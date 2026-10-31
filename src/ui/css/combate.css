@@ -1,0 +1,768 @@
+/*
+ * Combate y magia: Mi turno, Conjuros, Habilidades y selector de conjuros.
+ * Prefijo .cb-  ·  Guía en DISENO.md. No redefine piezas base.
+ */
+
+/* ===== Común ===== */
+
+/* Texto solo para lectores de pantalla */
+.cb-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Nota pequeña dentro de un h2 («1 por turno») */
+.cb-h2n {
+  flex: none;
+  padding-top: 0.2em;
+  font-family: var(--f-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* Bloque de sección: hijos separados 12 px; las subsecciones, más */
+.cb-sec > * + * {
+  margin-top: 12px;
+}
+.cb-sec > .cb-sub {
+  margin: 24px 0 8px;
+}
+.cb-sec > .cb-sub:first-child {
+  margin-top: 0;
+}
+.cb-sec > .cb-sub + * {
+  margin-top: 0;
+}
+.cb-sub {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cb-sub::before {
+  content: '';
+  flex: none;
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+.cb-hint {
+  margin: 0 0 10px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* Rombos pequeños de solo lectura (espacios de conjuro) */
+.cb-gems {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 2px;
+}
+.cb-gem {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border: 1.5px solid var(--accent);
+  background: var(--accent);
+  transform: rotate(45deg);
+}
+.cb-gem.used {
+  border-color: var(--faint);
+  background: transparent;
+}
+
+/* Hueco fijo para el rombo de competencia, para que nada lo pise */
+.cb-dotbox {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 20px;
+  height: 20px;
+}
+.cb-dotbox > .dot,
+.cb-dotbox > .dot.double {
+  margin: 0;
+  vertical-align: 0;
+}
+
+/* ===== Mi turno ===== */
+
+.cb-move {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.cb-move-v {
+  flex: none;
+  min-width: 72px;
+  padding-right: 14px;
+  border-right: 1px solid var(--line-2);
+  text-align: center;
+}
+.cb-move-v .v {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.cb-move-v .s {
+  margin-top: 4px;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  color: var(--muted);
+}
+/* min-width: 0 para que con zoom muy grande («oportunidad») no empuje fuera de la tarjeta */
+.cb-move p {
+  min-width: 0;
+  margin: 0;
+  font-size: 0.92rem;
+  overflow-wrap: break-word;
+}
+
+/* Ataques: un panel con una fila por arma */
+.cb-atk {
+  padding: 12px 14px 14px;
+}
+.cb-atk-name {
+  font-size: 1.25rem;
+}
+.cb-atk-nums {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 8fr);
+  margin-top: 8px;
+  border-block: 1px solid var(--line);
+}
+.cb-atk-cell {
+  min-width: 0;
+  padding: 6px 0 8px;
+}
+.cb-atk-cell + .cb-atk-cell {
+  padding-left: 14px;
+  border-left: 1px solid var(--line);
+}
+.cb-atk-v {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.55rem;
+  line-height: 1.1;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.cb-atk-v .cb-d20 {
+  color: var(--muted);
+  font-size: 0.8em;
+}
+.cb-atk-v .cb-type {
+  font-family: var(--f-body);
+  font-weight: 500;
+  font-size: 0.88rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.cb-atk-s {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.cb-atk-p {
+  margin: 8px 0 0;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.cb-atk-p.cb-mastery {
+  margin-top: 10px;
+}
+.cb-atk-p.cb-mastery .tag {
+  margin: 0 6px 0 0;
+}
+
+/* Usos de un rasgo dentro de una fila de ataque (Ataque de aliento) */
+.cb-uses {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px 10px;
+  margin-top: 8px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.cb-uses .pips {
+  margin-left: -8px;
+}
+
+/* Rasgos que cambian tus ataques, bajo la lista */
+.cb-also {
+  margin: 0 0 6px;
+  font-family: var(--f-body);
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* Botón de maestrías: texto a la izquierda, cuenta a la derecha */
+.cb-mbtn {
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+  padding-block: 8px;
+  text-align: left;
+}
+.cb-mbtn .cb-n {
+  flex: none;
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+.cb-mbtn.primary::before {
+  content: '';
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin-right: -2px;
+  background: var(--gold-hi);
+  box-shadow: 0 0 8px var(--gold);
+  transform: rotate(45deg);
+}
+.cb-mbtn .cb-mbtn-t {
+  flex: 1;
+  min-width: 0;
+}
+.cb-mbtn small {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--f-body);
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0;
+  color: var(--ink);
+}
+
+/* Conjuros como chips */
+.cb-chip-lv {
+  margin-left: 2px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* Sin nada para esta parte del turno */
+.cb-empty {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px dashed var(--line-2);
+  border-radius: var(--r);
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+/* Fila fija (no desplegable) con el mismo aspecto que las de la lista */
+.cb-static {
+  padding: 12px 14px;
+}
+.cb-static p {
+  margin: 2px 0 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* Acciones de cualquiera, dentro del desplegable */
+.cb-gen + .cb-gen {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.cb-gen h4 {
+  margin: 0 0 4px;
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--gold-hi);
+}
+.cb-gen .text {
+  font-size: 0.92rem;
+}
+
+/* Selector de maestrías */
+.cb-mp-picked {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.cb-mp-picked strong {
+  color: var(--accent);
+}
+.cb-mp-group {
+  margin: 20px 0 8px;
+  font-size: 1.05rem;
+  color: var(--gold);
+}
+.cb-mp .option {
+  padding-block: 10px;
+}
+.cb-mp .option + .option {
+  margin-top: 6px;
+}
+.cb-mp-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.cb-mp-row strong {
+  flex: 1;
+  min-width: 0;
+}
+.cb-mp-row .cb-mp-m {
+  flex: none;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.cb-mp .option.on .cb-mp-m {
+  color: var(--accent);
+  font-weight: 700;
+}
+/* Qué hace la maestría, en una línea bajo el nombre */
+.cb-mp-why {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.84rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+.cb-mp-help {
+  margin-top: 20px;
+}
+.cb-mp-help .cb-gen h4 {
+  font-size: 1rem;
+}
+
+/* ===== Conjuros ===== */
+
+/* Celda de la franja con una palabra en vez de cifra */
+.band .v.cb-word {
+  font-size: min(1.25rem, 5.4vw);
+  line-height: 1.6;
+}
+.cb-legend {
+  display: grid;
+  gap: 6px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.cb-legend li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.cb-legend .tag {
+  flex: none;
+  min-width: 22px;
+  margin: 0;
+  text-align: center;
+}
+.cb-legend b {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.cb-change {
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  padding-block: 8px;
+  text-align: left;
+}
+.cb-change .cb-n {
+  font-weight: 500;
+  font-size: 0.82rem;
+  color: var(--gold);
+  text-align: right;
+}
+
+/* Espacios que quedan, bajo el título de cada nivel */
+.cb-slots {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+}
+
+/* Conjuro en la lista */
+.cb-spell-name {
+  display: block;
+  font-weight: 700;
+}
+.cb-spell-meta,
+.cb-spell-src {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+.cb-spell-src {
+  font-style: italic;
+}
+.cb-spell-src .cb-free {
+  font-style: normal;
+  color: var(--accent);
+  font-weight: 700;
+}
+.cb-cast {
+  margin-bottom: 12px;
+}
+
+/* Hoja de lanzar: elegir espacio */
+.cb-higher {
+  margin: 0 0 14px;
+  padding: 2px 0 2px 12px;
+  border-left: 2px solid var(--gold-line);
+  color: var(--muted);
+}
+.cb-slotlist button.li:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.cb-slotlist .li strong {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+.cb-slotlist .li .v {
+  min-width: 5.5em;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: right;
+}
+.cb-note {
+  margin: 14px 0 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* Barra de pie dentro de la hoja: el pegado se mide desde el relleno inferior de .modal
+   (20 px + zona segura) y por debajo asomaba la lista. Se baja hasta el borde. */
+
+/* Hoja de cambiar conjuros */
+.cb-tabs {
+  margin: 14px 0 4px;
+}
+
+/* Pie de las hojas: el aviso de límite ocupa su propia línea encima de los botones */
+.cb-foot {
+  flex-wrap: wrap;
+}
+.cb-foot > .cb-limit {
+  flex-basis: 100%;
+  margin: 0 0 2px;
+}
+
+/* «Ya tienes 4. Quita uno para elegir otro.» Al llegar al límite de un selector */
+.cb-limit {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 8px 0 0;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  color: var(--ink);
+}
+.cb-limit::before {
+  content: '';
+  flex: none;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  transform: translateY(-2px) rotate(45deg);
+}
+
+/* ===== Selector de conjuros (SpellPicker) ===== */
+
+.cb-search {
+  position: sticky;
+  top: var(--top);
+  z-index: 4;
+  margin-inline: calc(-1 * var(--gutter));
+  padding: 10px var(--gutter);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+/* En la hoja inferior, pegado al borde de arriba de la hoja.
+   El pegado se mide desde el contenido de .modal (10 px de relleno arriba): se compensa. */
+.modal .cb-search {
+  top: -10px;
+  background: var(--panel);
+}
+.cb-search-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cb-search-n {
+  flex: none;
+  font-size: 0.8rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.cb-search-n b {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--ink);
+}
+.cb-search .chips {
+  margin-top: 8px;
+}
+.cb-picklist {
+  margin-top: 12px;
+}
+.cb-pick + .cb-pick {
+  margin-top: 8px;
+}
+.cb-pick-row {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+}
+.cb-pick-row > .option {
+  flex: 1;
+  min-width: 0;
+}
+/* Los fijos (de la subclase) están marcados y no se pueden quitar: que se lean */
+.cb-pick-row > .option.on:disabled {
+  opacity: 0.7;
+}
+.cb-pick-meta {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+.cb-pick-info {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 52px;
+  padding: 4px 0;
+  border: 1px solid var(--line-2);
+  border-radius: var(--r);
+  background: var(--panel);
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.modal .cb-pick-info {
+  background: var(--panel-2);
+}
+.cb-pick-info[aria-expanded='true'] {
+  border-color: var(--gold-line);
+  background: var(--gold-soft);
+  color: var(--gold-hi);
+}
+.cb-pick-body {
+  margin-top: 6px;
+}
+.cb-pick-empty {
+  margin: 16px 0 0;
+  color: var(--muted);
+}
+/* Pantallas bajas (horizontal, iPhone SE con las barras de Safari): pestañas y buscador fijo más
+   compactos, para que entre la lista y el pie se vean conjuros */
+@media (max-height: 600px) {
+  .cb-tabs {
+    margin: 10px 0 0;
+  }
+  .modal .cb-search {
+    padding-block: 6px;
+  }
+  .cb-search .cb-limit {
+    margin-top: 4px;
+  }
+  .cb-search .chips {
+    margin-top: 6px;
+  }
+}
+
+/* ===== Ficha de un conjuro (SpellBody) ===== */
+
+.cb-sb-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 14px;
+  margin: 0 0 12px;
+  padding: 6px 0;
+  border-block: 1px solid var(--line);
+}
+.cb-sb-grid > div {
+  min-width: 0;
+  padding: 4px 0;
+}
+.cb-sb-grid > .wide {
+  grid-column: 1 / -1;
+}
+.cb-sb-grid dt {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+.cb-sb-grid dd {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+.cb-sb-higher {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line-2);
+  font-size: 0.9rem;
+}
+
+/* ===== Habilidades ===== */
+
+.cb-after-band {
+  margin-top: 12px;
+}
+
+/* Losetas de características */
+.cb-abil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0 0;
+  overflow: hidden;
+}
+.cb-abil .label {
+  padding-inline: 4px;
+}
+.cb-abil .v {
+  margin-top: 4px;
+}
+.cb-score {
+  min-width: 2.6em;
+  margin: 4px 0 10px;
+  padding: 0 6px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.cb-save {
+  --ring-gap: var(--bg-inset);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  align-self: stretch;
+  margin-top: auto;
+  padding: 6px 4px 7px;
+  border-top: 1px solid var(--line);
+  background: var(--bg-inset);
+  font-size: 0.8rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.cb-save .cb-dotbox {
+  width: 16px;
+}
+.cb-save strong {
+  margin-left: 2px;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.cb-save.on {
+  color: var(--ink);
+}
+
+/* Leyenda de rombos */
+.cb-keys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+.cb-keys li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cb-keys.cb-keys-col {
+  flex-direction: column;
+}
+
+/* Habilidades */
+.cb-skill .grow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px 8px;
+}
+.cb-skill .grow .tag {
+  margin: 0;
+}
+.cb-skill-ab {
+  flex: none;
+  width: 2.6em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  text-align: right;
+}
+.cb-skill .v {
+  flex: none;
+  min-width: 2.2em;
+  margin-left: 0;
+  font-size: 1.05rem;
+  text-align: right;
+}
+.cb-skill.on .v {
+  color: var(--ink);
+}
+.cb-skill:not(.on) .v {
+  color: var(--muted);
+}
+
+/* Herramientas, idiomas, armas y armaduras */
+.cb-prof {
+  padding-block: 0;
+}
+.cb-prof-row {
+  padding: 12px 0;
+}
+.cb-prof-row + .cb-prof-row {
+  border-top: 1px solid var(--line);
+}
+.cb-prof-row .label {
+  margin-bottom: 4px;
+}
+.cb-prof-row p {
+  margin: 0;
+}

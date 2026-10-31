@@ -1,0 +1,1190 @@
+@import './fonts.css';
+
+/*
+ * Base de Zurrón: estilo de videojuego de rol, siempre oscuro.
+ * Guía completa en DISENO.md. Cada pantalla añade lo suyo en src/ui/css/<zona>.css
+ * y no redefine estas piezas.
+ */
+
+/* ===== Tokens ===== */
+:root {
+  /* Fondos (cuero y madera oscura, nunca negro puro) */
+  --bg: #14100c;
+  --bg-inset: #0e0b08;
+  --panel: #1f1913;
+  --panel-2: #29211a;
+  --line: #3a2f23;
+  --line-2: #4d3f2d;
+  /* Borde de los campos de texto: 3,27:1 sobre --panel-2, 3,59 sobre --panel y 3,91 sobre --bg
+     (WCAG 1.4.11 pide 3:1 en el contorno de un control). Los filetes decorativos siguen con --line y --line-2. */
+  --line-3: #806f58;
+  /* Oro viejo: marcos, títulos y estructura */
+  --gold: #c9a35c;
+  --gold-hi: #ecd29a;
+  --gold-line: rgb(201 163 92 / 0.42);
+  --gold-soft: #2e2417;
+  /* Texto (pergamino) */
+  --ink: #ece1c9;
+  --muted: #a8977c;
+  /* Pistas: 4,77:1 sobre --panel-2, 4,59 sobre --gold-soft y 5,25 sobre --panel; más apagado que --muted (5,56:1) */
+  --faint: #9b8b73;
+  /* Estados */
+  --blood: #b8352b;
+  --blood-soft: #2c1512;
+  --steel: #8fb3d9;
+  --good: #8cc283;
+  --bad: #e8735f;
+  /* Color del personaje (lo sobrescribe paletteStyle); por defecto, oro */
+  --accent: #c9a35c;
+  --accent-soft: #2e2417;
+  /* Alias por compatibilidad */
+  --surface: var(--panel);
+  --brass: var(--gold);
+  --brass-soft: var(--gold-soft);
+
+  --f-display: 'Grenze', Georgia, serif;
+  --f-body: 'Alegreya Sans', 'Segoe UI', system-ui, sans-serif;
+  --r: 4px;
+  --r-sm: 3px;
+  --gutter: max(16px, env(safe-area-inset-left, 0px));
+  --top: env(safe-area-inset-top, 0px);
+  --bottom: env(safe-area-inset-bottom, 0px);
+  /* Crece con la letra grande para que el icono y el texto no se corten */
+  --bnav-h: max(62px, 1.2rem + 36px);
+  --ring-gap: var(--bg);
+  color-scheme: dark;
+}
+
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+/* 17 px con la letra de serie (16 px); en %, para respetar la letra que la persona elija en el navegador */
+html {
+  font-size: 106.25%;
+  -webkit-text-size-adjust: 100%;
+  background: var(--bg);
+  scroll-padding-top: calc(var(--top) + 16px);
+  scroll-padding-bottom: calc(var(--bottom) + var(--bnav-h) + 16px);
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
+  line-height: 1.45;
+  -webkit-tap-highlight-color: transparent;
+}
+/* Tapa la barra de estado del iPhone al hacer scroll */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0 0 auto;
+  height: var(--top);
+  z-index: 40;
+  background: var(--bg);
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+}
+p {
+  margin: 0 0 0.75em;
+}
+a {
+  color: var(--gold-hi);
+  text-underline-offset: 3px;
+}
+:focus-visible {
+  outline: 2px solid var(--gold-hi);
+  outline-offset: 2px;
+}
+::selection {
+  background: var(--gold-soft);
+  color: var(--gold-hi);
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== Página ===== */
+.wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: calc(var(--top) + 12px) var(--gutter) calc(var(--bottom) + 48px);
+}
+.wrap.with-nav {
+  padding-bottom: calc(var(--bottom) + var(--bnav-h) + 32px);
+}
+/* vh antes de dvh: los motores sin dvh (iOS < 15.4, Chrome < 108) se quedan con la primera */
+.sheet {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* ===== Utilidades ===== */
+.muted {
+  color: var(--muted);
+}
+.faint {
+  color: var(--faint);
+}
+.small {
+  font-size: 0.88rem;
+}
+.num {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.center {
+  text-align: center;
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.row.wrapx {
+  flex-wrap: wrap;
+}
+.grow {
+  flex: 1;
+  min-width: 0;
+}
+.stack > * + * {
+  margin-top: 8px;
+}
+.hidden {
+  display: none !important;
+}
+.grid2,
+.grid3 {
+  display: grid;
+  gap: 8px;
+}
+.grid2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 340px) {
+  .grid3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ===== Tipografía ===== */
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: inherit;
+}
+.display {
+  font-family: var(--f-display);
+  font-weight: 700;
+  line-height: 0.95;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.brand {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 1;
+  color: var(--gold-hi);
+  margin: 0;
+}
+/* Título de sección: oro, con un filete que se desvanece a la derecha */
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0 12px;
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.1;
+  color: var(--gold);
+}
+h2::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-line), transparent);
+}
+h3 {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  line-height: 1.15;
+  color: var(--ink);
+}
+.label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--muted);
+}
+.lede {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.tagline {
+  font-style: italic;
+}
+.summary {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* ===== Paneles ===== */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 14px 16px;
+}
+.card + .card {
+  margin-top: 8px;
+}
+.grid2 > .card,
+.grid3 > .card {
+  margin-top: 0;
+}
+.card > h3 + * {
+  margin-top: 6px;
+}
+.card > :last-child,
+.notice > :last-child,
+details.item > .body > :last-child {
+  margin-bottom: 0;
+}
+/* Marco con esquinas doradas. Solo para la pieza principal de cada pantalla. */
+.frame {
+  position: relative;
+  border-color: var(--gold-line);
+}
+.frame::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  border-radius: var(--r);
+  background:
+    linear-gradient(var(--gold), var(--gold)) left top / 14px 2px,
+    linear-gradient(var(--gold), var(--gold)) left top / 2px 14px,
+    linear-gradient(var(--gold), var(--gold)) right top / 14px 2px,
+    linear-gradient(var(--gold), var(--gold)) right top / 2px 14px,
+    linear-gradient(var(--gold), var(--gold)) left bottom / 14px 2px,
+    linear-gradient(var(--gold), var(--gold)) left bottom / 2px 14px,
+    linear-gradient(var(--gold), var(--gold)) right bottom / 14px 2px,
+    linear-gradient(var(--gold), var(--gold)) right bottom / 2px 14px;
+  background-repeat: no-repeat;
+}
+
+/* Franja de cifras: filetes dorados arriba y abajo, rombos en las juntas */
+.band {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  border-block: 1px solid var(--gold-line);
+}
+.band > * {
+  position: relative;
+  min-width: 0;
+  padding: 12px 6px 10px;
+  text-align: center;
+}
+.band > button {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+}
+.band > * + *,
+.band > * + button {
+  border-left: 1px solid var(--line-2);
+}
+.band > * + *::before,
+.band > * + *::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+.band > * + *::before {
+  top: -4px;
+}
+.band > * + *::after {
+  bottom: -4px;
+}
+.band .v {
+  margin: 4px 0 2px;
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.band .s {
+  font-size: 0.75rem;
+  line-height: 1.25;
+  color: var(--faint);
+}
+/* La etiqueta crece con la letra del sistema hasta un 130 % más o menos; más allá «Iniciativa» ya no
+   cabría en su celda. Si aun así no cabe, se parte en vez de pisar la celda de al lado. Sin guiones
+   automáticos: partirían «Ataque má-gico» con la letra normal. */
+.band .label {
+  font-size: min(0.8rem, 12px + 1.6vw);
+  overflow-wrap: break-word;
+}
+/* Celda que se puede tocar: etiqueta subrayada con puntos */
+.band > button .label {
+  text-decoration: underline dotted var(--faint);
+  text-underline-offset: 3px;
+}
+
+/* Losetas (características, cifras sueltas) */
+.vital {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 10px 6px;
+  text-align: center;
+  min-width: 0;
+}
+button.vital {
+  width: 100%;
+  font: inherit;
+  color: inherit;
+}
+.vital .v {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.vital .s {
+  font-size: 0.75rem;
+  color: var(--faint);
+}
+
+/* ===== Listas ===== */
+.list {
+  --ring-gap: var(--panel);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  overflow: hidden;
+}
+/* box-shadow en vez de border: los botones .li resetean el borde */
+.list > * + * {
+  box-shadow: inset 0 1px 0 var(--line);
+}
+.li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 10px 14px;
+  color: inherit;
+  text-decoration: none;
+}
+button.li {
+  width: 100%;
+  background: none;
+  border: 0;
+  text-align: left;
+}
+.li .v {
+  margin-left: auto;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* Desplegables: los seguidos forman una sola lista */
+details.item {
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+details.item + details.item {
+  border-top: 0;
+  box-shadow: inset 0 1px 0 var(--line);
+}
+details.item:first-child,
+:not(details.item) + details.item {
+  border-top-left-radius: var(--r);
+  border-top-right-radius: var(--r);
+}
+/* En reglas separadas: sin :has() (Chrome < 105, iOS < 15.4) se perdería también :last-child */
+details.item:last-child {
+  border-bottom-left-radius: var(--r);
+  border-bottom-right-radius: var(--r);
+}
+details.item:not(:has(+ details.item)) {
+  border-bottom-left-radius: var(--r);
+  border-bottom-right-radius: var(--r);
+}
+/* Dentro de .stack van sueltos, cada uno con su borde */
+.stack > details.item,
+.stack > details.item + details.item {
+  border-top: 1px solid var(--line);
+  border-radius: var(--r);
+  box-shadow: none;
+}
+details.item > summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 12px 14px;
+  list-style: none;
+  cursor: pointer;
+}
+details.item > summary::-webkit-details-marker {
+  display: none;
+}
+details.item > summary::after {
+  content: '';
+  flex: none;
+  width: 7px;
+  height: 7px;
+  margin: 0 2px 0 4px;
+  border-right: 1.5px solid var(--gold);
+  border-bottom: 1.5px solid var(--gold);
+  transform: rotate(-45deg);
+  transition: transform 0.15s;
+}
+details.item[open] > summary::after {
+  transform: rotate(45deg);
+}
+details.item > summary strong {
+  font-weight: 700;
+}
+details.item > .body {
+  padding: 0 14px 14px;
+}
+details.item > .body > .summary {
+  margin: 0 0 8px;
+}
+
+/* ===== Botones ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 6px 14px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-sm);
+  background: var(--panel-2);
+  color: var(--ink);
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+  text-decoration: none;
+  text-wrap: balance;
+  /* Con letra muy grande, una palabra más ancha que el botón se parte dentro en vez de salirse */
+  overflow-wrap: break-word;
+}
+.btn:active:not(:disabled) {
+  filter: brightness(1.18);
+}
+/* Acción principal: marco de oro */
+.btn.primary {
+  border-color: var(--gold);
+  background: linear-gradient(180deg, #3d301d, #2a2115);
+  box-shadow: inset 0 1px 0 rgb(236 210 154 / 0.18);
+  color: var(--gold-hi);
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.08rem;
+  letter-spacing: 0.01em;
+}
+.btn.soft {
+  border-color: transparent;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.btn.brass {
+  border-color: var(--gold-line);
+  background: var(--gold-soft);
+  color: var(--gold-hi);
+}
+.btn.ghost {
+  border-color: transparent;
+  background: none;
+  color: var(--gold);
+  padding-inline: 6px;
+}
+.btn.danger {
+  color: var(--bad);
+}
+.btn.block {
+  width: 100%;
+}
+.btn.sm {
+  min-height: 36px;
+  padding: 0 12px;
+  font-size: 0.92rem;
+}
+/* «Inicio», «Cerrar» y «Cancelar» (sin borde): 44 px que se pueden tocar, pero la fila no crece */
+.btn.sm.ghost {
+  min-height: 44px;
+  margin-block: -4px;
+}
+.btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.btn svg {
+  flex: none;
+}
+.iconbtn {
+  display: inline-grid;
+  place-items: center;
+  min-width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--gold-line);
+  border-radius: var(--r-sm);
+  background: var(--panel-2);
+  color: var(--gold-hi);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.iconbtn:disabled {
+  opacity: 0.35;
+}
+.link {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--gold-hi);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ===== Formularios ===== */
+.input {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--line-3);
+  border-radius: var(--r-sm);
+  background: var(--bg-inset);
+  color: var(--ink);
+}
+.input::placeholder {
+  color: var(--faint);
+}
+.input:focus {
+  border-color: var(--gold);
+  outline: none;
+}
+/* Como los botones desactivados: se ve que ahora no se puede usar */
+.input:disabled {
+  opacity: 0.4;
+}
+/* :where() para que cualquier clase de zona pueda cambiar el alto */
+.input:where(textarea) {
+  min-height: 96px;
+  resize: vertical;
+  line-height: 1.45;
+}
+.field {
+  display: block;
+}
+.field > span:first-child {
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* ===== Usos: rombos ===== */
+/* 6 px entre huecos de 36: cuesta menos tocar el rombo de al lado */
+.pips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.pips.centered {
+  justify-content: center;
+}
+.pip {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+.pip::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border: 1.5px solid var(--accent);
+  border-radius: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 10px -1px var(--accent);
+  transform: rotate(45deg);
+}
+.pip.used::before,
+.pips.count .pip::before {
+  border-color: var(--faint);
+  background: transparent;
+  box-shadow: none;
+}
+.pips.count .pip.used::before {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 10px -1px var(--accent);
+}
+.pips.good {
+  --accent: var(--good);
+}
+.pips.bad {
+  --accent: var(--bad);
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.stepper .v {
+  min-width: 3.2ch;
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.stepper.compact {
+  gap: 6px;
+}
+.stepper.compact .iconbtn {
+  min-width: 36px;
+  height: 36px;
+  font-size: 1.15rem;
+}
+.stepper.compact .v {
+  font-size: 1.25rem;
+}
+
+/* ===== Control segmentado =====
+   .pt-seg (reglas y subir de nivel) y .cr-seg (crear personaje) comparten aspecto; cada zona solo
+   cambia cómo se reparten el ancho los botones (portada.css y crear.css). */
+.pt-seg,
+.cr-seg {
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid var(--gold-line);
+  border-radius: var(--r);
+  background: var(--bg-inset);
+}
+.pt-seg > a,
+.pt-seg > button,
+.cr-seg > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 4px 10px;
+  border: 1px solid transparent;
+  border-radius: var(--r-sm);
+  background: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+  text-decoration: none;
+}
+.pt-seg > [aria-current='page'],
+.pt-seg > [aria-pressed='true'],
+.cr-seg > [aria-pressed='true'] {
+  border-color: var(--gold);
+  background: var(--gold-soft);
+  box-shadow: inset 0 1px 0 rgb(236 210 154 / 0.18);
+  color: var(--gold-hi);
+}
+
+/* ===== Chips, etiquetas y marcas ===== */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 36px;
+  padding: 4px 12px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-sm);
+  background: var(--panel-2);
+  color: var(--ink);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.chip.on {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+.tag {
+  display: inline-block;
+  margin-left: 0.5em;
+  padding: 0 6px;
+  border: 1px solid var(--gold-line);
+  border-radius: 2px;
+  color: var(--gold);
+  font: 600 0.72rem/1.45 var(--f-body);
+  letter-spacing: 0.02em;
+  vertical-align: 0.15em;
+  white-space: nowrap;
+}
+.tag.accent {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+/* Competencia: rombo pequeño (vacío, lleno, mitad o doble) */
+.dot {
+  display: inline-block;
+  flex: none;
+  width: 9px;
+  height: 9px;
+  margin: 0 0.45em 0 0.1em;
+  border: 1.5px solid var(--faint);
+  transform: rotate(45deg);
+  vertical-align: 0.08em;
+}
+.dot.on,
+.dot.double {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+.dot.double {
+  box-shadow:
+    0 0 0 2px var(--ring-gap),
+    0 0 0 3.5px var(--accent);
+  margin-inline: 0.35em 0.65em;
+}
+.dot.half {
+  border-color: var(--accent);
+  background: linear-gradient(90deg, var(--accent) 50%, transparent 50%);
+}
+
+/* ===== Avisos ===== */
+.notice {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid var(--gold-line);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--r);
+  background: var(--gold-soft);
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+.notice.error {
+  border-color: rgb(232 115 95 / 0.35);
+  border-left-color: var(--bad);
+  background: var(--blood-soft);
+}
+.notice ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+.notice li + li {
+  margin-top: 4px;
+}
+
+/* ===== Texto de reglas ===== */
+.text p {
+  margin: 0 0 0.65em;
+}
+.text p:last-child {
+  margin-bottom: 0;
+}
+.text ul {
+  margin: 0 0 0.65em;
+  padding-left: 20px;
+}
+.text li + li {
+  margin-top: 3px;
+}
+.text table {
+  display: block;
+  width: 100%;
+  margin: 0 0 0.65em;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.text th,
+.text td {
+  padding: 5px 8px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.text th {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* ===== Retrato en medallón ===== */
+.portrait {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 88px;
+  height: 88px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  object-fit: cover;
+  background: radial-gradient(circle at 50% 35%, var(--accent-soft), var(--bg-inset));
+  box-shadow:
+    0 0 0 3px var(--ring-gap),
+    0 0 0 4px var(--gold-line),
+    0 0 26px 2px color-mix(in srgb, var(--accent) 40%, transparent);
+  color: var(--gold-hi);
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+/* ===== Hoja inferior (modal) ===== */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgb(5 3 2 / 0.72);
+  animation: fade 0.15s;
+}
+.modal {
+  --ring-gap: var(--panel);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 680px;
+  /* vh para los motores sin dvh: sin tope la hoja crece más que la pantalla y el título queda fuera */
+  max-height: 88vh;
+  max-height: 88dvh;
+  overflow: hidden;
+  border-top: 1px solid var(--gold-line);
+  border-radius: 10px 10px 0 0;
+  background: var(--panel);
+  color: var(--ink);
+  animation: up 0.2s ease-out;
+}
+/* Título y «Cerrar» fijos arriba: en hojas largas siguen a la vista. Solo se desplaza .modal-body. */
+.modal-head {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 12px;
+  padding: 16px var(--gutter) 4px;
+  background: var(--panel);
+}
+/* Lo que pasa por debajo se funde con el título en vez de cortarse en seco */
+.modal-head::after {
+  content: '';
+  position: absolute;
+  inset: 100% 0 auto;
+  height: 10px;
+  background: linear-gradient(var(--panel), transparent);
+  pointer-events: none;
+}
+.modal-head h2 {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+.modal-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 10px var(--gutter) calc(var(--bottom) + 20px);
+}
+/* 14 px bajo el título (4 + 10), empiece por lo que empiece */
+.modal-body > :first-child {
+  margin-top: 0;
+}
+/* Dentro de la hoja, lo que era panel sube un tono */
+.modal .card,
+.modal .list,
+.modal details.item,
+.modal .option,
+.modal .vital {
+  background: var(--panel-2);
+}
+/* Lo pegado dentro de la hoja se mide desde el relleno de .modal-body (10 px arriba, 20 + zona segura
+   abajo): la barra del pie baja hasta el borde de verdad. Lo pegado arriba usa top: -10px y queda
+   justo bajo el título. */
+.modal .footerbar {
+  bottom: calc(-20px - var(--bottom));
+  margin-bottom: calc(-20px - var(--bottom));
+  background: var(--panel);
+}
+@keyframes up {
+  from {
+    transform: translateY(30px);
+    opacity: 0.6;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ===== Opción marcable ===== */
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--r);
+  background: var(--panel);
+  color: var(--ink);
+  text-align: left;
+}
+.option + .option {
+  margin-top: 8px;
+}
+.option.on {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.option .box {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  border: 1.5px solid var(--accent);
+  border-radius: 3px;
+  color: var(--bg);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.option.on .box {
+  background: var(--accent);
+}
+.option.radio .box {
+  border-radius: 50%;
+}
+/* radio marcado: punto en el centro en lugar de ✓ */
+.option.radio.on .box {
+  background: transparent;
+}
+.option.radio.on .box::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.option:disabled {
+  opacity: 0.4;
+}
+/* marcada y bloqueada (siempre preparado): se lee bien, solo que no se toca */
+.option.on:disabled {
+  opacity: 0.7;
+}
+
+/* Barra de acciones fija al pie (asistentes y hojas) */
+.footerbar {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 12px 0 calc(var(--bottom) + 12px);
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+}
+
+/* ===== Barra de navegación inferior ===== */
+.bnav {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 30;
+  padding-bottom: var(--bottom);
+  border-top: 1px solid var(--gold-line);
+  background: rgb(20 16 12 / 0.96);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+.bnav > div {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  max-width: 680px;
+  margin: 0 auto;
+}
+.bnav a,
+.bnav button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: var(--bnav-h);
+  padding: 0 2px;
+  border: 0;
+  background: none;
+  color: var(--faint);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.bnav span {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Crece con la letra del sistema solo hasta donde cabe «Habilidades» en su quinto de pantalla
+     (unos 4,7 em de ancho); por debajo de 10 px ya no encoge y, si no cabe, sale «…». */
+  font-size: clamp(10px, 4vw - 1px, 0.72rem);
+}
+.bnav [aria-current='page'] {
+  color: var(--gold-hi);
+}
+.bnav [aria-current='page']::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: calc(50% - 4px);
+  width: 8px;
+  height: 8px;
+  background: var(--gold-hi);
+  box-shadow: 0 0 10px var(--gold);
+  transform: rotate(45deg);
+}
+
+/* ===== Aviso efímero ===== */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--bottom) + var(--bnav-h) + 16px);
+  z-index: 60;
+  max-width: calc(100% - 32px);
+  padding: 10px 16px;
+  border: 1px solid var(--gold-line);
+  border-radius: var(--r);
+  background: var(--panel-2);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.5);
+  color: var(--gold-hi);
+  font-weight: 700;
+  transform: translateX(-50%);
+  animation: fade 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.toast-action {
+  flex: none;
+  min-height: 44px;
+  margin: -10px -8px -10px 0;
+  padding: 0 10px;
+  border: 0;
+  background: none;
+  color: var(--gold);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+/* En asistentes y hojas con barra de acciones al pie, el aviso sube para no tapar el botón. */
+body:has(.footerbar) .toast {
+  bottom: calc(var(--bottom) + 96px);
+}
+/* Sin :has() (Chrome < 105, iOS < 15.4) no se sabe si hay barra al pie: el aviso va siempre a la
+   altura que salva las dos barras. */
+@supports not selector(:has(*)) {
+  .toast {
+    bottom: calc(var(--bottom) + max(96px, var(--bnav-h) + 16px));
+  }
+}
+
+/* Resultado de una tirada */
+.roll {
+  margin: 8px 0;
+  color: var(--gold-hi);
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 2.6rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* ===== Pantallas bajas (móvil en horizontal, iPhone SE con las barras de Safari) =====
+   Título, buscador y pie de las hojas más compactos para que quede sitio para la lista. */
+@media (max-height: 600px) {
+  .modal-head {
+    padding-top: 10px;
+  }
+  .modal .footerbar {
+    margin-top: 12px;
+    padding-top: 8px;
+    padding-bottom: calc(var(--bottom) + 8px);
+  }
+}
+@media (max-height: 500px) {
+  .modal {
+    max-height: 96vh;
+    max-height: 96dvh;
+  }
+}
+
+/* ===== Motores sin color-mix() (iOS 15 y 16.0-16.1, Chrome < 111, Samsung Internet < 22) =====
+   Una declaración con var() no se descarta al leerla, sino al calcularla: una alternativa escrita
+   antes en la misma regla no serviría. Por eso los colores de repuesto van en este bloque, al final,
+   con la mezcla ya hecha (o, si depende del color del personaje, una aproximación). */
+@supports not (color: color-mix(in srgb, red, red)) {
+  .portrait {
+    box-shadow:
+      0 0 0 3px var(--ring-gap),
+      0 0 0 4px var(--gold-line),
+      0 0 20px -4px var(--accent);
+  }
+}

@@ -1,0 +1,1156 @@
+[
+ {
+  "id": "senda-del-berserker",
+  "classId": "barbaro",
+  "name": "Senda del berserker",
+  "source": "srd",
+  "text": "Canaliza la furia en una violencia indómita.\n\nLos bárbaros que recorren la senda del berserker ponen su furia principalmente al servicio de la violencia. Su senda se asienta en una rabia sin cortapisas y estos bárbaros se embriagan del caos del combate mientras dejan que su furia se apodere de ellos y los fortalezca.",
+  "features": [
+   {
+    "id": "senda-del-berserker-frenesi",
+    "name": "Frenesí",
+    "level": 3,
+    "text": "Si utilizas Ataque temerario mientras estás enfurecido, causarás daño adicional al primer objetivo al que aciertes en tu turno con un ataque basado en la Fuerza. Para determinar el daño adicional, tira una cantidad de d6 igual a tu bonificación de daño por furia y suma los resultados. El daño será del mismo tipo que el del arma o ataque sin armas utilizado para el ataque.",
+    "summary": "Si usas Ataque temerario estando en furia, el primer objetivo al que aciertes con un ataque de Fuerza en tu turno recibe daño extra: tantos d6 como tu bonificador de daño por furia."
+   },
+   {
+    "id": "senda-del-berserker-furia-irracional",
+    "name": "Furia irracional",
+    "level": 6,
+    "text": "Tienes inmunidad a los estados de asustado y hechizado mientras estés enfurecido. Si estás asustado o hechizado cuando te dejes llevar por la furia, el estado terminará para ti.",
+    "summary": "Mientras estás en furia no puedes quedar asustado ni hechizado, y entrar en furia termina esos estados."
+   },
+   {
+    "id": "senda-del-berserker-represalia",
+    "name": "Represalia",
+    "level": 10,
+    "text": "Cuando recibas daño de una criatura que esté a 1,5 m o menos de ti, puedes llevar a cabo una reacción para hacer un ataque cuerpo a cuerpo contra esa criatura usando un arma o un ataque sin armas.",
+    "summary": "Cuando una criatura a 1,5 m o menos te haga daño, puedes usar tu reacción para atacarla cuerpo a cuerpo."
+   },
+   {
+    "id": "senda-del-berserker-presencia-intimidante",
+    "name": "Presencia intimidante",
+    "level": 14,
+    "text": "Como acción adicional, puedes sembrar el terror en los demás con tu mera presencia amenazadora y tu poder primigenio. Cuando lo hagas, todas las criaturas de tu elección situadas en una emanación de 9 m originada en ti deberán hacer una tirada de salvación de Sabiduría (CD 8 más tu modificador por Fuerza y tu bonificador por competencia). Si la fallan, tendrán el estado de asustadas durante 1 minuto. Al final de cada uno de sus turnos, las criaturas asustadas repiten la tirada de salvación y, si tienen éxito, se librarán del efecto.\n\nCuando uses este rasgo, no podrás volver a hacerlo hasta que finalices un descanso largo, a menos que gastes un uso de tu furia (no requiere acción) para restablecer su uso.",
+    "summary": "Como acción adicional, las criaturas que elijas a 9 m o menos hacen una salvación de Sabiduría o quedan asustadas 1 minuto. Una vez por descanso largo, o gastando un uso de furia para repetirlo.",
+    "resources": [
+     {
+      "id": "presencia-intimidante",
+      "name": "Presencia intimidante",
+      "max": {
+       "perLevel": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+       ]
+      },
+      "recharge": "largo",
+      "fromLevel": 14
+     }
+    ]
+   }
+  ],
+  "summary": "Bárbaro de furia desatada: hace más daño cuando ataca temerariamente y no se deja asustar ni hechizar."
+ },
+ {
+  "id": "colegio-del-conocimiento",
+  "classId": "bardo",
+  "name": "Colegio del conocimiento",
+  "source": "srd",
+  "text": "Explora las profundidades del conocimiento mágico.\n\nLos bardos del colegio del conocimiento recaban conjuros y secretos de diversas fuentes, como tratados intelectuales, ritos místicos y cuentos de campesinos. Los miembros del colegio se reúnen en bibliotecas y universidades para intercambiar sus conocimientos. También se encuentran en festivales o reuniones de Estado, donde pueden sacar a la luz casos de corrupción, desvelar mentiras o reírse de los vanidosos representantes de la autoridad.",
+  "features": [
+   {
+    "id": "colegio-del-conocimiento-competencias-adicionales",
+    "name": "Competencias adicionales",
+    "level": 3,
+    "text": "Ganas competencia en tres habilidades de tu elección.",
+    "choice": {
+     "id": "colegio-del-conocimiento-competencias-adicionales",
+     "kind": "habilidad",
+     "count": 3
+    },
+    "summary": "Ganas competencia en tres habilidades que elijas."
+   },
+   {
+    "id": "colegio-del-conocimiento-palabras-cortantes",
+    "name": "Palabras cortantes",
+    "level": 3,
+    "text": "Aprendes a usar tu astucia para distraer, confundir y minar la confianza y las aptitudes de los demás de manera sobrenatural. Cuando una criatura que puedas ver a 18 m o menos de ti haga una tirada de daño o tenga éxito en una prueba de característica o una tirada de ataque, puedes llevar a cabo una reacción para gastar un uso de tu Inspiración bárdica; tira tu dado de Inspiración bárdica y resta el número obtenido al resultado de la tirada de la criatura, lo que reducirá el daño o quizá convierta el éxito en un fallo.",
+    "summary": "Cuando una criatura que veas a 18 m o menos haga una tirada de daño o tenga éxito en una prueba o un ataque, puedes usar tu reacción y un uso de Inspiración bárdica para restarle tu dado bárdico. Úsalo para librar a un aliado de un golpe fuerte o hacer fallar a un enemigo."
+   },
+   {
+    "id": "colegio-del-conocimiento-descubrimientos-magicos",
+    "name": "Descubrimientos mágicos",
+    "level": 6,
+    "text": "Aprendes dos conjuros de tu elección. Estos conjuros pueden proceder de las listas de conjuros de clérigo, druida o mago, o de cualquier combinación de estas (consulta la lista de conjuros en la sección de la clase). Los conjuros que elijas deben ser trucos o conjuros para los que tengas espacios de conjuro, como se muestra en la tabla «Rasgos de bardo».\n\nSiempre tienes preparados los conjuros elegidos y, cada vez que subas un nivel de bardo, podrás reemplazar uno de los conjuros por otro conjuro que cumpla estos requisitos.",
+    "choice": {
+     "id": "colegio-del-conocimiento-descubrimientos-magicos",
+     "kind": "conjuro",
+     "count": 2,
+     "spells": {
+      "lists": [
+       "clerigo",
+       "druida",
+       "mago"
+      ],
+      "upToSlots": true,
+      "toSheet": true
+     },
+     "note": "De las listas de clérigo, druida o mago; trucos o conjuros de un nivel para el que tengas espacios. Siempre preparados."
+    },
+    "summary": "Aprendes dos conjuros de las listas de clérigo, druida o mago (trucos o de un nivel que puedas lanzar). Siempre los tienes preparados y no cuentan para tu límite."
+   },
+   {
+    "id": "colegio-del-conocimiento-habilidad-sin-parangon",
+    "name": "Habilidad sin parangón",
+    "level": 14,
+    "text": "Cuando hagas una prueba de característica o una tirada de ataque y falles, podrás gastar un uso de Inspiración bárdica; tira el dado de Inspiración bárdica y suma el resultado al d20, lo que podría convertir un fallo en un éxito. Si fallas la tirada, la Inspiración bárdica no se gasta.",
+    "summary": "Si fallas una prueba de característica o una tirada de ataque, puedes gastar un uso de Inspiración bárdica y sumar el dado a tu tirada. Si aun así fallas, no pierdes el uso."
+   }
+  ],
+  "summary": "Bardo erudito: más habilidades, conjuros de otras clases y la capacidad de estropear las tiradas enemigas con Palabras cortantes."
+ },
+ {
+  "id": "patron-infernal",
+  "classId": "brujo",
+  "name": "Patrón infernal",
+  "source": "srd",
+  "text": "Haz un trato con los Planos Inferiores.\n\nTu pacto recurre a los Planos Inferiores, los reinos de la perdición. Puedes negociar con un señor demoníaco, con un archidiablo o con otro infernal especialmente notable. Estos patrones desean la corrupción y la destrucción de todas las cosas (incluyéndote a ti en última instancia) y tu camino se verá definido por la medida en que luchas contra esos deseos.",
+  "features": [
+   {
+    "id": "patron-infernal-bendicion-del-oscuro",
+    "name": "Bendición del oscuro",
+    "level": 3,
+    "text": "Cuando reduzcas a 0 los puntos de golpe de un enemigo, obtienes una cantidad de puntos de golpe temporales igual a tu modificador por Carisma más tu nivel de brujo (mínimo de 1 punto de golpe temporal). También obtienes este beneficio si otra criatura reduce a 0 los puntos de golpe de un enemigo a 3 m o menos de ti.",
+    "summary": "Cuando reduces a 0 PG a un enemigo (o lo hace otra criatura a 3 m o menos de ti), ganas PG temporales iguales a tu modificador por Carisma + tu nivel de brujo."
+   },
+   {
+    "id": "patron-infernal-conjuros-del-infernal",
+    "name": "Conjuros del infernal",
+    "level": 3,
+    "text": "La magia de tu patrón garantiza que siempre tengas ciertos conjuros preparados. Cuando alcances un nivel de brujo especificado en la tabla «Conjuros del infernal», a partir de entonces siempre tendrás preparados los conjuros que se indican.\n\n**Conjuros del infernal**\n\n| Nivel de brujo | Conjuros |\n|---|---|\n| 3 | Manos ardientes, Orden imperiosa, Rayo abrasador, Sugestión |\n| 5 | Bola de fuego, Nube apestosa |\n| 7 | Escudo de fuego, Muro de fuego |\n| 9 | Geas, Plaga de insectos |",
+    "summary": "Siempre tienes preparados ciertos conjuros de fuego y manipulación, que no cuentan para tu límite. Ganas más en los niveles 5, 7 y 9."
+   },
+   {
+    "id": "patron-infernal-la-suerte-del-oscuro",
+    "name": "La suerte del oscuro",
+    "level": 6,
+    "text": "Puedes invocar a tu patrón infernal para alterar el destino a tu favor. Cuando hagas una prueba de característica o una tirada de salvación, puedes utilizar este rasgo para sumar 1d10 a tu tirada. Puedes hacerlo después de ver el resultado de la tirada, pero antes de que ocurran sus efectos.\n\nPuedes usar este rasgo una cantidad de veces igual a tu modificador por Carisma (mínimo una vez), pero no más de una vez por tirada. Recuperas todos los usos tras finalizar un descanso largo.",
+    "summary": "Cuando hagas una prueba de característica o una salvación, puedes sumar 1d10 después de ver el resultado. Tienes tantos usos como tu Carisma (mínimo 1) por descanso largo.",
+    "resources": [
+     {
+      "id": "la-suerte-del-oscuro",
+      "name": "La suerte del oscuro",
+      "max": {
+       "abilityMod": "car",
+       "min": 1
+      },
+      "recharge": "largo",
+      "fromLevel": 6
+     }
+    ]
+   },
+   {
+    "id": "patron-infernal-resistencia-infernal",
+    "name": "Resistencia infernal",
+    "level": 10,
+    "text": "Tras finalizar un descanso corto o largo, elige un tipo de daño que no sea el de fuerza. Tienes resistencia a ese tipo de daño hasta que elijas uno distinto con este rasgo.",
+    "summary": "Tras cada descanso corto o largo eliges un tipo de daño (salvo fuerza) y tienes resistencia a él hasta que elijas otro."
+   },
+   {
+    "id": "patron-infernal-arrastrar-por-el-infierno",
+    "name": "Arrastrar por el infierno",
+    "level": 14,
+    "text": "Una vez por turno, cuando aciertas a una criatura con una tirada de ataque, puedes intentar teletransportar instantáneamente al objetivo a los Planos Inferiores. El objetivo deberá superar una tirada de salvación de Carisma contra tu CD de salvación de conjuros o desaparecerá y se precipitará a través de un paisaje de pesadilla. Si el objetivo no es un infernal, sufrirá 8d10 de daño psíquico y tendrá el estado de incapacitado hasta el final de tu siguiente turno, momento en el que volverá al espacio que ocupaba anteriormente o al espacio sin ocupar más cercano.\n\nCuando uses este rasgo, no podrás volver a hacerlo hasta que finalices un descanso largo, a menos que gastes un espacio de conjuro de Magia del pacto (no requiere acción) para restablecer su uso.",
+    "summary": "Una vez por turno, al acertar un ataque, puedes enviar al objetivo a los Planos Inferiores: si falla una salvación de Carisma, recibe 8d10 de daño psíquico (si no es un infernal) y vuelve al final de tu siguiente turno. Una vez por descanso largo, o gastando un espacio de Magia del pacto.",
+    "resources": [
+     {
+      "id": "arrastrar-por-el-infierno",
+      "name": "Arrastrar por el infierno",
+      "max": {
+       "perLevel": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+       ]
+      },
+      "recharge": "largo",
+      "fromLevel": 14
+     }
+    ]
+   }
+  ],
+  "alwaysPrepared": [
+   {
+    "level": 3,
+    "spells": [
+     "manos-ardientes",
+     "orden-imperiosa",
+     "rayo-abrasador",
+     "sugestion"
+    ]
+   },
+   {
+    "level": 5,
+    "spells": [
+     "bola-de-fuego",
+     "nube-apestosa"
+    ]
+   },
+   {
+    "level": 7,
+    "spells": [
+     "escudo-de-fuego",
+     "muro-de-fuego"
+    ]
+   },
+   {
+    "level": 9,
+    "spells": [
+     "geas",
+     "plaga-de-insectos"
+    ]
+   }
+  ],
+  "summary": "Brujo con un pacto con un demonio o diablo: gana PG temporales al tumbar enemigos y conjuros de fuego."
+ },
+ {
+  "id": "dominio-de-la-vida",
+  "classId": "clerigo",
+  "name": "Dominio de la vida",
+  "source": "srd",
+  "text": "Alivia las penas del mundo.\n\nEl dominio de la vida se centra en la energía positiva que ayuda a sustentar la vida en el multiverso. Los clérigos que acceden a este dominio son maestros de la curación y emplean la fuerza vital para sanar el sufrimiento.\n\nLa existencia en sí depende de la energía positiva asociada a este dominio, así que los clérigos de casi cualquier tradición religiosa podrían optar por él. Este dominio se asocia, en especial, con las deidades de la agricultura, la curación o la resistencia y los dioses del hogar y la comunidad. Las órdenes religiosas dedicadas a la sanación también recurren a la magia de este dominio.",
+  "features": [
+   {
+    "id": "dominio-de-la-vida-conjuros-del-dominio-de-la-vida",
+    "name": "Conjuros del dominio de la vida",
+    "level": 3,
+    "text": "Tu conexión con este dominio divino garantiza que siempre tengas ciertos conjuros preparados. Cuando alcances un nivel de clérigo especificado en la tabla «Conjuros del dominio de la vida», a partir de entonces siempre tendrás preparados los conjuros que se indican.\n\n**Conjuros del dominio de la vida**\n\n| Nivel de clérigo | Conjuros |\n|---|---|\n| 3 | Auxilio, Bendición, Curar heridas, Restablecimiento menor |\n| 5 | Palabra de curación en masa, Revivir |\n| 7 | Aura de vida, Guarda contra la muerte |\n| 9 | Curar heridas en masa, Restablecimiento mayor |",
+    "summary": "Siempre tienes preparados ciertos conjuros de curación, que no cuentan para tu límite. Ganas más en los niveles 5, 7 y 9."
+   },
+   {
+    "id": "dominio-de-la-vida-discipulo-de-la-vida",
+    "name": "Discípulo de la vida",
+    "level": 3,
+    "text": "Cuando uses un espacio de conjuro para lanzar un conjuro que haga recuperar puntos de golpe a una criatura, esa criatura recuperará puntos de golpe adicionales en el turno en que lances el conjuro. La cantidad de puntos de golpe adicionales es igual a 2 más el nivel del espacio de conjuro.",
+    "summary": "Cuando curas con un conjuro que gasta un espacio de conjuro, el objetivo recupera además 2 + el nivel del espacio en PG."
+   },
+   {
+    "id": "dominio-de-la-vida-preservar-vida",
+    "name": "Preservar vida",
+    "level": 3,
+    "text": "Como acción de magia, muestras tu símbolo sagrado y gastas un uso de Canalizar divinidad para generar una energía curativa capaz de restaurar una cantidad de puntos de golpe igual a cinco veces tu nivel de clérigo. Elige criaturas maltrechas a 9 m o menos de ti (lo que puede incluirte a ti) y divide estos puntos de golpe entre ellas. Este rasgo no puede hacer que una criatura pase a tener más de la mitad de sus puntos de golpe máximos.",
+    "summary": "Como acción de magia, gastas un uso de Canalizar divinidad para repartir curación (cinco veces tu nivel de clérigo) entre criaturas maltrechas a 9 m o menos. No puede subir a nadie por encima de la mitad de sus PG máximos."
+   },
+   {
+    "id": "dominio-de-la-vida-sanador-bendito",
+    "name": "Sanador bendito",
+    "level": 6,
+    "text": "Los conjuros de curación que lances sobre otros también te sanan a ti. Inmediatamente después de usar un espacio de conjuro para lanzar un conjuro que haga recuperar puntos de golpe a una o varias criaturas que no seas tú, recuperarás una cantidad de puntos de golpe igual a 2 más el nivel del espacio de conjuro.",
+    "summary": "Cuando curas a otros con un conjuro que gasta un espacio, tú también recuperas 2 + el nivel del espacio en PG."
+   },
+   {
+    "id": "dominio-de-la-vida-sanacion-suprema",
+    "name": "Sanación suprema",
+    "level": 17,
+    "text": "En vez de tirar uno o más dados para hacer que una criatura recupere puntos de golpe con un conjuro o con Canalizar divinidad, no tirarás estos dados para la curación, sino que utilizarás el número más alto de cada dado. Por ejemplo, en lugar de hacer que una criatura recupere 2d6 puntos de golpe, harás que recupere 12.",
+    "summary": "Tus curaciones con conjuros o con Canalizar divinidad no se tiran: cada dado cuenta como su valor máximo."
+   }
+  ],
+  "alwaysPrepared": [
+   {
+    "level": 3,
+    "spells": [
+     "auxilio",
+     "bendicion",
+     "curar-heridas",
+     "restablecimiento-menor"
+    ]
+   },
+   {
+    "level": 5,
+    "spells": [
+     "palabra-de-curacion-en-masa",
+     "revivir"
+    ]
+   },
+   {
+    "level": 7,
+    "spells": [
+     "aura-de-vida",
+     "guarda-contra-la-muerte"
+    ]
+   },
+   {
+    "level": 9,
+    "spells": [
+     "curar-heridas-en-masa",
+     "restablecimiento-mayor"
+    ]
+   }
+  ],
+  "summary": "Clérigo sanador: sus curaciones curan más y siempre tiene preparados conjuros de curación."
+ },
+ {
+  "id": "circulo-de-la-tierra",
+  "classId": "druida",
+  "name": "Círculo de la tierra",
+  "source": "srd",
+  "text": "Celebra el vínculo con el mundo natural.\n\nEl círculo de la tierra se compone de místicos y sabios que custodian ritos y conocimientos antiguos. Estos druidas se reúnen en torno a círculos sagrados de árboles o menhires para susurrar secretos primordiales en lengua druídica. Los miembros más sabios del círculo son los sumos sacerdotes de sus comunidades.",
+  "features": [
+   {
+    "id": "circulo-de-la-tierra-ayuda-de-la-tierra",
+    "name": "Ayuda de la tierra",
+    "level": 3,
+    "text": "Como acción de magia, puedes gastar un uso de tu rasgo Forma salvaje y elegir un punto a 18 m o menos de ti. Unas flores que otorgan vitalidad y espinas que la absorben aparecen por un instante en una esfera de 3 m de radio centrada en ese punto. Todas las criaturas de tu elección situadas en la esfera deberán hacer una tirada de salvación de Constitución contra tu CD de salvación de conjuros; sufrirán 2d6 de daño necrótico si la fallan o la mitad del daño si la superan. Además, una criatura de tu elección situada en esa zona recuperará 2d6 puntos de golpe.\n\nEl daño y la curación aumentan en 1d6 cuando alcances los niveles 10 (3d6) y 14 (4d6) de druida.",
+    "summary": "Como acción de magia, gastas un uso de Forma salvaje para crear una esfera de 3 m de radio a 18 m o menos: las criaturas que elijas hacen una salvación de Constitución o reciben 2d6 de daño necrótico (la mitad si la superan), y una criatura que elijas recupera 2d6 PG."
+   },
+   {
+    "id": "circulo-de-la-tierra-conjuros-del-circulo-de-la-tierra",
+    "name": "Conjuros del círculo de la tierra",
+    "level": 3,
+    "text": "Tras finalizar un descanso largo, elige un tipo de terreno: árido, polar, templado o tropical. Consulta a continuación la tabla que se corresponda con el tipo elegido. Tendrás preparados los conjuros que se mencionan para tu nivel de druida e inferiores.\n\n**Terreno árido**\n\n| Nivel de druida | Conjuros |\n|---|---|\n| 3 | Contorno borroso, Descarga de fuego, Manos ardientes |\n| 5 | Bola de fuego |\n| 7 | Marchitar |\n| 9 | Muro de piedra |\n\n**Terreno polar**\n\n| Nivel de druida | Conjuros |\n|---|---|\n| 3 | Inmovilizar persona, Nube de oscurecimiento, Rayo de escarcha |\n| 5 | Tormenta de aguanieve |\n| 7 | Tormenta de hielo |\n| 9 | Cono de frío |\n\n**Terreno templado**\n\n| Nivel de druida | Conjuros |\n|---|---|\n| 3 | Agarre electrizante, Dormir, Paso brumoso |\n| 5 | Relámpago |\n| 7 | Libertad de movimiento |\n| 9 | Paso arbóreo |\n\n**Terreno tropical**\n\n| Nivel de druida | Conjuros |\n|---|---|\n| 3 | Rayo nauseabundo, Salpicadura ácida, Telaraña |\n| 5 | Nube apestosa |\n| 7 | Polimorfar |\n| 9 | Plaga de insectos |",
+    "choice": {
+     "kind": "opcion",
+     "count": 1,
+     "options": [
+      {
+       "id": "arido",
+       "name": "Terreno árido",
+       "text": "Nivel 3: Contorno borroso, Descarga de fuego, Manos ardientes.\n\nNivel 5: Bola de fuego.\n\nNivel 7: Marchitar.\n\nNivel 9: Muro de piedra."
+      },
+      {
+       "id": "polar",
+       "name": "Terreno polar",
+       "text": "Nivel 3: Inmovilizar persona, Nube de oscurecimiento, Rayo de escarcha.\n\nNivel 5: Tormenta de aguanieve.\n\nNivel 7: Tormenta de hielo.\n\nNivel 9: Cono de frío."
+      },
+      {
+       "id": "templado",
+       "name": "Terreno templado",
+       "text": "Nivel 3: Agarre electrizante, Dormir, Paso brumoso.\n\nNivel 5: Relámpago.\n\nNivel 7: Libertad de movimiento.\n\nNivel 9: Paso arbóreo."
+      },
+      {
+       "id": "tropical",
+       "name": "Terreno tropical",
+       "text": "Nivel 3: Rayo nauseabundo, Salpicadura ácida, Telaraña.\n\nNivel 5: Nube apestosa.\n\nNivel 7: Polimorfar.\n\nNivel 9: Plaga de insectos."
+      }
+     ],
+     "note": "Puedes cambiar de terreno tras cada descanso largo.",
+     "id": "circulo-de-la-tierra-conjuros-del-circulo-de-la-tierra"
+    },
+    "summary": "Tras cada descanso largo eliges un terreno (árido, polar, templado o tropical) y tienes siempre preparados sus conjuros para tu nivel, sin que cuenten para tu límite."
+   },
+   {
+    "id": "circulo-de-la-tierra-recuperacion-natural",
+    "name": "Recuperación natural",
+    "level": 6,
+    "text": "Puedes lanzar un conjuro de nivel 1 o superior que tengas preparado por el rasgo Conjuros de círculo sin gastar un espacio de conjuro. Deberás finalizar un descanso largo antes de volver a hacerlo.\n\nAdemás, tras finalizar un descanso corto, puedes elegir espacios de conjuro gastados y recuperarlos. La suma de niveles de estos espacios de conjuro debe ser igual o inferior a la mitad de tu nivel de druida (redondeando hacia arriba) y ninguno de los espacios puede ser de nivel 6 o más. Por ejemplo, si eres une druida de nivel 6, puedes recuperar hasta tres niveles en espacios de conjuro: puedes recuperar un espacio de conjuro de nivel 3, un espacio de nivel 2 y otro de nivel 1 o tres espacios de nivel 1. Cuando recuperes espacios de conjuro con este rasgo, no podrás volver a hacerlo hasta que finalices un descanso largo.",
+    "summary": "Una vez por descanso largo lanzas gratis uno de tus conjuros de círculo de nivel 1 o más. Y, una vez por descanso largo, al terminar un descanso corto recuperas espacios de conjuro (niveles que sumen hasta la mitad de tu nivel de druida, redondeando hacia arriba; ninguno de nivel 6 o más).",
+    "resources": [
+     {
+      "id": "recuperacion-natural-conjuro",
+      "name": "Recuperación natural (conjuro gratis)",
+      "max": {
+       "perLevel": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+       ]
+      },
+      "recharge": "largo",
+      "fromLevel": 6
+     },
+     {
+      "id": "recuperacion-natural-espacios",
+      "name": "Recuperación natural (recuperar espacios)",
+      "max": {
+       "perLevel": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+       ]
+      },
+      "recharge": "largo",
+      "fromLevel": 6
+     }
+    ]
+   },
+   {
+    "id": "circulo-de-la-tierra-proteccion-de-la-naturaleza",
+    "name": "Protección de la naturaleza",
+    "level": 10,
+    "text": "Eres inmune al estado de envenenado y tienes resistencia a un tipo de daño asociado con tu elección de terreno actual del rasgo Conjuros de círculo, como se muestra en la tabla «Protección de la naturaleza».\n\n**Protección de la naturaleza**\n\n| Tipo de terreno | Resistencia |\n|---|---|\n| Árido | Fuego |\n| Polar | Frío |\n| Templado | Relámpago |\n| Tropical | Veneno |",
+    "summary": "No puedes quedar envenenado y tienes resistencia al daño del terreno que hayas elegido (árido: fuego; polar: frío; templado: relámpago; tropical: veneno)."
+   },
+   {
+    "id": "circulo-de-la-tierra-santuario-de-la-naturaleza",
+    "name": "Santuario de la naturaleza",
+    "level": 14,
+    "text": "Como acción de magia, puedes gastar un uso de tu rasgo Forma salvaje y hacer que aparezcan árboles y enredaderas espectrales en un cubo de 4,5 m de lado sobre el suelo a 36 m o menos de ti. Permanecerán ahí 1 minuto o hasta que tengas el estado de incapacitado o mueras. Tus aliados y tú tendréis cobertura media mientras estéis en esa zona y tus aliados obtendrán la resistencia actual de tu Protección de la naturaleza mientras estén ahí.\n\nComo acción adicional, puedes mover el cubo hasta 18 m a una parte del suelo que esté a 36 m o menos de ti.",
+    "summary": "Como acción de magia, gastas un uso de Forma salvaje para crear un cubo de árboles espectrales de 4,5 m durante 1 minuto: tú y tus aliados dentro tenéis cobertura media, y tus aliados ganan tu resistencia de Protección de la naturaleza."
+   }
+  ],
+  "alwaysPreparedByOption": {
+   "choiceId": "circulo-de-la-tierra-conjuros-del-circulo-de-la-tierra",
+   "options": {
+    "arido": [
+     {
+      "level": 3,
+      "spells": [
+       "contorno-borroso",
+       "descarga-de-fuego",
+       "manos-ardientes"
+      ]
+     },
+     {
+      "level": 5,
+      "spells": [
+       "bola-de-fuego"
+      ]
+     },
+     {
+      "level": 7,
+      "spells": [
+       "marchitar"
+      ]
+     },
+     {
+      "level": 9,
+      "spells": [
+       "muro-de-piedra"
+      ]
+     }
+    ],
+    "polar": [
+     {
+      "level": 3,
+      "spells": [
+       "inmovilizar-persona",
+       "nube-de-oscurecimiento",
+       "rayo-de-escarcha"
+      ]
+     },
+     {
+      "level": 5,
+      "spells": [
+       "tormenta-de-aguanieve"
+      ]
+     },
+     {
+      "level": 7,
+      "spells": [
+       "tormenta-de-hielo"
+      ]
+     },
+     {
+      "level": 9,
+      "spells": [
+       "cono-de-frio"
+      ]
+     }
+    ],
+    "templado": [
+     {
+      "level": 3,
+      "spells": [
+       "agarre-electrizante",
+       "dormir",
+       "paso-brumoso"
+      ]
+     },
+     {
+      "level": 5,
+      "spells": [
+       "relampago"
+      ]
+     },
+     {
+      "level": 7,
+      "spells": [
+       "libertad-de-movimiento"
+      ]
+     },
+     {
+      "level": 9,
+      "spells": [
+       "paso-arboreo"
+      ]
+     }
+    ],
+    "tropical": [
+     {
+      "level": 3,
+      "spells": [
+       "rayo-nauseabundo",
+       "salpicadura-acida",
+       "telarana"
+      ]
+     },
+     {
+      "level": 5,
+      "spells": [
+       "nube-apestosa"
+      ]
+     },
+     {
+      "level": 7,
+      "spells": [
+       "polimorfar"
+      ]
+     },
+     {
+      "level": 9,
+      "spells": [
+       "plaga-de-insectos"
+      ]
+     }
+    ]
+   }
+  },
+  "summary": "Druida ligado a un tipo de terreno que le da conjuros extra; además recupera espacios de conjuro al descansar."
+ },
+ {
+  "id": "cazador",
+  "classId": "explorador",
+  "name": "Cazador",
+  "source": "srd",
+  "text": "Protege la naturaleza y a la gente contra la destrucción.\n\nAcechas a tus presas en las tierras salvajes y en otros lugares y empleas tus habilidades de cazador para proteger la naturaleza y a la gente contra las fuerzas que buscan destruirlas.",
+  "features": [
+   {
+    "id": "cazador-el-cazador-y-la-presa",
+    "name": "El cazador y la presa",
+    "level": 3,
+    "text": "Obtienes una de las siguientes opciones de este rasgo, a tu elección. Tras finalizar un descanso corto o largo, puedes cambiar la opción elegida por la otra.\n\n**Azote de colosos.** Tu tenacidad puede agotar incluso a los enemigos más resistentes. Cuando aciertes a una criatura con un arma, esta inflige 1d8 de daño adicional si el objetivo no tiene todos sus puntos de golpe. Solo puedes infligir este daño adicional una vez por turno.\n\n**Destructor de hordas.** Una vez en cada uno de tus turnos, cuando hagas un ataque con un arma, puedes realizar otro con la misma arma contra una criatura distinta que se encuentre a 1,5 m o menos del objetivo original si no la has atacado este turno y está dentro del alcance del arma.",
+    "choice": {
+     "id": "cazador-el-cazador-y-la-presa",
+     "kind": "opcion",
+     "count": 1,
+     "options": [
+      {
+       "id": "azote-de-colosos",
+       "name": "Azote de colosos",
+       "text": "Tu tenacidad puede agotar incluso a los enemigos más resistentes. Cuando aciertes a una criatura con un arma, esta inflige 1d8 de daño adicional si el objetivo no tiene todos sus puntos de golpe. Solo puedes infligir este daño adicional una vez por turno."
+      },
+      {
+       "id": "destructor-de-hordas",
+       "name": "Destructor de hordas",
+       "text": "Una vez en cada uno de tus turnos, cuando hagas un ataque con un arma, puedes realizar otro con la misma arma contra una criatura distinta que se encuentre a 1,5 m o menos del objetivo original si no la has atacado este turno y está dentro del alcance del arma."
+      }
+     ],
+     "note": "Puedes cambiarla tras un descanso corto o largo."
+    },
+    "summary": "Eliges Azote de colosos (1d8 de daño extra una vez por turno contra objetivos que ya estén heridos) o Destructor de hordas (un ataque extra contra otra criatura cercana una vez por turno). Puedes cambiar tras un descanso."
+   },
+   {
+    "id": "cazador-sabiduria-del-cazador",
+    "name": "Sabiduría del cazador",
+    "level": 3,
+    "text": "Puedes invocar a las fuerzas de la naturaleza para mostrar ciertos puntos fuertes y débiles de tu presa. Mientras una criatura tenga tu marca del cazador sobre ella, sabrás si tiene alguna inmunidad, resistencia o vulnerabilidad y cuáles son, de ser así.",
+    "summary": "Mientras una criatura tenga tu marca del cazador, sabes si tiene inmunidades, resistencias o vulnerabilidades y cuáles son."
+   },
+   {
+    "id": "cazador-tacticas-defensivas",
+    "name": "Tácticas defensivas",
+    "level": 7,
+    "text": "Obtienes una de las siguientes opciones de este rasgo, a tu elección. Tras finalizar un descanso corto o largo, puedes cambiar la opción elegida por la otra.\n\n**Defensa contra ataques múltiples.** Cuando una criatura te acierte con una tirada de ataque, esa criatura tendrá desventaja en todas las demás tiradas de ataque contra ti este turno.\n\n**Escapar de la horda.** Los ataques de oportunidad tienen desventaja contra ti.",
+    "choice": {
+     "id": "cazador-tacticas-defensivas",
+     "kind": "opcion",
+     "count": 1,
+     "options": [
+      {
+       "id": "defensa-contra-ataques-multiples",
+       "name": "Defensa contra ataques múltiples",
+       "text": "Cuando una criatura te acierte con una tirada de ataque, esa criatura tendrá desventaja en todas las demás tiradas de ataque contra ti este turno."
+      },
+      {
+       "id": "escapar-de-la-horda",
+       "name": "Escapar de la horda",
+       "text": "Los ataques de oportunidad tienen desventaja contra ti."
+      }
+     ],
+     "note": "Puedes cambiarla tras un descanso corto o largo."
+    },
+    "summary": "Eliges Defensa contra ataques múltiples (quien te acierta tiene desventaja en sus demás ataques contra ti ese turno) o Escapar de la horda (los ataques de oportunidad contra ti tienen desventaja). Puedes cambiar tras un descanso."
+   },
+   {
+    "id": "cazador-el-cazador-experto-y-la-presa",
+    "name": "El cazador experto y la presa",
+    "level": 11,
+    "text": "Una vez por turno, cuando inflijas daño a una criatura que tenga tu marca del cazador, también puedes hacer el daño adicional del conjuro a una criatura distinta que puedas ver a 9 m o menos de la primera criatura.",
+    "summary": "Una vez por turno, al dañar a la criatura marcada con marca del cazador, puedes aplicar también su daño extra a otra criatura que veas a 9 m o menos de ella."
+   },
+   {
+    "id": "cazador-defensa-de-cazador-experto",
+    "name": "Defensa de cazador experto",
+    "level": 15,
+    "text": "Cuando recibes daño, puedes usar una reacción para concederte resistencia a ese daño y a cualquier otro daño del mismo tipo hasta el final de ese turno.",
+    "summary": "Cuando recibes daño, puedes usar tu reacción para tener resistencia a ese daño y a cualquier otro del mismo tipo hasta el final del turno."
+   }
+  ],
+  "summary": "Explorador especializado en abatir enemigos, con tácticas de ataque y defensa que puede cambiar al descansar."
+ },
+ {
+  "id": "campeon",
+  "classId": "guerrero",
+  "name": "Campeón",
+  "source": "srd",
+  "text": "Aspira a la excelencia física en combate.\n\nUn campeón se centra en desarrollar su destreza marcial en su incansable afán de victoria. Los campeones combinan un entrenamiento riguroso con un estado físico excelente para asestar golpes devastadores, resistir ante el peligro y alcanzar la gloria. Ya sea en una competición atlética o en una sangrienta batalla, los campeones luchan por coronarse como vencedores.",
+  "features": [
+   {
+    "id": "campeon-atleta-sobresaliente",
+    "name": "Atleta sobresaliente",
+    "level": 3,
+    "text": "Gracias a tus capacidades atléticas, tienes ventaja en las tiradas de iniciativa y las pruebas de Fuerza (Atletismo).\n\nAdemás, justo después de causar un crítico, puedes moverte hasta la mitad de tu velocidad sin provocar ataques de oportunidad.",
+    "summary": "Tienes ventaja en la iniciativa y en las pruebas de Fuerza (Atletismo). Además, justo después de hacer un crítico puedes moverte hasta la mitad de tu velocidad sin provocar ataques de oportunidad."
+   },
+   {
+    "id": "campeon-critico-mejorado",
+    "name": "Crítico mejorado",
+    "level": 3,
+    "text": "Tus tiradas de ataque con armas y tus ataques sin armas pueden causar críticos con un resultado de 19 o 20 en el d20.",
+    "summary": "Tus ataques con armas y sin armas son críticos con un 19 o un 20 en el d20."
+   },
+   {
+    "id": "campeon-estilo-de-combate-adicional",
+    "name": "Estilo de combate adicional",
+    "level": 7,
+    "text": "Obtienes otra dote de estilo de combate de tu elección.",
+    "choice": {
+     "id": "campeon-estilo-de-combate-adicional",
+     "kind": "estilo-combate",
+     "count": 1
+    },
+    "summary": "Eliges otra dote de estilo de combate."
+   },
+   {
+    "id": "campeon-guerrero-heroico",
+    "name": "Guerrero heroico",
+    "level": 10,
+    "text": "La emoción de la batalla te empuja hacia la victoria. Durante un combate, puedes otorgarte inspiración heroica siempre que empieces tu turno sin ella.",
+    "summary": "Durante un combate, si empiezas tu turno sin inspiración heroica, la obtienes gratis. Úsala para repetir una tirada que te haya salido mal."
+   },
+   {
+    "id": "campeon-critico-superior",
+    "name": "Crítico superior",
+    "level": 15,
+    "text": "Tus tiradas de ataque con armas y tus ataques sin armas ahora pueden causar críticos con un resultado de 18 a 20 en el d20.",
+    "summary": "Tus ataques con armas y sin armas son críticos con un 18, 19 o 20 en el d20."
+   },
+   {
+    "id": "campeon-superviviente",
+    "name": "Superviviente",
+    "level": 18,
+    "text": "Alcanzas la cumbre de la resistencia en batalla, lo que te otorga estos beneficios:\n\n**Desafiar a la muerte.** Tienes ventaja en las tiradas de salvación contra muerte. Asimismo, cuando saques de 18 a 20 en una tirada de salvación contra muerte, obtendrás el beneficio de sacar un 20 en ella.\n\n**Mejoría heroica.** Al principio de cada uno de tus turnos, recuperas una cantidad de puntos de golpe igual a 5 más tu modificador por Constitución si estás maltrecho y tienes al menos 1 punto de golpe.",
+    "summary": "Tienes ventaja en las tiradas de salvación contra muerte, y un 18-20 cuenta como un 20. Además, si estás maltrecho (a la mitad de PG o menos) pero con al menos 1 PG, recuperas 5 + tu modificador por Constitución al principio de cada turno."
+   }
+  ],
+  "summary": "Guerrero sencillo y eficaz: hace críticos más a menudo y cada vez es más difícil de tumbar."
+ },
+ {
+  "id": "hechiceria-draconica",
+  "classId": "hechicero",
+  "name": "Hechicería dracónica",
+  "source": "srd",
+  "text": "Exhala la magia de los dragones.\n\nTu magia innata proviene de un regalo dracónico. Tal vez un dragón anciano a punto de morir te transfiriera parte de su poder mágico a ti o a un antepasado tuyo. Puede que hayas absorbido magia de un lugar impregnado con poder dracónico, manipulado un tesoro de un dragón impregnado de su poder o quizá uno de tus antecesores fuera un dragón.",
+  "features": [
+   {
+    "id": "hechiceria-draconica-conjuros-draconicos",
+    "name": "Conjuros dracónicos",
+    "level": 3,
+    "text": "Cuando alcances un nivel de hechicero especificado en la tabla «Conjuros dracónicos», a partir de entonces siempre tendrás preparados los conjuros que se indican.\n\n**Conjuros dracónicos**\n\n| Nivel de hechicero | Conjuros |\n|---|---|\n| 3 | Aliento de dragón, Alterar el propio aspecto, Orbe cromático, Orden imperiosa |\n| 5 | Terror, Volar |\n| 7 | Hechizar monstruo, Ojo arcano |\n| 9 | Conocer las leyendas, Invocar dragón |",
+    "summary": "Siempre tienes preparados ciertos conjuros de temática dracónica, que no cuentan para tu límite. Ganas más en los niveles 5, 7 y 9."
+   },
+   {
+    "id": "hechiceria-draconica-resistencia-draconica",
+    "name": "Resistencia dracónica",
+    "level": 3,
+    "text": "La magia de tu cuerpo manifiesta tu don dracónico de forma física. Tus puntos de golpe máximos aumentan en 3 y en 1 más por cada nivel de hechicero que subas en el futuro.\n\nAdemás, partes de tu cuerpo se cubren de escamas similares a las de los dragones. Mientras no lleves armadura, tu clase de armadura base será igual a 10 más tus modificadores por Destreza y Carisma.",
+    "summary": "Tus PG máximos aumentan en 3, y en 1 más cada vez que subes de nivel de hechicero. Además, sin armadura tu CA base es 10 + Destreza + Carisma."
+   },
+   {
+    "id": "hechiceria-draconica-afinidad-elemental",
+    "name": "Afinidad elemental",
+    "level": 6,
+    "text": "Tu magia dracónica tiene afinidad con un tipo de daño asociado a los dragones. Elige uno de estos tipos: ácido, frío, fuego, relámpago o veneno.\n\nTienes resistencia a ese tipo de daño. Además, cuando lances un conjuro que inflija daño de ese tipo, puedes sumar tu modificador por Carisma a una tirada de daño del conjuro.",
+    "choice": {
+     "id": "hechiceria-draconica-afinidad-elemental",
+     "kind": "opcion",
+     "count": 1,
+     "options": [
+      {
+       "id": "acido",
+       "name": "Ácido"
+      },
+      {
+       "id": "frio",
+       "name": "Frío"
+      },
+      {
+       "id": "fuego",
+       "name": "Fuego"
+      },
+      {
+       "id": "relampago",
+       "name": "Relámpago"
+      },
+      {
+       "id": "veneno",
+       "name": "Veneno"
+      }
+     ]
+    },
+    "summary": "Eliges un tipo de daño (ácido, frío, fuego, relámpago o veneno): tienes resistencia a él y, cuando un conjuro tuyo haga ese daño, sumas tu modificador por Carisma a una de sus tiradas de daño."
+   },
+   {
+    "id": "hechiceria-draconica-alas-de-dragon",
+    "name": "Alas de dragón",
+    "level": 14,
+    "text": "Como acción adicional, puedes hacer que te crezcan alas dracónicas de la espalda. Las alas permanecen 1 hora o hasta que las hagas desaparecer (no requiere acción). Mientras dure el efecto, tienes una velocidad volando de 18 m.\n\nCuando uses este rasgo, no podrás volver a hacerlo hasta que finalices un descanso largo, a menos que gastes 3 puntos de hechicería (no requiere acción) para restablecer su uso.",
+    "summary": "Como acción adicional, te salen alas de dragón durante 1 hora y tienes velocidad volando de 18 m. Una vez por descanso largo, o gastando 3 puntos de hechicería para volver a usarlo.",
+    "resources": [
+     {
+      "id": "alas-de-dragon",
+      "name": "Alas de dragón",
+      "max": {
+       "perLevel": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+       ]
+      },
+      "recharge": "largo",
+      "fromLevel": 14
+     }
+    ]
+   },
+   {
+    "id": "hechiceria-draconica-companero-dragon",
+    "name": "Compañero dragón",
+    "level": 18,
+    "text": "Puedes lanzar invocar dragón sin ningún componente material. También puedes lanzarlo una vez sin gastar un espacio de conjuro y recuperas la capacidad de hacerlo de esta forma tras finalizar un descanso largo.\n\nCuando empieces a lanzar el conjuro, puedes modificarlo para que no requiera concentración. Si lo haces, la duración del conjuro es de 1 minuto para ese lanzamiento.",
+    "summary": "Puedes lanzar invocar dragón sin componente material, una vez gratis por descanso largo. Si quieres, el conjuro no requiere concentración (y entonces dura 1 minuto).",
+    "resources": [
+     {
+      "id": "companero-dragon",
+      "name": "Compañero dragón (invocar dragón gratis)",
+      "max": {
+       "perLevel": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+       ]
+      },
+      "recharge": "largo",
+      "fromLevel": 18
+     }
+    ]
+   }
+  ],
+  "alwaysPrepared": [
+   {
+    "level": 3,
+    "spells": [
+     "aliento-de-dragon",
+     "alterar-el-propio-aspecto",
+     "orbe-cromatico",
+     "orden-imperiosa"
+    ]
+   },
+   {
+    "level": 5,
+    "spells": [
+     "terror",
+     "volar"
+    ]
+   },
+   {
+    "level": 7,
+    "spells": [
+     "hechizar-monstruo",
+     "ojo-arcano"
+    ]
+   },
+   {
+    "level": 9,
+    "spells": [
+     "conocer-las-leyendas",
+     "invocar-dragon"
+    ]
+   }
+  ],
+  "summary": "Hechicero con sangre de dragón: más PG, escamas que le protegen, afinidad con un elemento y alas a nivel alto."
+ },
+ {
+  "id": "evocador",
+  "classId": "mago",
+  "name": "Evocador",
+  "source": "srd",
+  "text": "Crea efectos elementales explosivos.\n\nHaces hincapié en el estudio de la magia capaz de crear poderosos efectos elementales, como un frío penetrante, llamas abrasadoras, ácidos corrosivos, truenos reverberantes o violentos relámpagos. Algunos evocadores encuentran empleo en las fuerzas armadas, concretamente en los regimientos de artillería para destrozar ejércitos desde lejos. Otros emplean su poder para proteger a los demás y hay quienes los usan en su propio beneficio.",
+  "features": [
+   {
+    "id": "evocador-experto-en-evocacion",
+    "name": "Experto en evocación",
+    "level": 3,
+    "text": "Elige dos conjuros de mago de la escuela de evocación de nivel 2 o inferior y añádelos a tu libro de conjuros sin coste.\n\nAdemás, siempre que consigas un nuevo nivel de espacios de conjuro de esta clase, puedes añadir un conjuro de mago de la escuela de evocación a tu libro de conjuros sin coste. El conjuro elegido debe ser de un nivel para el que tengas espacios de conjuro.",
+    "choice": {
+     "id": "evocador-experto-en-evocacion",
+     "kind": "conjuro",
+     "count": 2,
+     "spells": {
+      "lists": [
+       "mago"
+      ],
+      "levels": [
+       1,
+       2
+      ],
+      "school": "Evocación"
+     },
+     "note": "Dos conjuros de mago de evocación de nivel 2 o inferior, gratis en tu libro."
+    },
+    "summary": "Añades gratis a tu libro dos conjuros de evocación de nivel 2 o menor, y otro de evocación cada vez que accedes a un nivel de espacios de conjuro nuevo."
+   },
+   {
+    "id": "evocador-truco-potente",
+    "name": "Truco potente",
+    "level": 3,
+    "text": "Tus trucos que causen daño pueden afectar incluso a las criaturas que hayan evitado la peor parte del efecto. Cuando lances un truco a una criatura y falles la tirada de ataque o el objetivo supere la tirada de salvación contra el truco, el objetivo recibirá la mitad del daño del truco (si es que causa alguno), pero no sufrirá ningún otro de sus efectos adicionales.",
+    "summary": "Si fallas el ataque de un truco de daño o el objetivo supera su salvación, igualmente recibe la mitad del daño (pero no los efectos extra)."
+   },
+   {
+    "id": "evocador-esculpir-conjuros",
+    "name": "Esculpir conjuros",
+    "level": 6,
+    "text": "Puedes crear espacios de relativa seguridad en el interior de los efectos generados por tu magia de evocación. Cuando lances un conjuro de evocación que afecte a otras criaturas que puedas ver, puedes elegir una cantidad de ellas igual a 1 más el nivel del conjuro. Las criaturas elegidas tienen éxito automáticamente en sus tiradas de salvación contra el conjuro y no reciben daño alguno si normalmente recibirían la mitad de daño del mismo al superar una tirada de salvación.",
+    "summary": "Al lanzar un conjuro de evocación, eliges hasta 1 + el nivel del conjuro criaturas que veas: superan automáticamente la salvación y no reciben daño si normalmente recibirían la mitad. Ideal para lanzar bolas de fuego cerca de tus aliados."
+   },
+   {
+    "id": "evocador-evocacion-potenciada",
+    "name": "Evocación potenciada",
+    "level": 10,
+    "text": "Siempre que lances un conjuro de mago de la escuela de evocación, puedes sumar tu modificador por Inteligencia a una tirada de daño del conjuro.",
+    "summary": "Sumas tu modificador por Inteligencia a una tirada de daño de tus conjuros de evocación de mago."
+   },
+   {
+    "id": "evocador-sobrecanalizar",
+    "name": "Sobrecanalizar",
+    "level": 14,
+    "text": "Puedes aumentar el poder de tus conjuros. Cuando lances un conjuro de mago que cause daño usando un espacio de conjuro de niveles entre 1 y 5, puedes infligir el máximo daño posible con ese conjuro el turno en que lo lanzas.\n\nLa primera vez que hagas esto no sufrirás ningún efecto negativo, pero si usas este rasgo de nuevo sin haber finalizado un descanso largo antes, recibirás 2d12 de daño necrótico por cada nivel del espacio de conjuro inmediatamente después de lanzarlo. Este daño ignora cualquier resistencia e inmunidad.\n\nCada vez que vuelvas a utilizar este rasgo sin haber terminado un descanso largo, el daño necrótico por cada nivel del conjuro aumentará en 1d12.",
+    "summary": "Al lanzar un conjuro de daño de nivel 1 a 5, puedes hacer el daño máximo. La primera vez entre descansos largos es gratis; las siguientes te hacen daño necrótico creciente."
+   }
+  ],
+  "summary": "Mago experto en conjuros de daño elemental, capaz de proteger a sus aliados de sus propias explosiones."
+ },
+ {
+  "id": "guerrero-de-la-mano-abierta",
+  "classId": "monje",
+  "name": "Guerrero de la mano abierta",
+  "source": "srd",
+  "text": "Domina las técnicas de combate sin armas.\n\nLos guerreros de la mano abierta son maestros del combate sin armas. Aprenden técnicas para empujar y derribar a sus adversarios y manipulan su propia energía para protegerse del peligro.",
+  "features": [
+   {
+    "id": "guerrero-de-la-mano-abierta-tecnica-de-la-mano-abierta",
+    "name": "Técnica de la mano abierta",
+    "level": 3,
+    "text": "Siempre que aciertes a una criatura con un ataque proporcionado por Ráfaga de golpes, puedes imponerle uno de los siguientes efectos:\n\n**Derribar.** El objetivo deberá superar una tirada de salvación de Destreza o tendrá el estado de derribado.\n\n**Desconcertar.** El objetivo no podrá realizar ataques de oportunidad hasta el principio de su siguiente turno.\n\n**Empujar.** El objetivo deberá superar una tirada de salvación de Fuerza o será empujado hasta 4,5 m respecto a ti.",
+    "summary": "Cuando aciertas con un ataque de Ráfaga de golpes, puedes derribar al objetivo (salvación de Destreza), impedirle hacer ataques de oportunidad o empujarlo 4,5 m (salvación de Fuerza)."
+   },
+   {
+    "id": "guerrero-de-la-mano-abierta-plenitud-de-cuerpo",
+    "name": "Plenitud de cuerpo",
+    "level": 6,
+    "text": "Obtienes la capacidad de sanar tu propio cuerpo. Como acción adicional, puedes tirar tu dado de Artes marciales. Recuperas una cantidad de puntos de golpe igual al resultado más tu modificador por Sabiduría (recuperas 1 punto de golpe como mínimo).\n\nPuedes usar este rasgo una cantidad de veces igual a tu modificador por Sabiduría (mínimo una vez) y recuperas todos los usos tras finalizar un descanso largo.",
+    "summary": "Como acción adicional, recuperas PG iguales a una tirada de tu dado de Artes marciales + tu Sabiduría. Tantas veces como tu Sabiduría (mínimo 1) por descanso largo.",
+    "resources": [
+     {
+      "id": "plenitud-de-cuerpo",
+      "name": "Plenitud de cuerpo",
+      "max": {
+       "abilityMod": "sab",
+       "min": 1
+      },
+      "recharge": "largo",
+      "fromLevel": 6
+     }
+    ]
+   },
+   {
+    "id": "guerrero-de-la-mano-abierta-paso-veloz",
+    "name": "Paso veloz",
+    "level": 11,
+    "text": "Cuando utilices una acción adicional que no sea Paso del viento, podrás usar también Paso del viento inmediatamente después de esa acción adicional.",
+    "summary": "Cuando uses una acción adicional que no sea Paso del viento, puedes usar también Paso del viento justo después."
+   },
+   {
+    "id": "guerrero-de-la-mano-abierta-palma-estremecedora",
+    "name": "Palma estremecedora",
+    "level": 17,
+    "text": "Consigues la capacidad de transmitir vibraciones letales al cuerpo de un oponente. Cuando aciertes a una criatura con un ataque sin armas, puedes gastar 4 puntos de concentración para iniciar estas vibraciones imperceptibles, que durarán tantos días como tu nivel de monje. Las vibraciones son inofensivas, salvo si usas tu acción para hacer que terminen. Como alternativa, cuando lleves a cabo la acción de atacar en tu turno, puedes renunciar a uno de los ataques para poner fin a las vibraciones. Para ello, el objetivo y tú debéis estar en el mismo plano de existencia. Cuando les pongas fin, el objetivo deberá realizar una tirada de salvación de Constitución; sufrirá 10d12 de daño de fuerza si la falla o la mitad del daño si la supera.\n\nSolo puedes tener a una criatura bajo el efecto de este rasgo al mismo tiempo. Puedes poner fin a las vibraciones de forma inocua (no requiere acción).",
+    "summary": "Al acertar un ataque sin armas, puedes gastar 4 puntos de concentración para dejar vibraciones en el objetivo. Cuando quieras (renunciando a un ataque o con tu acción), las activas: salvación de Constitución o 10d12 de daño de fuerza (la mitad si la supera)."
+   }
+  ],
+  "summary": "Monje maestro del combate sin armas que derriba y empuja a sus enemigos con sus golpes."
+ },
+ {
+  "id": "juramento-de-entrega",
+  "classId": "paladin",
+  "name": "Juramento de entrega",
+  "source": "srd",
+  "text": "Defiende los ideales de la justicia y el orden.\n\nEl juramento de entrega vincula al paladín con los ideales de la justicia y el orden. Estos paladines encarnan el ideal del caballero de brillante armadura, se exigen a sí mismos los más altos estándares de conducta y algunos de ellos, para bien o para mal, esperan lo mismo del resto del mundo.\n\nMuchos de los que pronuncian este juramento veneran a dioses de la ley y la bondad, y emplean los mandamientos de estas deidades como vara de medir de su propia devoción. Otros conciben a los ángeles como el ideal al que aspirar e incorporan imágenes de alas angelicales en sus yelmos o blasones.\n\nEstos paladines comparten los siguientes principios:\n\n• Que tus palabras sean siempre promesas.\n• Protege a los débiles y nunca temas actuar.\n• Que tus actos honorables sirvan de ejemplo.",
+  "features": [
+   {
+    "id": "juramento-de-entrega-arma-sagrada",
+    "name": "Arma sagrada",
+    "level": 3,
+    "text": "Cuando realizas la acción de atacar, puedes gastar uno de los usos de Canalizar divinidad para imbuir de energía positiva un arma cuerpo a cuerpo que sostengas. Durante 10 minutos o hasta que vuelvas a usar este rasgo, sumas tu modificador por Carisma a las tiradas de ataque que hagas con esa arma (mínimo de +1), y cada vez que aciertes con ella, haces que inflija su tipo de daño normal o daño radiante.\n\nEl arma también emite luz brillante en un radio de 6 m y luz tenue 6 m más allá.\n\nPuedes poner fin a este efecto antes (no requiere acción). El efecto también terminará si no llevas el arma contigo.",
+    "summary": "Al hacer la acción de atacar, puedes gastar un uso de Canalizar divinidad para bendecir tu arma cuerpo a cuerpo durante 10 minutos: sumas tu Carisma a las tiradas de ataque con ella, puede hacer daño radiante y da luz."
+   },
+   {
+    "id": "juramento-de-entrega-conjuros-del-juramento-de-entrega",
+    "name": "Conjuros del juramento de entrega",
+    "level": 3,
+    "text": "La magia de tu juramento garantiza que siempre tengas ciertos conjuros preparados. Cuando alcances un nivel de paladín especificado en la tabla «Conjuros del juramento de entrega», a partir de entonces siempre tendrás preparados los conjuros que se indican.\n\n**Conjuros del juramento de entrega**\n\n| Nivel de paladín | Conjuros |\n|---|---|\n| 3 | Escudo de fe, Protección contra el bien y el mal |\n| 5 | Auxilio, Zona de la verdad |\n| 9 | Disipar magia, Señal de esperanza |\n| 13 | Guardián de la fe, Libertad de movimiento |\n| 17 | Comunión, Golpe flamígero |",
+    "summary": "Siempre tienes preparados ciertos conjuros de protección y justicia, que no cuentan para tu límite. Ganas más en los niveles 5, 9, 13 y 17."
+   },
+   {
+    "id": "juramento-de-entrega-aura-de-entrega",
+    "name": "Aura de entrega",
+    "level": 7,
+    "text": "Tus aliados y tú tenéis inmunidad al estado de hechizados mientras estéis dentro de tu Aura de protección. Si un aliado hechizado entra en el aura, ese estado no tendrá efecto en él mientras esté dentro.",
+    "summary": "Tú y tus aliados dentro de tu Aura de protección no podéis quedar hechizados."
+   },
+   {
+    "id": "juramento-de-entrega-castigo-protector",
+    "name": "Castigo protector",
+    "level": 15,
+    "text": "Tu castigo mágico ahora irradia energía protectora. Siempre que lances castigo divino, tus aliados y tú tenéis cobertura media mientras estéis dentro de tu Aura de protección. El aura tiene este beneficio hasta el principio de tu siguiente turno.",
+    "summary": "Cuando lanzas castigo divino, tú y tus aliados dentro de tu Aura de protección tenéis cobertura media (+2 a la CA y a las salvaciones de Destreza) hasta el principio de tu siguiente turno."
+   },
+   {
+    "id": "juramento-de-entrega-halo-sagrado",
+    "name": "Halo sagrado",
+    "level": 20,
+    "text": "Como acción adicional, puedes imbuir de poder divino tu Aura de protección, lo que otorga los beneficios indicados a continuación durante 10 minutos o hasta que les pongas fin (no requiere acción). Cuando uses este rasgo, no podrás volver a hacerlo hasta que finalices un descanso largo. También puedes restablecer su uso gastando un espacio de conjuro de nivel 5 (no requiere acción).\n\n**Daño radiante.** Siempre que un enemigo comience su turno dentro del aura, esa criatura recibirá una cantidad de daño radiante igual a tu modificador por Carisma más tu bonificador por competencia.\n\n**Luz solar.** El aura está llena de luz brillante del sol.\n\n**Protección sagrada.** Tienes ventaja en las tiradas de salvación que te obliguen a hacer infernales o muertos vivientes.",
+    "summary": "Como acción adicional, durante 10 minutos tu aura daña a los enemigos que empiecen su turno en ella (Carisma + bonificador por competencia de daño radiante), da luz solar y te da ventaja en salvaciones contra infernales y muertos vivientes. Una vez por descanso largo, o gastando un espacio de nivel 5.",
+    "resources": [
+     {
+      "id": "halo-sagrado",
+      "name": "Halo sagrado",
+      "max": {
+       "perLevel": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+       ]
+      },
+      "recharge": "largo",
+      "fromLevel": 20
+     }
+    ]
+   }
+  ],
+  "alwaysPrepared": [
+   {
+    "level": 3,
+    "spells": [
+     "escudo-de-fe",
+     "proteccion-contra-el-bien-y-el-mal"
+    ]
+   },
+   {
+    "level": 5,
+    "spells": [
+     "auxilio",
+     "zona-de-la-verdad"
+    ]
+   },
+   {
+    "level": 9,
+    "spells": [
+     "disipar-magia",
+     "senal-de-esperanza"
+    ]
+   },
+   {
+    "level": 13,
+    "spells": [
+     "guardian-de-la-fe",
+     "libertad-de-movimiento"
+    ]
+   },
+   {
+    "level": 17,
+    "spells": [
+     "comunion",
+     "golpe-flamigero"
+    ]
+   }
+  ],
+  "summary": "Paladín de caballero clásico: arma sagrada, aura que impide los hechizos de control y conjuros de protección."
+ },
+ {
+  "id": "ladron",
+  "classId": "picaro",
+  "name": "Ladrón",
+  "source": "srd",
+  "text": "Busca tesoros como los aventureros clásicos.\n\nMezcla de ladrón, cazatesoros y explorador, representas el paradigma del aventurero. Además de mejorar tu agilidad y sigilo, también aprendes habilidades útiles para explorar ruinas y sacarles el máximo provecho a los objetos mágicos que encuentras en ellas.",
+  "features": [
+   {
+    "id": "ladron-manos-rapidas",
+    "name": "Manos rápidas",
+    "level": 3,
+    "text": "Como acción adicional, puedes hacer una de las siguientes cosas:\n\n**Juego de manos.** Haz una prueba de Destreza (Juego de manos) para robarle a alguien o usar herramientas de ladrón para forzar una cerradura o desarmar una trampa.\n\n**Usar un objeto.** Emplea la acción de utilizar o la acción de magia para usar un objeto mágico que necesite una acción.",
+    "summary": "Como acción adicional, puedes hacer una prueba de Destreza (Juego de manos) para robar, abrir una cerradura o desarmar una trampa, o usar un objeto (incluso uno mágico que necesite una acción)."
+   },
+   {
+    "id": "ladron-balconero",
+    "name": "Balconero",
+    "level": 3,
+    "text": "Te has entrenado para llegar a lugares especialmente difíciles de alcanzar, lo que te otorga los siguientes beneficios.\n\n**Escalador.** Obtienes una velocidad trepando igual a tu velocidad.\n\n**Saltador.** Puedes determinar tu distancia de salto empleando tu Destreza en lugar de tu Fuerza.",
+    "summary": "Ganas velocidad trepando igual a tu velocidad y puedes usar Destreza en lugar de Fuerza para calcular tus saltos."
+   },
+   {
+    "id": "ladron-sigilo-supremo",
+    "name": "Sigilo supremo",
+    "level": 9,
+    "text": "Obtienes la siguiente opción de Golpe astuto.\n\n**Ataque sigiloso (coste: 1d6).** Si tienes el estado de invisible por una acción de esconderse, este ataque no pone fin a ese estado si terminas el turno tras una cobertura tres cuartos o cobertura completa.",
+    "summary": "Nuevo efecto de Golpe astuto, Ataque sigiloso (1d6): si estás invisible por haberte escondido, atacar no te hace visible si acabas el turno tras cobertura de tres cuartos o completa."
+   },
+   {
+    "id": "ladron-usar-objetos-magicos",
+    "name": "Usar objetos mágicos",
+    "level": 13,
+    "text": "Has aprendido a sacarles el máximo provecho a los objetos mágicos, lo que te otorga los siguientes beneficios.\n\n**Cargas.** Siempre que uses una propiedad de objeto mágico que gaste cargas, tira 1d6. Si sacas un 6, usa la propiedad sin gastar cargas.\n\n**Pergaminos.** Puedes usar cualquier pergamino de conjuro empleando la Inteligencia como aptitud mágica para el conjuro. Si el conjuro es de nivel 1 o un truco, puedes lanzarlo de forma fiable. Si el pergamino contiene un conjuro de mayor nivel, primero deberás superar una prueba de Inteligencia (Conocimiento arcano) con CD 10 más el nivel conjuro. Si la superas, podrás lanzar el conjuro desde el pergamino. Si la fallas, el pergamino se desintegrará.\n\n**Sintonización.** Puedes sintonizarte con hasta cuatro objetos mágicos a la vez.",
+    "summary": "Puedes sintonizarte con hasta cuatro objetos mágicos, a veces usar cargas gratis (con un 6 en 1d6) y usar cualquier pergamino de conjuro con tu Inteligencia."
+   },
+   {
+    "id": "ladron-reflejos-de-ladron",
+    "name": "Reflejos de ladrón",
+    "level": 17,
+    "text": "Eres experto en tender emboscadas y escapar rápidamente del peligro. Puedes actuar dos turnos durante el primer asalto de cualquier combate. Llevarás a cabo tu primer turno según tu iniciativa normal y el segundo en tu iniciativa menos 10.",
+    "summary": "En el primer asalto de cada combate juegas dos turnos: uno con tu iniciativa normal y otro con tu iniciativa menos 10."
+   }
+  ],
+  "summary": "Pícaro aventurero clásico: manos rápidas, gran trepador y experto en usar objetos mágicos."
+ }
+]

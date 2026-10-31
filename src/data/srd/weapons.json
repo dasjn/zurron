@@ -1,0 +1,563 @@
+[
+ {
+  "id": "baston",
+  "name": "Bastón",
+  "category": "sencilla",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d6",
+  "damageType": "contundente",
+  "properties": [
+   "Versátil (1d8)"
+  ],
+  "mastery": "derribar",
+  "weight": "2 kg",
+  "cost": "2 pp"
+ },
+ {
+  "id": "daga",
+  "name": "Daga",
+  "category": "sencilla",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d4",
+  "damageType": "perforante",
+  "properties": [
+   "Arrojadiza (alcance 6/18)",
+   "Ligera",
+   "Sutil"
+  ],
+  "mastery": "mellar",
+  "weight": "0,5 kg",
+  "cost": "2 po"
+ },
+ {
+  "id": "garrote",
+  "name": "Garrote",
+  "category": "sencilla",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d4",
+  "damageType": "contundente",
+  "properties": [
+   "Ligera"
+  ],
+  "mastery": "ralentizar",
+  "weight": "1 kg",
+  "cost": "1 pp"
+ },
+ {
+  "id": "garrote-grande",
+  "name": "Garrote grande",
+  "category": "sencilla",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d8",
+  "damageType": "contundente",
+  "properties": [
+   "A dos manos"
+  ],
+  "mastery": "empujar",
+  "weight": "5 kg",
+  "cost": "2 pp"
+ },
+ {
+  "id": "hacha-de-mano",
+  "name": "Hacha de mano",
+  "category": "sencilla",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d6",
+  "damageType": "cortante",
+  "properties": [
+   "Arrojadiza (alcance 6/18)",
+   "Ligera"
+  ],
+  "mastery": "molestar",
+  "weight": "1 kg",
+  "cost": "5 po"
+ },
+ {
+  "id": "hoz",
+  "name": "Hoz",
+  "category": "sencilla",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d4",
+  "damageType": "cortante",
+  "properties": [
+   "Ligera"
+  ],
+  "mastery": "mellar",
+  "weight": "1 kg",
+  "cost": "1 po"
+ },
+ {
+  "id": "jabalina",
+  "name": "Jabalina",
+  "category": "sencilla",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d6",
+  "damageType": "perforante",
+  "properties": [
+   "Arrojadiza (alcance 9/36)"
+  ],
+  "mastery": "ralentizar",
+  "weight": "1 kg",
+  "cost": "5 pp"
+ },
+ {
+  "id": "lanza",
+  "name": "Lanza",
+  "category": "sencilla",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d6",
+  "damageType": "perforante",
+  "properties": [
+   "Arrojadiza (alcance 6/18)",
+   "Versátil (1d8)"
+  ],
+  "mastery": "debilitar",
+  "weight": "1,5 kg",
+  "cost": "1 po"
+ },
+ {
+  "id": "martillo-ligero",
+  "name": "Martillo ligero",
+  "category": "sencilla",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d4",
+  "damageType": "contundente",
+  "properties": [
+   "Arrojadiza (alcance 6/18)",
+   "Ligera"
+  ],
+  "mastery": "mellar",
+  "weight": "1 kg",
+  "cost": "2 po"
+ },
+ {
+  "id": "maza",
+  "name": "Maza",
+  "category": "sencilla",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d6",
+  "damageType": "contundente",
+  "properties": [],
+  "mastery": "debilitar",
+  "weight": "2 kg",
+  "cost": "5 po"
+ },
+ {
+  "id": "arco-corto",
+  "name": "Arco corto",
+  "category": "sencilla",
+  "kind": "distancia",
+  "damage": "1d6",
+  "damageType": "perforante",
+  "properties": [
+   "A dos manos",
+   "Munición (alcance 24/96; flecha)"
+  ],
+  "mastery": "molestar",
+  "weight": "1 kg",
+  "cost": "25 po"
+ },
+ {
+  "id": "ballesta-ligera",
+  "name": "Ballesta ligera",
+  "category": "sencilla",
+  "kind": "distancia",
+  "damage": "1d8",
+  "damageType": "perforante",
+  "properties": [
+   "A dos manos",
+   "Munición (alcance 24/96; virote)",
+   "Recarga"
+  ],
+  "mastery": "ralentizar",
+  "weight": "2,5 kg",
+  "cost": "25 po"
+ },
+ {
+  "id": "dardo",
+  "name": "Dardo",
+  "category": "sencilla",
+  "kind": "distancia",
+  "damage": "1d4",
+  "damageType": "perforante",
+  "properties": [
+   "Arrojadiza (alcance 6/18)",
+   "Sutil"
+  ],
+  "mastery": "molestar",
+  "weight": "125 g",
+  "cost": "5 pc"
+ },
+ {
+  "id": "honda",
+  "name": "Honda",
+  "category": "sencilla",
+  "kind": "distancia",
+  "damage": "1d4",
+  "damageType": "contundente",
+  "properties": [
+   "Munición (alcance 9/36; proyectil)"
+  ],
+  "mastery": "ralentizar",
+  "weight": "—",
+  "cost": "1 pp"
+ },
+ {
+  "id": "alabarda",
+  "name": "Alabarda",
+  "category": "marcial",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d10",
+  "damageType": "cortante",
+  "properties": [
+   "A dos manos",
+   "Gran alcance",
+   "Pesada"
+  ],
+  "mastery": "hender",
+  "weight": "3 kg",
+  "cost": "20 po"
+ },
+ {
+  "id": "cimitarra",
+  "name": "Cimitarra",
+  "category": "marcial",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d6",
+  "damageType": "cortante",
+  "properties": [
+   "Ligera",
+   "Sutil"
+  ],
+  "mastery": "mellar",
+  "weight": "1,5 kg",
+  "cost": "25 po"
+ },
+ {
+  "id": "espada-corta",
+  "name": "Espada corta",
+  "category": "marcial",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d6",
+  "damageType": "perforante",
+  "properties": [
+   "Ligera",
+   "Sutil"
+  ],
+  "mastery": "molestar",
+  "weight": "1 kg",
+  "cost": "10 po"
+ },
+ {
+  "id": "espada-larga",
+  "name": "Espada larga",
+  "category": "marcial",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d8",
+  "damageType": "cortante",
+  "properties": [
+   "Versátil (1d10)"
+  ],
+  "mastery": "debilitar",
+  "weight": "1,5 kg",
+  "cost": "15 po"
+ },
+ {
+  "id": "espadon",
+  "name": "Espadón",
+  "category": "marcial",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "2d6",
+  "damageType": "cortante",
+  "properties": [
+   "A dos manos",
+   "Pesada"
+  ],
+  "mastery": "rozar",
+  "weight": "3 kg",
+  "cost": "50 po"
+ },
+ {
+  "id": "estoque",
+  "name": "Estoque",
+  "category": "marcial",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d8",
+  "damageType": "perforante",
+  "properties": [
+   "Sutil"
+  ],
+  "mastery": "molestar",
+  "weight": "1 kg",
+  "cost": "25 po"
+ },
+ {
+  "id": "guja",
+  "name": "Guja",
+  "category": "marcial",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d10",
+  "damageType": "cortante",
+  "properties": [
+   "A dos manos",
+   "Gran alcance",
+   "Pesada"
+  ],
+  "mastery": "rozar",
+  "weight": "3 kg",
+  "cost": "20 po"
+ },
+ {
+  "id": "hacha-a-dos-manos",
+  "name": "Hacha a dos manos",
+  "category": "marcial",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d12",
+  "damageType": "cortante",
+  "properties": [
+   "A dos manos",
+   "Pesada"
+  ],
+  "mastery": "hender",
+  "weight": "3,5 kg",
+  "cost": "30 po"
+ },
+ {
+  "id": "hacha-de-guerra",
+  "name": "Hacha de guerra",
+  "category": "marcial",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d8",
+  "damageType": "cortante",
+  "properties": [
+   "Versátil (1d10)"
+  ],
+  "mastery": "derribar",
+  "weight": "2 kg",
+  "cost": "10 po"
+ },
+ {
+  "id": "lanza-de-caballeria",
+  "name": "Lanza de caballería",
+  "category": "marcial",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d10",
+  "damageType": "perforante",
+  "properties": [
+   "A dos manos (salvo montado)",
+   "Gran alcance",
+   "Pesada"
+  ],
+  "mastery": "derribar",
+  "weight": "3 kg",
+  "cost": "10 po"
+ },
+ {
+  "id": "latigo",
+  "name": "Látigo",
+  "category": "marcial",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d4",
+  "damageType": "cortante",
+  "properties": [
+   "Gran alcance",
+   "Sutil"
+  ],
+  "mastery": "ralentizar",
+  "weight": "1,5 kg",
+  "cost": "2 po"
+ },
+ {
+  "id": "lucero-del-alba",
+  "name": "Lucero del alba",
+  "category": "marcial",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d8",
+  "damageType": "perforante",
+  "properties": [],
+  "mastery": "debilitar",
+  "weight": "2 kg",
+  "cost": "15 po"
+ },
+ {
+  "id": "mangual",
+  "name": "Mangual",
+  "category": "marcial",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d8",
+  "damageType": "contundente",
+  "properties": [],
+  "mastery": "debilitar",
+  "weight": "1 kg",
+  "cost": "10 po"
+ },
+ {
+  "id": "martillo-de-guerra",
+  "name": "Martillo de guerra",
+  "category": "marcial",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d8",
+  "damageType": "contundente",
+  "properties": [
+   "Versátil (1d10)"
+  ],
+  "mastery": "empujar",
+  "weight": "2,5 kg",
+  "cost": "15 po"
+ },
+ {
+  "id": "maza-a-dos-manos",
+  "name": "Maza a dos manos",
+  "category": "marcial",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "2d6",
+  "damageType": "contundente",
+  "properties": [
+   "A dos manos",
+   "Pesada"
+  ],
+  "mastery": "derribar",
+  "weight": "5 kg",
+  "cost": "10 po"
+ },
+ {
+  "id": "pica",
+  "name": "Pica",
+  "category": "marcial",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d10",
+  "damageType": "perforante",
+  "properties": [
+   "A dos manos",
+   "Gran alcance",
+   "Pesada"
+  ],
+  "mastery": "empujar",
+  "weight": "9 kg",
+  "cost": "5 po"
+ },
+ {
+  "id": "pico-de-guerra",
+  "name": "Pico de guerra",
+  "category": "marcial",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d8",
+  "damageType": "perforante",
+  "properties": [
+   "Versátil (1d10)"
+  ],
+  "mastery": "debilitar",
+  "weight": "1 kg",
+  "cost": "5 po"
+ },
+ {
+  "id": "tridente",
+  "name": "Tridente",
+  "category": "marcial",
+  "kind": "cuerpo-a-cuerpo",
+  "damage": "1d8",
+  "damageType": "perforante",
+  "properties": [
+   "Arrojadiza (alcance 6/18)",
+   "Versátil (1d10)"
+  ],
+  "mastery": "derribar",
+  "weight": "2 kg",
+  "cost": "5 po"
+ },
+ {
+  "id": "arco-largo",
+  "name": "Arco largo",
+  "category": "marcial",
+  "kind": "distancia",
+  "damage": "1d8",
+  "damageType": "perforante",
+  "properties": [
+   "A dos manos",
+   "Munición (alcance 45/180; flecha)",
+   "Pesada"
+  ],
+  "mastery": "ralentizar",
+  "weight": "1 kg",
+  "cost": "50 po"
+ },
+ {
+  "id": "ballesta-de-mano",
+  "name": "Ballesta de mano",
+  "category": "marcial",
+  "kind": "distancia",
+  "damage": "1d6",
+  "damageType": "perforante",
+  "properties": [
+   "Ligera",
+   "Munición (alcance 9/36; virote)",
+   "Recarga"
+  ],
+  "mastery": "molestar",
+  "weight": "1,5 kg",
+  "cost": "75 po"
+ },
+ {
+  "id": "ballesta-pesada",
+  "name": "Ballesta pesada",
+  "category": "marcial",
+  "kind": "distancia",
+  "damage": "1d10",
+  "damageType": "perforante",
+  "properties": [
+   "A dos manos",
+   "Munición (alcance 30/120; virote)",
+   "Pesada",
+   "Recarga"
+  ],
+  "mastery": "empujar",
+  "weight": "9 kg",
+  "cost": "50 po"
+ },
+ {
+  "id": "cerbatana",
+  "name": "Cerbatana",
+  "category": "marcial",
+  "kind": "distancia",
+  "damage": "1",
+  "damageType": "perforante",
+  "properties": [
+   "Munición (alcance 7,5/30; dardo)",
+   "Recarga"
+  ],
+  "mastery": "molestar",
+  "weight": "0,5 kg",
+  "cost": "10 po"
+ },
+ {
+  "id": "mosquete",
+  "name": "Mosquete",
+  "category": "marcial",
+  "kind": "distancia",
+  "damage": "1d12",
+  "damageType": "perforante",
+  "properties": [
+   "A dos manos",
+   "Munición (alcance 12/36; bala)",
+   "Recarga"
+  ],
+  "mastery": "ralentizar",
+  "weight": "5 kg",
+  "cost": "500 po"
+ },
+ {
+  "id": "pistola",
+  "name": "Pistola",
+  "category": "marcial",
+  "kind": "distancia",
+  "damage": "1d10",
+  "damageType": "perforante",
+  "properties": [
+   "Munición (alcance 9/27; bala)",
+   "Recarga"
+  ],
+  "mastery": "molestar",
+  "weight": "1,5 kg",
+  "cost": "250 po"
+ }
+]

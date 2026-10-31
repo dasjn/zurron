@@ -1,0 +1,355 @@
+[
+ {
+  "id": "alerta",
+  "name": "Alerta",
+  "source": "srd",
+  "category": "origen",
+  "text": "Obtienes los siguientes beneficios:\n\n**Competencia en iniciativa.** Cuando tires iniciativa, puedes sumar tu bonificador por competencia a la tirada.\n\n**Intercambio de iniciativa.** Justo después de tirar iniciativa, puedes cambiar tu iniciativa con la de un aliado que esté dispuesto a hacerlo en el mismo combate. No puedes hacer este intercambio si el aliado o tú tenéis el estado de incapacitado.",
+  "summary": "Sumas tu bonificador por competencia a la iniciativa, así que sueles actuar antes. Además, puedes intercambiar tu iniciativa con la de un aliado justo después de tirar."
+ },
+ {
+  "id": "atacante-salvaje",
+  "name": "Atacante salvaje",
+  "source": "srd",
+  "category": "origen",
+  "text": "Te has preparado para asestar golpes especialmente dañinos. Una vez por turno, cuando aciertes a un objetivo con un arma, podrás tirar dos veces los dados de daño del arma y usar el resultado que prefieras contra el objetivo.",
+  "summary": "Una vez por turno, al acertar con un arma, tiras dos veces los dados de daño y te quedas con el mejor resultado."
+ },
+ {
+  "id": "habilidoso",
+  "name": "Habilidoso",
+  "source": "srd",
+  "category": "origen",
+  "repeatable": true,
+  "text": "Ganas competencia en cualquier combinación de tres habilidades o herramientas que elijas.\n\n**Repetible.** Puedes elegir esta dote más de una vez.",
+  "summary": "Ganas competencia en tres habilidades o herramientas a tu elección, en cualquier combinación.",
+  "choice": {
+   "id": "habilidoso",
+   "kind": "habilidad",
+   "count": 3,
+   "note": "Cualquier combinación de habilidades o herramientas."
+  }
+ },
+ {
+  "id": "iniciado-en-la-magia",
+  "name": "Iniciado en la magia",
+  "source": "srd",
+  "category": "origen",
+  "repeatable": true,
+  "text": "Obtienes los siguientes beneficios:\n\n**Dos trucos.** Aprendes dos trucos de tu elección escogidos de entre los de la lista de conjuros de clérigo, druida o mago. Tu aptitud mágica para los conjuros de esta dote es la Inteligencia, la Sabiduría o el Carisma (elígela cuando selecciones esta dote).\n\n**Conjuro de nivel 1.** Elige un conjuro de nivel 1 de la misma lista que seleccionaste para los trucos de esta dote. Siempre tienes ese conjuro preparado. Puedes lanzarlo una vez sin gastar un espacio de conjuro y recuperas la capacidad de hacerlo de esta forma tras finalizar un descanso largo. También puedes lanzar el conjuro usando cualquier espacio de conjuro que tengas.\n\n**Cambiar conjuro.** Cada vez que subas un nivel, puedes reemplazar uno de los conjuros que elijas con esta dote por un conjuro distinto del mismo nivel de la lista de conjuros seleccionada.\n\n**Repetible.** Puedes elegir esta dote más de una vez, pero debes elegir una lista de conjuros distinta cada vez.",
+  "summary": "Aprendes dos trucos y un conjuro de nivel 1 de la lista de clérigo, druida o mago. Puedes lanzar ese conjuro gratis una vez por descanso largo.",
+  "choice": {
+   "id": "iniciado-en-la-magia",
+   "kind": "opcion",
+   "count": 1,
+   "options": [
+    {
+     "id": "clerigo",
+     "name": "Clérigo"
+    },
+    {
+     "id": "druida",
+     "name": "Druida"
+    },
+    {
+     "id": "mago",
+     "name": "Mago"
+    }
+   ],
+   "note": "Después elige 2 trucos y 1 conjuro de nivel 1 de esa lista, y la aptitud mágica (Inteligencia, Sabiduría o Carisma)."
+  },
+  "resources": [
+   {
+    "id": "iniciado-en-la-magia",
+    "name": "Conjuro de nivel 1 sin espacio",
+    "max": {
+     "perLevel": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ]
+    },
+    "recharge": "largo"
+   }
+  ]
+ },
+ {
+  "id": "apresador",
+  "name": "Apresador",
+  "source": "srd",
+  "category": "general",
+  "prerequisite": "Nivel 4 o más, Fuerza o Destreza 13 o más",
+  "text": "Obtienes los siguientes beneficios:\n\n**Mejora de característica.** Aumenta tu puntuación de Fuerza o Destreza en 1, hasta un máximo de 20.\n\n**Golpear y agarrar.** Cuando aciertes a una criatura con un ataque sin armas como parte de la acción de atacar en tu turno, puedes utilizar las opciones de daño y agarre. Solo puedes usar este beneficio una vez por turno.\n\n**Ventaja al atacar.** Tienes ventaja en las tiradas de ataque contra una criatura a la que estés agarrando.\n\n**Luchador rápido.** No tienes que invertir movimiento adicional para mover a una criatura a la que estés agarrando si la criatura es de tu tamaño o más pequeña.",
+  "summary": "Te especializas en agarrar: +1 a Fuerza o Destreza, puedes golpear y agarrar con el mismo ataque sin armas y tienes ventaja al atacar a quien tienes agarrado.",
+  "abilityIncrease": {
+   "options": [
+    "fue",
+    "des"
+   ],
+   "amount": 1,
+   "max": 20
+  }
+ },
+ {
+  "id": "mejora-de-caracteristica",
+  "name": "Mejora de característica",
+  "source": "srd",
+  "category": "general",
+  "prerequisite": "Nivel 4 o más",
+  "repeatable": true,
+  "text": "Aumenta en 2 una puntuación de característica que elijas o aumenta dos en 1 cada una. Esta dote no puede aumentar una puntuación de característica por encima de 20.\n\n**Repetible.** Puedes elegir esta dote más de una vez.",
+  "summary": "Sube una característica en 2, o dos características en 1 cada una (máximo 20). Es la opción clásica al llegar a ciertos niveles.",
+  "abilityIncrease": {
+   "options": [
+    "fue",
+    "des",
+    "con",
+    "int",
+    "sab",
+    "car"
+   ],
+   "amount": 2,
+   "max": 20
+  },
+  "choice": {
+   "id": "mejora-de-caracteristica",
+   "kind": "opcion",
+   "count": 1,
+   "note": "+2 a una característica o +1 a dos características distintas (máximo 20).",
+   "options": [
+    {
+     "id": "mas-2",
+     "name": "+2 a una característica"
+    },
+    {
+     "id": "mas-1-mas-1",
+     "name": "+1 a dos características"
+    }
+   ]
+  }
+ },
+ {
+  "id": "combate-con-armas-a-dos-manos",
+  "name": "Combate con armas a dos manos",
+  "source": "srd",
+  "category": "estilo-combate",
+  "prerequisite": "Rasgo Estilo de combate",
+  "text": "Cuando tires el daño para un ataque hecho con un arma cuerpo a cuerpo que empuñas con ambas manos, puedes tratar cualquier 1 o 2 en los dados de daño como un 3. Para obtener este beneficio, el arma debe poseer la propiedad «a dos manos» o «versátil».",
+  "summary": "Con armas a dos manos o versátiles usadas a dos manos, los 1 y 2 en los dados de daño cuentan como 3."
+ },
+ {
+  "id": "combate-con-dos-armas",
+  "name": "Combate con dos armas",
+  "source": "srd",
+  "category": "estilo-combate",
+  "prerequisite": "Rasgo Estilo de combate",
+  "text": "Cuando haces un ataque extra como resultado de utilizar un arma con la propiedad «ligera», puedes sumar tu modificador por característica al daño de ese ataque si no lo estás sumando ya al daño.",
+  "summary": "Cuando haces el ataque extra por luchar con dos armas ligeras, también sumas tu modificador por característica al daño."
+ },
+ {
+  "id": "defensa",
+  "name": "Defensa",
+  "source": "srd",
+  "category": "estilo-combate",
+  "prerequisite": "Rasgo Estilo de combate",
+  "text": "Mientras lleves puesta una armadura ligera, media o pesada, recibes un bonificador de +1 a la clase de armadura.",
+  "summary": "Mientras llevas armadura ligera, media o pesada, tienes +1 a la clase de armadura."
+ },
+ {
+  "id": "tiro-con-arco",
+  "name": "Tiro con arco",
+  "source": "srd",
+  "category": "estilo-combate",
+  "prerequisite": "Rasgo Estilo de combate",
+  "text": "Recibes un bonificador de +2 a las tiradas de ataque con armas a distancia.",
+  "summary": "Tienes +2 a las tiradas de ataque con armas a distancia."
+ },
+ {
+  "id": "don-de-la-pericia-en-combate",
+  "name": "Don de la pericia en combate",
+  "source": "srd",
+  "category": "don-epico",
+  "prerequisite": "Nivel 19 o más",
+  "text": "Obtienes los siguientes beneficios:\n\n**Mejora de característica.** Aumenta una puntuación de característica de tu elección en 1, hasta un máximo de 30.\n\n**Precisión sin igual.** Cuando falles con una tirada de ataque, puedes acertarla. Cuando uses este beneficio, no podrás volver a hacerlo hasta el principio de tu siguiente turno.",
+  "summary": "+1 a una característica (hasta 30). Cuando fallas un ataque, puedes convertirlo en acierto una vez por turno.",
+  "abilityIncrease": {
+   "options": [
+    "fue",
+    "des",
+    "con",
+    "int",
+    "sab",
+    "car"
+   ],
+   "amount": 1,
+   "max": 30
+  }
+ },
+ {
+  "id": "don-de-la-vision-verdadera",
+  "name": "Don de la visión verdadera",
+  "source": "srd",
+  "category": "don-epico",
+  "prerequisite": "Nivel 19 o más",
+  "text": "Obtienes los siguientes beneficios:\n\n**Mejora de característica.** Aumenta una puntuación de característica de tu elección en 1, hasta un máximo de 30.\n\n**Visión verdadera.** Tienes visión verdadera hasta 18 m.",
+  "summary": "+1 a una característica (hasta 30) y ves la verdad hasta 18 m: invisibles, ilusiones y formas transformadas.",
+  "abilityIncrease": {
+   "options": [
+    "fue",
+    "des",
+    "con",
+    "int",
+    "sab",
+    "car"
+   ],
+   "amount": 1,
+   "max": 30
+  }
+ },
+ {
+  "id": "don-del-ataque-imparable",
+  "name": "Don del ataque imparable",
+  "source": "srd",
+  "category": "don-epico",
+  "prerequisite": "Nivel 19 o más",
+  "text": "Obtienes los siguientes beneficios:\n\n**Mejora de característica.** Aumenta tu puntuación de Fuerza o Destreza en 1, hasta un máximo de 30.\n\n**Superar las defensas.** El daño contundente, cortante y perforante que causas siempre ignora la resistencia.\n\n**Golpe arrollador.** Cuando saques un 20 en el d20 en una tirada de ataque, puedes infligir una cantidad de daño adicional al objetivo igual a la puntuación de característica aumentada con esta dote. El daño adicional es del mismo tipo que el del ataque.",
+  "summary": "+1 a Fuerza o Destreza (hasta 30). Tu daño físico ignora la resistencia y los 20 naturales hacen mucho daño extra.",
+  "abilityIncrease": {
+   "options": [
+    "fue",
+    "des"
+   ],
+   "amount": 1,
+   "max": 30
+  }
+ },
+ {
+  "id": "don-del-destino",
+  "name": "Don del destino",
+  "source": "srd",
+  "category": "don-epico",
+  "prerequisite": "Nivel 19 o más",
+  "text": "Obtienes los siguientes beneficios:\n\n**Mejora de característica.** Aumenta una puntuación de característica de tu elección en 1, hasta un máximo de 30.\n\n**Mejorar el destino.** Cuando tú u otra criatura que esté a 18 m o menos de ti superéis o falléis una prueba con d20, puedes tirar 2d4 y aplicar el resultado total como bonificador o penalizador a la tirada del d20. Cuando uses este beneficio, no podrás volver a hacerlo hasta que tires iniciativa o finalices un descanso corto o largo.",
+  "summary": "+1 a una característica (hasta 30). Puedes sumar o restar 2d4 a una prueba con d20 cercana; se recarga al tirar iniciativa o descansar.",
+  "abilityIncrease": {
+   "options": [
+    "fue",
+    "des",
+    "con",
+    "int",
+    "sab",
+    "car"
+   ],
+   "amount": 1,
+   "max": 30
+  },
+  "resources": [
+   {
+    "id": "mejorar-el-destino",
+    "name": "Mejorar el destino",
+    "max": {
+     "perLevel": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ]
+    },
+    "recharge": "corto"
+   }
+  ]
+ },
+ {
+  "id": "don-del-espiritu-de-la-noche",
+  "name": "Don del espíritu de la noche",
+  "source": "srd",
+  "category": "don-epico",
+  "prerequisite": "Nivel 19 o más",
+  "text": "Obtienes los siguientes beneficios:\n\n**Mejora de característica.** Aumenta una puntuación de característica de tu elección en 1, hasta un máximo de 30.\n\n**Fusionarse con las sombras.** Cuando estés en una zona de luz tenue u oscuridad, puedes otorgarte el estado de invisible como acción adicional. El estado finaliza inmediatamente después de que realices una acción, una acción adicional o una reacción.\n\n**Forma sombría.** Cuando estés en una zona de luz tenue u oscuridad, tienes resistencia a todo el daño excepto al psíquico y al radiante.",
+  "summary": "+1 a una característica (hasta 30). En la penumbra o la oscuridad puedes volverte invisible y resistes casi todo el daño.",
+  "abilityIncrease": {
+   "options": [
+    "fue",
+    "des",
+    "con",
+    "int",
+    "sab",
+    "car"
+   ],
+   "amount": 1,
+   "max": 30
+  }
+ },
+ {
+  "id": "don-del-recuerdo-de-conjuros",
+  "name": "Don del recuerdo de conjuros",
+  "source": "srd",
+  "category": "don-epico",
+  "prerequisite": "Nivel 19 o más, rasgo Lanzamiento de conjuros",
+  "text": "Obtienes los siguientes beneficios:\n\n**Mejora de característica.** Aumenta tu puntuación de Inteligencia, Sabiduría o Carisma en 1, hasta un máximo de 30.\n\n**Lanzamiento gratuito.** Cada vez que lances un conjuro con un espacio de conjuro de nivel 1 a 4, tira 1d4. Si el número que sacas es el mismo que el nivel del espacio, este no se gasta.",
+  "summary": "+1 a Inteligencia, Sabiduría o Carisma (hasta 30). A veces lanzas conjuros de nivel 1 a 4 sin gastar el espacio.",
+  "abilityIncrease": {
+   "options": [
+    "int",
+    "sab",
+    "car"
+   ],
+   "amount": 1,
+   "max": 30
+  }
+ },
+ {
+  "id": "don-del-viaje-dimensional",
+  "name": "Don del viaje dimensional",
+  "source": "srd",
+  "category": "don-epico",
+  "prerequisite": "Nivel 19 o más",
+  "text": "Obtienes los siguientes beneficios:\n\n**Mejora de característica.** Aumenta una puntuación de característica de tu elección en 1, hasta un máximo de 30.\n\n**Pasos desplazadores.** Inmediatamente después de que realices la acción de atacar o la de magia, puedes teletransportarte hasta 9 m a un espacio sin ocupar que puedas ver.",
+  "summary": "+1 a una característica (hasta 30). Tras atacar o usar la acción de magia, puedes teletransportarte hasta 9 m.",
+  "abilityIncrease": {
+   "options": [
+    "fue",
+    "des",
+    "con",
+    "int",
+    "sab",
+    "car"
+   ],
+   "amount": 1,
+   "max": 30
+  }
+ }
+]

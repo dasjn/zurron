@@ -1,0 +1,30 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Contenido privado del grupo: fichas, retratos, material de vuestro manual y
+# los tests que los usan. La app publicada funciona sin ellos (ver README);
+# scripts/check-dist.mjs para la publicación si se cuelan en dist/.
+src/data/party/
+src/data/mesa/

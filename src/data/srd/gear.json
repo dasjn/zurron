@@ -1,0 +1,569 @@
+[
+ {
+  "id": "abrojos",
+  "name": "Abrojos",
+  "weight": "1 kg",
+  "cost": "1 po",
+  "text": "Como acción de utilizar, puedes esparcir los abrojos de tu bolsa para cubrir una zona cuadrada de 1,5 m de lado a 1,5 m o menos de ti. Las criaturas que entren en esta zona por primera vez en un turno deberán superar una tirada de salvación de Destreza con CD 15 o sufrirán 1 de daño perforante y su velocidad se reducirá a 0 hasta el principio de su siguiente turno. Se tarda 10 minutos en recuperar los abrojos."
+ },
+ {
+  "id": "aceite",
+  "name": "Aceite",
+  "weight": "0,5 kg",
+  "cost": "1 pp",
+  "text": "Puedes empapar de aceite a una criatura, un objeto o un espacio o utilizarlo como combustible, como se detalla a continuación.\n\n**Empapar a una criatura o un objeto.** Cuando lleves a cabo la acción de atacar, puedes sustituir uno de tus ataques por lanzar un frasco de aceite. Haz objetivo a una criatura u objeto a 6 m o menos de ti. El objetivo deberá superar una tirada de salvación de Destreza (CD 8 más tu modificador por Destreza y tu bonificador por competencia) o quedará cubierto de aceite. Si el objetivo sufre daño de fuego antes de que el aceite se seque (tras 1 minuto), recibirá 5 de daño de fuego adicional debido a que el aceite arderá.\n\n**Empapar un espacio.** Puedes llevar a cabo la acción de utilizar para verter un frasco de aceite sobre un suelo plano para cubrir una zona cuadrada de 1,5 m de lado a 1,5 m o menos de ti. Si se prende, el aceite arderá durante 2 asaltos desde que se prendió (o 12 segundos) hasta el final de ese turno y hará 5 de daño de fuego a cualquier criatura que entre en la zona o termine su turno en ella. Una criatura solo puede sufrir este daño una vez por turno.\n\n**Combustible.** El aceite sirve de combustible para lámparas y linternas. Un frasco de aceite prendido arde durante 6 horas en una lámpara o linterna. Esa duración no tiene que ser consecutiva; puedes apagar el aceite ardiendo (como acción de utilizar) y volver a encenderlo hasta que haya ardido durante un total de 6 horas."
+ },
+ {
+  "id": "acido",
+  "name": "Ácido",
+  "weight": "0,5 kg",
+  "cost": "25 po",
+  "text": "Cuando lleves a cabo la acción de atacar, puedes sustituir uno de tus ataques por lanzar un vial de ácido. Haz objetivo a una criatura u objeto que puedas ver a 6 m o menos de ti. El objetivo deberá superar una tirada de salvación de Destreza (CD 8 más tu modificador por Destreza y tu bonificador por competencia) o sufrirá 2d6 de daño de ácido."
+ },
+ {
+  "id": "agua-bendita",
+  "name": "Agua bendita",
+  "weight": "0,5 kg",
+  "cost": "25 po",
+  "text": "Cuando lleves a cabo la acción de atacar, puedes sustituir uno de tus ataques por lanzar un frasco de agua bendita. Haz objetivo a una criatura que puedas ver a 6 m o menos de ti. El objetivo deberá superar una tirada de salvación de Destreza (CD 8 más tu modificador por Destreza y tu bonificador por competencia) o sufrirá 2d8 de daño radiante si es un infernal o un muerto viviente."
+ },
+ {
+  "id": "aljaba",
+  "name": "Aljaba",
+  "weight": "0,5 kg",
+  "cost": "1 po",
+  "text": "En una aljaba caben hasta 20 flechas."
+ },
+ {
+  "id": "antitoxina",
+  "name": "Antitoxina",
+  "weight": "—",
+  "cost": "50 po",
+  "text": "Como acción adicional, puedes beber un vial de antitoxina para obtener ventaja en las tiradas de salvación para evitar o poner fin al estado de envenenado durante 1 hora."
+ },
+ {
+  "id": "antorcha",
+  "name": "Antorcha",
+  "weight": "0,5 kg",
+  "cost": "1 pc",
+  "text": "Una antorcha arde durante 1 hora y emite luz brillante en un radio de 6 m y luz tenue 6 m más allá. Cuando llevas a cabo la acción de atacar, puedes hacerlo con la antorcha como si fuera un arma cuerpo a cuerpo sencilla. Si acierta, el objetivo sufre 1 de daño de fuego."
+ },
+ {
+  "id": "ariete-portatil",
+  "name": "Ariete portátil",
+  "weight": "17,5 kg",
+  "cost": "4 po",
+  "text": "Puedes usar un ariete portátil para derribar puertas. Cuando lo hagas, obtendrás un bonificador de +4 a la prueba de Fuerza. Si otro personaje te ayuda a usar el ariete, tendrás ventaja en esta prueba."
+ },
+ {
+  "id": "barril",
+  "name": "Barril",
+  "weight": "35 kg",
+  "cost": "2 po",
+  "text": "En un barril caben 160 l de líquido o un volumen de 120 l de mercancías secas."
+ },
+ {
+  "id": "bolas-de-metal",
+  "name": "Bolas de metal",
+  "weight": "1 kg",
+  "cost": "1 po",
+  "text": "Como acción de utilizar, puedes verter las bolas de metal de su bolsa. Se esparcirán para cubrir una zona cuadrada y plana de 3 m de lado a 3 m o menos de ti. Las criaturas que entren en esta zona por primera vez en un turno deberán superar una tirada de salvación de Destreza con CD 10 o tendrán el estado de derribadas. Se tarda 10 minutos en recuperar las bolas de metal."
+ },
+ {
+  "id": "bolsa",
+  "name": "Bolsa",
+  "weight": "0,5 kg",
+  "cost": "5 pp",
+  "text": "Una bolsa soporta hasta 3 kg en un volumen de 6 l."
+ },
+ {
+  "id": "botella-de-cristal",
+  "name": "Botella de cristal",
+  "weight": "1 kg",
+  "cost": "2 po",
+  "text": "En una botella de cristal caben hasta 0,75 l de líquido."
+ },
+ {
+  "id": "cadena",
+  "name": "Cadena",
+  "weight": "5 kg",
+  "cost": "5 po",
+  "text": "Como acción de utilizar, puedes atar con una cadena a una criatura no voluntaria a 1,5 m o menos de ti que tenga el estado de agarrada, apresada o incapacitada si superas una prueba de Fuerza (Atletismo) con CD 13. Si la criatura tiene las piernas atadas, tendrá el estado de apresada hasta que se libere. Para liberarse de la cadena, deberá superar una prueba de Destreza (Acrobacias) con CD 18 como acción. Romper la cadena requiere superar una prueba de Fuerza (Atletismo) con CD 20 como acción."
+ },
+ {
+  "id": "campana",
+  "name": "Campana",
+  "weight": "—",
+  "cost": "1 po",
+  "text": "Al tañer una campana como acción de utilizar, producirá un sonido audible a 18 m de distancia."
+ },
+ {
+  "id": "canalizador-arcano",
+  "name": "Canalizador arcano",
+  "weight": "Variable",
+  "cost": "Variable",
+  "text": "Un canalizador arcano puede ser uno de los objetos de la tabla «Canalizadores arcanos» y está ornamentado o tallado para canalizar la magia arcana. Los brujos, hechiceros o magos pueden utilizar estos objetos como canalizadores mágicos.\n\n**Canalizadores arcanos**\n\n| Canalizador | Peso | Precio |\n|---|---|---|\n| Bastón | 2 kg | 5 po |\n| Cristal | 0,5 kg | 10 po |\n| Orbe | 1,5 kg | 20 po |\n| Vara | 1 kg | 10 po |\n| Varita | 0,5 kg | 10 po |"
+ },
+ {
+  "id": "canalizador-druidico",
+  "name": "Canalizador druídico",
+  "weight": "Variable",
+  "cost": "Variable",
+  "text": "Un canalizador druídico puede ser uno de los objetos de la tabla «Canalizadores druídicos» y está tallado, atado con un lazo o pintado para canalizar la magia primigenia. Los druidas o exploradores pueden utilizar estos objetos como canalizadores mágicos.\n\n**Canalizadores druídicos**\n\n| Canalizador | Peso | Precio |\n|---|---|---|\n| Bastón de madera (también bastón) | 2 kg | 5 po |\n| Rama de muérdago | — | 1 po |\n| Varita de tejo | 0,5 kg | 10 po |"
+ },
+ {
+  "id": "cantimplora",
+  "name": "Cantimplora",
+  "weight": "2,5 kg (llena)",
+  "cost": "2 pp",
+  "text": "En una cantimplora caben hasta 2 l de líquido. Si no bebes suficiente agua, te arriesgas a sufrir deshidratación (consulta el capítulo «Glosario de reglas»)."
+ },
+ {
+  "id": "catalejo",
+  "name": "Catalejo",
+  "weight": "0,5 kg",
+  "cost": "1000 po",
+  "text": "Los objetos que se observan a través de un catalejo se ven al doble de su tamaño real."
+ },
+ {
+  "id": "cerradura",
+  "name": "Cerradura",
+  "weight": "0,5 kg",
+  "cost": "10 po",
+  "text": "Una cerradura viene con una llave. Sin la llave, una criatura puede usar herramientas de ladrón para forzar la cerradura si supera una prueba de Destreza (Juego de manos) con CD 15."
+ },
+ {
+  "id": "cesta",
+  "name": "Cesta",
+  "weight": "1 kg",
+  "cost": "4 pp",
+  "text": "Una cesta soporta hasta 20 kg en un volumen de 60 l."
+ },
+ {
+  "id": "cofre",
+  "name": "Cofre",
+  "weight": "12,5 kg",
+  "cost": "5 po",
+  "text": "En un cofre cabe un volumen de hasta 360 l de contenido."
+ },
+ {
+  "id": "cordel",
+  "name": "Cordel",
+  "weight": "—",
+  "cost": "1 pp",
+  "text": "Un cordel mide 3 m de longitud. Puedes atar un nudo con él como acción de utilizar."
+ },
+ {
+  "id": "cubo",
+  "name": "Cubo",
+  "weight": "1 kg",
+  "cost": "5 pc",
+  "text": "En un cubo cabe un volumen de 15 l de contenido."
+ },
+ {
+  "id": "cuerda",
+  "name": "Cuerda",
+  "weight": "2,5 kg",
+  "cost": "1 po",
+  "text": "Como acción de utilizar, puedes hacer un nudo con una cuerda si superas una prueba de Destreza (Juego de manos) con CD 10. Para romper la cuerda, se debe superar una prueba de Fuerza (Atletismo) con CD 20.\n\nPuedes atar a una criatura no voluntaria con la cuerda solo si tiene el estado de agarrada, apresada o incapacitada. Si la criatura tiene las piernas atadas, tendrá el estado de apresada hasta que se libere. Para liberarse de la cuerda, deberá superar una prueba de Destreza (Acrobacias) con CD 15 como acción."
+ },
+ {
+  "id": "disfraz",
+  "name": "Disfraz",
+  "weight": "2 kg",
+  "cost": "5 po",
+  "text": "Mientras lleves puesto un disfraz, tienes ventaja en cualquier prueba de característica que hagas para hacerte pasar por la persona o tipo de persona que representa."
+ },
+ {
+  "id": "escalera",
+  "name": "Escalera",
+  "weight": "12,5 kg",
+  "cost": "1 pp",
+  "text": "Una escalera mide 3 m de altura. Debes trepar para subir o bajar por ella."
+ },
+ {
+  "id": "espejo",
+  "name": "Espejo",
+  "weight": "250 g",
+  "cost": "5 po",
+  "text": "Un espejito de acero portátil resulta útil para arreglarse, pero también para mirar por las esquinas y reflejar la luz a modo de señal."
+ },
+ {
+  "id": "esposas",
+  "name": "Esposas",
+  "weight": "3 kg",
+  "cost": "2 po",
+  "text": "Como acción de utilizar, puedes esposar a una criatura Pequeña o Mediana no voluntaria que esté a 1,5 m o menos de ti que tenga el estado de agarrada, apresada o incapacitada si superas una prueba de Destreza (Juego de manos) con CD 13. Mientras esté esposada, la criatura tendrá desventaja en las tiradas de ataque y estará apresada si las esposas están sujetas a una cadena o garfio fijados en el sitio. Para liberarse de las esposas, deberá superar una prueba de Destreza (Juego de manos) con CD 20 como acción. Para romperlas, deberá superar una prueba de Fuerza (Atletismo) con CD 25 como acción.\n\nCada juego de esposas viene con una llave. Sin la llave, una criatura puede usar herramientas de ladrón para forzar la cerradura de las esposas si supera una prueba de Destreza (Juego de manos) con CD 15."
+ },
+ {
+  "id": "estuche-para-mapas-o-pergaminos",
+  "name": "Estuche para mapas o pergaminos",
+  "weight": "0,5 kg",
+  "cost": "1 po",
+  "text": "En un estuche para mapas o pergaminos caben hasta 10 hojas de papel o 5 hojas de pergamino."
+ },
+ {
+  "id": "estuche-para-virotes-de-ballesta",
+  "name": "Estuche para virotes de ballesta",
+  "weight": "0,5 kg",
+  "cost": "1 po",
+  "text": "En un estuche para virotes de ballesta caben hasta 20 virotes."
+ },
+ {
+  "id": "frasco",
+  "name": "Frasco",
+  "weight": "0,5 kg",
+  "cost": "2 pc",
+  "text": "En un frasco caben hasta 0,5 l de líquido."
+ },
+ {
+  "id": "fuego-de-alquimista",
+  "name": "Fuego de alquimista",
+  "weight": "0,5 kg",
+  "cost": "50 po",
+  "text": "Cuando lleves a cabo la acción de atacar, puedes sustituir uno de tus ataques por lanzar un frasco de fuego de alquimista. Haz objetivo a una criatura u objeto que puedas ver a 6 m o menos de ti. El objetivo deberá superar una tirada de salvación de Destreza (CD 8 más tu modificador por Destreza y tu bonificador por competencia) o sufrirá 1d4 de daño de fuego y comenzará a arder (consulta el capítulo «Glosario de reglas»)."
+ },
+ {
+  "id": "garfio-de-escalada",
+  "name": "Garfio de escalada",
+  "weight": "2 kg",
+  "cost": "2 po",
+  "text": "Como acción de utilizar, puedes lanzar un garfio de escalada a una barandilla, cornisa u otro saliente a 15 m o menos de ti, y el garfio se enganchará si superas una prueba de Destreza (Acrobacias) con CD 13. Si el garfio tiene una cuerda atada, podrás escalar."
+ },
+ {
+  "id": "jarro",
+  "name": "Jarro",
+  "weight": "2 kg",
+  "cost": "2 pc",
+  "text": "En un jarro caben hasta 4 l de líquido."
+ },
+ {
+  "id": "lampara",
+  "name": "Lámpara",
+  "weight": "0,5 kg",
+  "cost": "5 pp",
+  "text": "Una lámpara quema aceite como combustible para emitir luz brillante en un radio de 4,5 m y luz tenue 9 m más allá."
+ },
+ {
+  "id": "libro",
+  "name": "Libro",
+  "weight": "2,5 kg",
+  "cost": "25 po",
+  "text": "Un libro contiene ficción o no ficción. Si consultas un libro veraz de no ficción para saber algo sobre su materia, ganarás un bonificador de +5 a las pruebas de Inteligencia (Conocimiento arcano, Historia, Naturaleza o Religión) que hagas sobre esa materia."
+ },
+ {
+  "id": "linterna-de-ojo-de-buey",
+  "name": "Linterna de ojo de buey",
+  "weight": "1 kg",
+  "cost": "10 po",
+  "text": "Una linterna de ojo de buey quema aceite como combustible para emitir luz brillante en un cono de 18 m y luz tenue 18 m más allá."
+ },
+ {
+  "id": "linterna-sorda",
+  "name": "Linterna sorda",
+  "weight": "1 kg",
+  "cost": "5 po",
+  "text": "Una linterna sorda quema aceite como combustible para emitir luz brillante en un radio de 9 m y luz tenue 9 m más allá. Como acción adicional, puedes cubrir la abertura con la tapa y hacer que solo emita luz tenue en un radio de 1,5 m, o abrirla de nuevo."
+ },
+ {
+  "id": "lupa",
+  "name": "Lupa",
+  "weight": "—",
+  "cost": "100 po",
+  "text": "Una lupa te da ventaja en las pruebas de característica que hagas para tasar o inspeccionar un objeto muy detallado. Para encender un fuego con una lupa, se necesita una luz tan brillante como la del sol para enfocar, yesca para prender y unos 5 minutos para que se encienda el fuego."
+ },
+ {
+  "id": "manta",
+  "name": "Manta",
+  "weight": "1,5 kg",
+  "cost": "5 pp",
+  "text": "Mientras te envuelvas en una manta, tendrás ventaja en las tiradas de salvación contra el frío extremo (consulta el capítulo «Herramientas del juego»)."
+ },
+ {
+  "id": "mapa",
+  "name": "Mapa",
+  "weight": "—",
+  "cost": "1 po",
+  "text": "Si consultas un mapa preciso, recibes un bonificador de +5 a las pruebas de Sabiduría (Supervivencia) que hagas para orientarte en el lugar representado en él."
+ },
+ {
+  "id": "mochila",
+  "name": "Mochila",
+  "weight": "2,5 kg",
+  "cost": "2 po",
+  "text": "Una mochila soporta hasta 15 kg en un volumen de 30 l. También puede servir de alforja."
+ },
+ {
+  "id": "municion",
+  "name": "Munición",
+  "weight": "Variable",
+  "cost": "Variable",
+  "text": "Las armas que tienen la propiedad de munición requieren munición. La descripción del arma especifica el tipo de munición que utiliza. La tabla «Munición» indica los diferentes tipos y la cantidad que obtienes cuando los compras. También incluye el objeto que se usa normalmente para almacenar cada tipo, que debe comprarse por separado.\n\n**Munición**\n\n| Tipo | Cantidad | Recipiente | Peso | Precio |\n|---|---|---|---|---|\n| Balas de arma de fuego | 10 | Bolsa | 1 kg | 3 po |\n| Dardos | 50 | Bolsa | 0,5 kg | 1 po |\n| Flechas | 20 | Aljaba | 0,5 kg | 1 po |\n| Proyectiles de honda | 20 | Bolsa | 0,75 kg | 4 pc |\n| Virotes | 20 | Estuche | 0,75 kg | 1 po |"
+ },
+ {
+  "id": "olla-de-hierro",
+  "name": "Olla de hierro",
+  "weight": "5 kg",
+  "cost": "2 po",
+  "text": "En una olla de hierro caben hasta 4 l."
+ },
+ {
+  "id": "pala",
+  "name": "Pala",
+  "weight": "2,5 kg",
+  "cost": "2 po",
+  "text": "Con 1 hora de trabajo, puedes usar una pala para cavar un agujero cúbico de 1,5 m de lado en la tierra o en un material similar."
+ },
+ {
+  "id": "palanqueta",
+  "name": "Palanqueta",
+  "weight": "2,5 kg",
+  "cost": "2 po",
+  "text": "Una palanqueta te da ventaja en las pruebas de Fuerza en las que se pueda hacer palanca."
+ },
+ {
+  "id": "papel",
+  "name": "Papel",
+  "weight": "—",
+  "cost": "2 pp",
+  "text": "En una hoja de papel caben unas 250 palabras escritas a mano."
+ },
+ {
+  "id": "paquete-de-artista",
+  "name": "Paquete de artista",
+  "weight": "29,25 kg",
+  "cost": "40 po",
+  "text": "Un paquete de artista contiene los siguientes objetos: campana, cantimplora, 3 disfraces, espejo, 8 frascos de aceite, linterna de ojo de buey, mochila, petate, raciones para 9 días y yesquero."
+ },
+ {
+  "id": "paquete-de-diplomatico",
+  "name": "Paquete de diplomático",
+  "weight": "19,5 kg",
+  "cost": "39 po",
+  "text": "Un paquete de diplomático contiene los siguientes objetos: cofre, 2 estuches para mapas o pergaminos, 4 frascos de aceite, 5 hojas de papel, 5 hojas de pergamino, lámpara, perfume, 5 plumas, ropas de calidad, tinta y yesquero."
+ },
+ {
+  "id": "paquete-de-erudito",
+  "name": "Paquete de erudito",
+  "weight": "11 kg",
+  "cost": "40 po",
+  "text": "Un paquete de erudito contiene los siguientes objetos: 10 frascos de aceite, 10 hojas de pergamino, lámpara, libro, mochila, pluma, tinta y yesquero."
+ },
+ {
+  "id": "paquete-de-explorador",
+  "name": "Paquete de explorador",
+  "weight": "27,5 kg",
+  "cost": "10 po",
+  "text": "Un paquete de explorador contiene los siguientes objetos: 10 antorchas, cantimplora, cuerda, 2 frascos de aceite, mochila, petate, raciones para 10 días y yesquero."
+ },
+ {
+  "id": "paquete-de-explorador-de-mazmorras",
+  "name": "Paquete de explorador de mazmorras",
+  "weight": "27,5 kg",
+  "cost": "12 po",
+  "text": "Un paquete de explorador de mazmorras contiene los siguientes objetos: abrojos, 10 antorchas, cantimplora, cuerda, 2 frascos de aceite, mochila, palanqueta, raciones para 10 días y yesquero."
+ },
+ {
+  "id": "paquete-de-ladron",
+  "name": "Paquete de ladrón",
+  "weight": "21 kg",
+  "cost": "16 po",
+  "text": "Un paquete de ladrón contiene los siguientes objetos: bolas de metal, campana, cantimplora, cuerda, 7 frascos de aceite, linterna sorda, mochila, palanqueta, raciones para 5 días, 10 velas y yesquero."
+ },
+ {
+  "id": "paquete-de-sacerdote",
+  "name": "Paquete de sacerdote",
+  "weight": "14,5 kg",
+  "cost": "33 po",
+  "text": "Un paquete de sacerdote contiene los siguientes objetos: agua bendita, lámpara, manta, mochila, raciones para 7 días, túnica y yesquero."
+ },
+ {
+  "id": "perfume",
+  "name": "Perfume",
+  "weight": "—",
+  "cost": "5 po",
+  "text": "El perfume viene en un vial de 120 ml. Después de ponerte el perfume, durante 1 hora tendrás ventaja en las pruebas de Carisma (Persuasión) que hagas para influir en un humanoide indiferente situado a 1,5 m o menos de ti."
+ },
+ {
+  "id": "pergamino",
+  "name": "Pergamino",
+  "weight": "—",
+  "cost": "1 pp",
+  "text": "En una hoja de pergamino caben unas 250 palabras escritas a mano."
+ },
+ {
+  "id": "pergamino-de-conjuro",
+  "name": "Pergamino de conjuro",
+  "weight": "—",
+  "cost": "truco, 30 po; nivel 1, 50 po",
+  "text": "Un pergamino de conjuro (truco) o un pergamino de conjuro (nivel 1) es un objeto mágico que contiene las palabras de un truco o de un conjuro de nivel 1, respectivamente, según lo determine el creador del pergamino. Si el conjuro está en la lista de conjuros de tu clase, puedes leer el pergamino y lanzar el conjuro con su tiempo de lanzamiento normal y sin necesidad de componentes materiales.\n\nSi el conjuro requiere una tirada de salvación o una tirada de ataque, la CD de salvación de conjuros será 13 y el bonificador de ataque será de +5. El pergamino se desintegra cuando se completa el lanzamiento."
+ },
+ {
+  "id": "petate",
+  "name": "Petate",
+  "weight": "3,5 kg",
+  "cost": "1 po",
+  "text": "En un petate puede dormir una criatura Pequeña o Mediana. Mientras estés en un petate, superarás automáticamente las tiradas de salvación contra el frío extremo (consulta el capítulo «Herramientas del juego»)."
+ },
+ {
+  "id": "pluma",
+  "name": "Pluma",
+  "weight": "—",
+  "cost": "2 pc",
+  "text": "Una pluma sirve para escribir o dibujar con tinta."
+ },
+ {
+  "id": "pocion-de-curacion",
+  "name": "Poción de curación",
+  "weight": "250 g",
+  "cost": "50 po",
+  "text": "Esta poción es un objeto mágico. Como acción adicional, puedes beberla o administrarla a otra criatura que se encuentre a 1,5 m o menos de ti. La criatura que beba el fluido mágico de color rojo de este vial recuperará 2d4 + 2 puntos de golpe."
+ },
+ {
+  "id": "polipasto",
+  "name": "Polipasto",
+  "weight": "2,5 kg",
+  "cost": "1 po",
+  "text": "Un polipasto te permite levantar hasta cuatro veces el peso que normalmente puedes levantar."
+ },
+ {
+  "id": "puntas-de-hierro",
+  "name": "Puntas de hierro",
+  "weight": "2,5 kg",
+  "cost": "1 po",
+  "text": "Las puntas de hierro vienen en lotes de diez. Como acción de utilizar, puedes usar un objeto romo, como un martillo ligero, para clavar una punta en una superficie de madera, tierra u otra materia similar. Puedes hacerlo para atrancar una puerta o para después atar una cuerda o cadena a la punta."
+ },
+ {
+  "id": "raciones",
+  "name": "Raciones",
+  "weight": "1 kg",
+  "cost": "5 pp",
+  "text": "Las raciones se componen de alimentos propicios para viajar, como cecina, fruta deshidratada, galletas y frutos secos. Consulta «Desnutrición» en el capítulo «Glosario de reglas» para saber los riesgos que implica no comer."
+ },
+ {
+  "id": "red",
+  "name": "Red",
+  "weight": "1,5 kg",
+  "cost": "1 po",
+  "text": "Cuando lleves a cabo la acción de atacar, puedes sustituir uno de tus ataques por lanzar una red. Haz objetivo a una criatura que puedas ver a 4,5 m o menos de ti. El objetivo deberá superar una tirada de salvación de Destreza (CD 8 más tu modificador por Destreza y tu bonificador por competencia) o tendrá el estado de apresado hasta que se libere. El objetivo la superará automáticamente si es Enorme o más grande.\n\nPara liberarse, el objetivo o una criatura que esté a 1,5 m o menos de él deberá usar una acción para hacer una prueba de Fuerza (Atletismo) con CD 10; si la supera, la criatura apresada se liberará. Si se destruye la red (CA 10, 5 pg; inmunidad al daño contundente, psíquico y de veneno), también se libera al objetivo y se pone fin al efecto."
+ },
+ {
+  "id": "ropas-de-calidad",
+  "name": "Ropas de calidad",
+  "weight": "3 kg",
+  "cost": "15 po",
+  "text": "Las ropas de calidad están confeccionadas con telas caras y ornamentadas con detalles elaborados por manos expertas. Algunos eventos y lugares admiten solo a gente que lleve esta indumentaria."
+ },
+ {
+  "id": "ropas-de-viaje",
+  "name": "Ropas de viaje",
+  "weight": "2 kg",
+  "cost": "2 po",
+  "text": "Las ropas de viaje son prendas resistentes y diseñadas para viajar por diversos entornos."
+ },
+ {
+  "id": "saco",
+  "name": "Saco",
+  "weight": "250 g",
+  "cost": "1 pc",
+  "text": "Un saco soporta hasta 15 kg en un volumen de 30 l."
+ },
+ {
+  "id": "saquito-de-componentes",
+  "name": "Saquito de componentes",
+  "weight": "1 kg",
+  "cost": "25 po",
+  "text": "Un saquito de componentes es una bolsa hermética y llena de compartimentos que contienen todos los componentes materiales gratuitos para tus conjuros."
+ },
+ {
+  "id": "silbato-de-supervivencia",
+  "name": "Silbato de supervivencia",
+  "weight": "—",
+  "cost": "5 pc",
+  "text": "Cuando se sopla como acción de utilizar, un silbato de supervivencia produce un sonido que se puede oír a 180 m de distancia."
+ },
+ {
+  "id": "simbolo-sagrado",
+  "name": "Símbolo sagrado",
+  "weight": "Variable",
+  "cost": "Variable",
+  "text": "Un símbolo sagrado puede ser uno de los objetos de la tabla «Símbolos sagrados» y está ornamentado o pintado para canalizar la magia divina. Los clérigos o paladines pueden utilizar un símbolo sagrado como canalizador mágico.\n\nLa tabla indica si un símbolo sagrado se debe sostener, llevar puesto o mostrar en tela (como un tabardo o un estandarte) o en un escudo.\n\n**Símbolos sagrados**\n\n| Símbolo | Peso | Precio |\n|---|---|---|\n| Amuleto (puesto o sostenido) | 0,5 kg | 5 po |\n| Emblema (en tela o en escudo) | — | 5 po |\n| Relicario (sostenido) | 1 kg | 5 po |"
+ },
+ {
+  "id": "tienda",
+  "name": "Tienda",
+  "weight": "10 kg",
+  "cost": "2 po",
+  "text": "En una tienda pueden dormir hasta dos criaturas Pequeñas o Medianas."
+ },
+ {
+  "id": "tinta",
+  "name": "Tinta",
+  "weight": "—",
+  "cost": "10 po",
+  "text": "La tinta viene en un frasco de 30 ml que basta para escribir unas 500 páginas."
+ },
+ {
+  "id": "trampa-para-cazar",
+  "name": "Trampa para cazar",
+  "weight": "12,5 kg",
+  "cost": "5 po",
+  "text": "Como acción de utilizar, puedes poner una trampa para cazar, que consiste en una anilla dentada de acero que se cierra cuando una criatura pisa una placa de presión situada en su centro. La trampa se fija mediante una pesada cadena a cualquier objeto inmóvil, como un árbol o una estaca clavada en el suelo. Si una criatura pisa la placa, deberá superar una tirada de salvación de Destreza con CD 13 o sufrirá 1d4 de daño perforante y su velocidad se reducirá a 0 hasta el principio de su siguiente turno. A partir de ese momento y hasta que la criatura se libere de la trampa, su movimiento se verá limitado por la longitud de la cadena (normalmente 90 cm). Una criatura puede emplear su acción para hacer una prueba de Fuerza (Atletismo) con CD 13 para liberarse a sí misma o a otra criatura que esté a su alcance si la supera. Cada prueba fallida causa 1 de daño perforante a la criatura atrapada."
+ },
+ {
+  "id": "tunica",
+  "name": "Túnica",
+  "weight": "2 kg",
+  "cost": "1 po",
+  "text": "Una túnica tiene un significado vocacional y ceremonial. Algunos eventos y lugares admiten solo a gente que vista una túnica con determinados colores o símbolos."
+ },
+ {
+  "id": "utiles-de-escalada",
+  "name": "Útiles de escalada",
+  "weight": "6 kg",
+  "cost": "25 po",
+  "text": "Los útiles de escalada incluyen arnés, guantes, pitones y puntas para las botas. Como acción de utilizar, puedes emplear los útiles de escalada para anclarte; cuando lo hagas, no podrás caer más de 7,5 m desde el punto de anclaje ni podrás alejarte más de 7,5 m de ahí si no quitas la sujeción como acción adicional."
+ },
+ {
+  "id": "utiles-de-sanador",
+  "name": "Útiles de sanador",
+  "weight": "1,5 kg",
+  "cost": "5 po",
+  "text": "Los útiles de sanador tienen diez usos. Como acción de utilizar, puedes gastar uno de ellos para estabilizar a una criatura inconsciente que tenga 0 puntos de golpe sin necesidad de hacer una prueba de Sabiduría (Medicina)."
+ },
+ {
+  "id": "vara",
+  "name": "Vara",
+  "weight": "3,5 kg",
+  "cost": "5 pc",
+  "text": "Una vara mide 3 m de longitud. Puedes usarla para tocar algo que esté a hasta 3 m de distancia. Si tienes que hacer una prueba de Fuerza (Atletismo) como parte de un salto de altura o longitud, puedes impulsarte con la vara, lo que te dará ventaja en la prueba."
+ },
+ {
+  "id": "vela",
+  "name": "Vela",
+  "weight": "—",
+  "cost": "1 pc",
+  "text": "Durante 1 hora, una vela encendida emite luz brillante en un radio de 1,5 m y luz tenue 1,5 m más allá."
+ },
+ {
+  "id": "veneno-basico",
+  "name": "Veneno básico",
+  "weight": "—",
+  "cost": "100 po",
+  "text": "Como acción adicional, puedes usar un vial de veneno básico para impregnar un arma o hasta tres unidades de munición. Las criaturas que sufran daño cortante o perforante por el arma o munición envenenadas recibirán 1d4 de daño de veneno adicional. Una vez aplicado, el veneno mantiene su efectividad durante 1 minuto o hasta que inflija su daño, lo que ocurra primero."
+ },
+ {
+  "id": "vial",
+  "name": "Vial",
+  "weight": "—",
+  "cost": "1 po",
+  "text": "En un vial caben 120 ml de líquido."
+ },
+ {
+  "id": "yesquero",
+  "name": "Yesquero",
+  "weight": "0,5 kg",
+  "cost": "5 pp",
+  "text": "Un yesquero es un pequeño recipiente que contiene un pedernal, un chispero y yescas (normalmente, tela seca untada en aceite) y se utiliza para encender un fuego. Se necesita una acción adicional para prender con él una antorcha, lámpara, linterna o vela (o cualquier otra cosa con combustible expuesto). Encender cualquier otro tipo de fuego lleva 1 minuto."
+ }
+]

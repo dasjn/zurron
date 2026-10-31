@@ -1,0 +1,26 @@
+Zurrón
+Copyright (c) 2026 dasjn
+
+El código de Zurrón usa la licencia MIT (ver LICENSE). Esa licencia cubre
+solo el código. Partes del proyecto tienen su propia licencia:
+
+Reglas (src/data/srd/)
+----------------------
+Esta obra incluye material procedente del documento de referencia del sistema
+5.2.1 ("SRD 5.2.1") de Wizards of the Coast LLC, disponible en
+https://www.dndbeyond.com/srd. La licencia sobre el SRD 5.2.1 se concede de
+acuerdo con la licencia internacional de atribución/reconocimiento 4.0 de
+Creative Commons, disponible en
+https://creativecommons.org/licenses/by/4.0/legalcode.
+
+Los JSON de src/data/srd/ se generan a partir del texto en español del
+SRD 5.2.1 (scripts/srd/). Cambios: el texto se reparte en clases, conjuros,
+equipo, glosario, etc., y se añaden resúmenes breves para la interfaz.
+
+Tipografías (src/assets/fonts/)
+-------------------------------
+Copyright 2013 The Alegreya Sans Project Authors
+(https://github.com/huertatipografica/Alegreya-Sans)
+Copyright 2019, The Grenze Project Authors (https://github.com/Omnibus-Type/Grenze)
+
+Se distribuyen con la SIL Open Font License 1.1 (ver src/assets/fonts/OFL.txt).

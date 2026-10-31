@@ -1,0 +1,520 @@
+/*
+ * Fichero: pestañas Rasgos, Equipo, Personaje y Notas, y el editor de elecciones.
+ * Todas las clases llevan el prefijo .fx-. Las piezas base están en styles.css.
+ */
+
+/* ===== Contenedor de pestaña ===== */
+/* El primer elemento no lleva margen extra: el contenedor ya deja aire bajo la cabecera */
+.fx-tab > :first-child,
+.fx-tab > section:first-child > h2:first-child {
+  margin-top: 0;
+}
+.fx-after {
+  margin-top: 12px;
+}
+/* Un botón tras un .lede ya tiene sus 12 px (los botones son inline-flex y no se funden márgenes) */
+.lede + .fx-after {
+  margin-top: 0;
+}
+.fx-sub {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+/* ===== Rasgos ===== */
+.fx-review > strong {
+  display: block;
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  line-height: 1.15;
+}
+.fx-review ul {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.fx-review li {
+  position: relative;
+  padding-left: 18px;
+  text-wrap: pretty;
+}
+.fx-review li + li {
+  margin-top: 12px;
+}
+/* Rombo rojo como viñeta */
+.fx-review li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  background: var(--bad);
+  transform: rotate(45deg);
+}
+.fx-go {
+  display: flex;
+  width: fit-content;
+  margin-top: 8px;
+}
+
+.fx-feats details.item > summary .muted {
+  margin-top: 3px;
+  line-height: 1.4;
+}
+.fx-feats details.item > .body {
+  margin: 0 14px;
+  padding: 12px 0 14px;
+  border-top: 1px solid var(--line);
+}
+.fx-feats details.item > .body > .summary {
+  margin-bottom: 10px;
+}
+.fx-choose {
+  margin-top: 14px;
+}
+/* Tablas de reglas dentro de un rasgo o de la guía: más compactas para que quepan a 360 px */
+.fx-feats .text table,
+.fx-guide .text table {
+  font-size: 0.82rem;
+}
+.fx-feats .text :is(th, td),
+.fx-guide .text :is(th, td) {
+  padding: 5px 6px;
+}
+.fx-feats .text :is(th, td):first-child,
+.fx-guide .text :is(th, td):first-child {
+  padding-left: 0;
+}
+.fx-asides {
+  margin: 16px 0 0;
+}
+
+/* ===== Editor de elecciones ===== */
+.fx-ce-hint {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.fx-ce-hint strong {
+  color: var(--ink);
+}
+/* Tope alcanzado («Ya tienes 2. Quita una para elegir otra.»). En una hoja se queda
+   pegada arriba, para que se vea al bajar por la lista y ver las opciones apagadas. */
+.fx-ce-full {
+  margin: 0 0 12px;
+}
+.modal .fx-ce-full {
+  position: sticky;
+  top: -10px;
+  z-index: 2;
+  box-shadow: 0 6px 12px -4px color-mix(in srgb, var(--bg-inset) 80%, transparent);
+}
+.fx-ce-note {
+  margin: 12px 0 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.fx-opt-name {
+  display: block;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.fx-opt-text {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.fx-opt-text .text p {
+  margin-bottom: 0.4em;
+}
+.fx-opt-text .text p:last-child {
+  margin-bottom: 0;
+}
+.option.on .fx-opt-text {
+  color: var(--ink);
+}
+.fx-asi {
+  margin-top: 12px;
+}
+.fx-asi-head {
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.fx-asi-head strong {
+  color: var(--gold-hi);
+}
+.fx-asi .li {
+  padding-block: 8px;
+}
+.fx-asi .stepper .v {
+  min-width: 2.6ch;
+  font-size: 1.15rem;
+}
+.fx-asi-from {
+  margin-left: 6px;
+  font-size: 0.88rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.fx-more {
+  margin-top: 12px;
+}
+.fx-more + div {
+  margin-top: 12px;
+}
+.fx-featcard {
+  margin-top: 12px;
+}
+
+/* ===== Equipo ===== */
+.fx-purse {
+  padding: 14px 12px;
+}
+.fx-coins {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+}
+.fx-coin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+/* Con letra grande no crece más de lo que cabe en un quinto de pantalla («Platino», «Electro») */
+.fx-coin .label {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: clamp(11px, 4.2vw, 0.8rem);
+}
+.fx-coin .input {
+  padding: 6px 2px;
+  font-family: var(--f-display);
+  font-weight: 600;
+  /* A 360 px baja un poco para que quepan cinco cifras */
+  font-size: clamp(1.1rem, 5.4vw, 1.3rem);
+  line-height: 1;
+  text-align: center;
+}
+.fx-coin-hint {
+  font-size: 0.72rem;
+  line-height: 1.2;
+  color: var(--faint);
+  white-space: nowrap;
+}
+.fx-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 12px 4px 0;
+  border-top: 1px solid var(--line);
+}
+.fx-total .v {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--gold-hi);
+  white-space: nowrap;
+}
+.fx-total-note {
+  margin: 6px 4px 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.fx-ac {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 10px;
+  margin: 0 0 12px;
+}
+.fx-ac .v {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--gold-hi);
+}
+/* De dónde sale el número, en su propia línea */
+.fx-ac-parts {
+  flex-basis: 100%;
+  margin-top: 2px;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: var(--faint);
+}
+
+.fx-item {
+  padding: 0;
+  gap: 0;
+}
+.fx-item-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 48px;
+  padding: 11px 14px;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
+}
+/* Respuesta al toque en filas que son botones */
+.fx-item-main:active,
+.fx-press:active {
+  background: color-mix(in srgb, var(--gold) 9%, transparent);
+}
+.fx-item .chip {
+  flex: none;
+  margin-right: 12px;
+}
+.fx-nowrap {
+  white-space: nowrap;
+}
+.fx-qty {
+  margin-left: 6px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.fx-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.fx-empty-row {
+  margin: 0;
+  color: var(--muted);
+}
+
+.fx-results {
+  margin-top: 12px;
+}
+.fx-add-label {
+  flex: none;
+  color: var(--gold-hi);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+.fx-custom {
+  margin-top: 24px;
+}
+.fx-custom .row {
+  margin-top: 8px;
+}
+.fx-custom .btn {
+  flex: none;
+}
+
+/* ===== Personaje ===== */
+/* Datos cortos y textos llevan la misma etiqueta (.label) encima del valor */
+.fx-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 16px;
+  padding: 12px 14px;
+}
+.fx-facts > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.fx-facts .label,
+.fx-prow > .label {
+  display: block;
+  margin-bottom: 2px;
+}
+.fx-prow {
+  padding: 12px 14px 14px;
+}
+.fx-prow .text {
+  line-height: 1.5;
+}
+.fx-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+.fx-empty-text {
+  margin: 0;
+  color: var(--muted);
+}
+
+.fx-guide details.item > .body {
+  margin: 0 14px;
+  padding: 12px 0 14px;
+  border-top: 1px solid var(--line);
+}
+
+.fx-row {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  padding-block: 12px;
+}
+.fx-row strong {
+  font-weight: 700;
+}
+.fx-delete {
+  margin-top: 24px;
+}
+
+/* Formularios en hojas */
+.fx-form > * + * {
+  margin-top: 16px;
+}
+.fx-form h3 {
+  margin-top: 24px;
+}
+.fx-form h3 + * {
+  margin-top: 8px;
+}
+.fx-hint {
+  display: block;
+  margin: -2px 0 6px;
+  font-size: 0.82rem;
+  line-height: 1.3;
+  color: var(--faint);
+}
+.fx-form .lede {
+  margin: 0;
+}
+.fx-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 12px;
+}
+.fx-scores {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px 8px;
+}
+.fx-score {
+  text-align: center;
+}
+.fx-score > span:first-child {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fx-score .input {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  line-height: 1;
+  text-align: center;
+}
+.fx-score-final {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.fx-foot-actions > .btn:not(.primary) {
+  flex: none;
+}
+.fx-confirm {
+  margin: 0;
+}
+.fx-confirm-del {
+  border-color: rgb(232 115 95 / 0.5);
+  background: var(--blood-soft);
+}
+
+/* ===== Notas ===== */
+.fx-notes {
+  margin-top: 12px;
+}
+.fx-note {
+  align-items: stretch;
+}
+.fx-note-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.fx-note-head strong {
+  flex: 1;
+  min-width: 0;
+  font-weight: 700;
+}
+.fx-note-date {
+  flex: none;
+  font-size: 0.8rem;
+  color: var(--gold);
+  white-space: nowrap;
+}
+.fx-note-body {
+  margin-top: 4px;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--muted);
+  white-space: pre-wrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.fx-blank {
+  padding: 28px 20px 24px;
+  border: 1px dashed var(--gold-line);
+  border-radius: var(--r);
+  background: var(--panel);
+  text-align: center;
+}
+.fx-blank svg {
+  color: var(--gold);
+}
+.fx-blank h3 {
+  margin-top: 8px;
+}
+.fx-blank p {
+  margin: 8px auto 0;
+  max-width: 34ch;
+  color: var(--muted);
+}
+.fx-blank .btn {
+  margin-top: 20px;
+}
+.fx-narrow {
+  max-width: 220px;
+}
+.fx-qty-input {
+  max-width: 120px;
+}
+.fx-untitled {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Textos largos (nota, apartado de la guía) */
+.fx-tall {
+  min-height: 220px;
+}
+
+/* ===== Motores sin color-mix() (iOS 15 y 16.0-16.1, Chrome < 111) =====
+   La mezcla con var() se anula al calcularse; aquí va ya hecha. */
+@supports not (color: color-mix(in srgb, red, red)) {
+  .modal .fx-ce-full {
+    box-shadow: 0 6px 12px -4px rgb(14 11 8 / 0.8);
+  }
+  .fx-item-main:active,
+  .fx-press:active {
+    background: rgb(201 163 92 / 0.09);
+  }
+}

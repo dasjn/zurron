@@ -1,0 +1,135 @@
+[
+ {
+  "id": "armadura-acolchada",
+  "name": "Armadura acolchada",
+  "category": "ligera",
+  "baseAC": 11,
+  "dexCap": null,
+  "stealthDisadvantage": true,
+  "weight": "4 kg",
+  "cost": "5 po"
+ },
+ {
+  "id": "armadura-de-cuero",
+  "name": "Armadura de cuero",
+  "category": "ligera",
+  "baseAC": 11,
+  "dexCap": null,
+  "stealthDisadvantage": false,
+  "weight": "5 kg",
+  "cost": "10 po"
+ },
+ {
+  "id": "armadura-de-cuero-tachonado",
+  "name": "Armadura de cuero tachonado",
+  "category": "ligera",
+  "baseAC": 12,
+  "dexCap": null,
+  "stealthDisadvantage": false,
+  "weight": "6,5 kg",
+  "cost": "45 po"
+ },
+ {
+  "id": "armadura-de-pieles",
+  "name": "Armadura de pieles",
+  "category": "media",
+  "baseAC": 12,
+  "dexCap": 2,
+  "stealthDisadvantage": false,
+  "weight": "6 kg",
+  "cost": "10 po"
+ },
+ {
+  "id": "camisa-de-malla",
+  "name": "Camisa de malla",
+  "category": "media",
+  "baseAC": 13,
+  "dexCap": 2,
+  "stealthDisadvantage": false,
+  "weight": "10 kg",
+  "cost": "50 po"
+ },
+ {
+  "id": "cota-de-escamas",
+  "name": "Cota de escamas",
+  "category": "media",
+  "baseAC": 14,
+  "dexCap": 2,
+  "stealthDisadvantage": true,
+  "weight": "22,5 kg",
+  "cost": "50 po"
+ },
+ {
+  "id": "coraza",
+  "name": "Coraza",
+  "category": "media",
+  "baseAC": 14,
+  "dexCap": 2,
+  "stealthDisadvantage": false,
+  "weight": "10 kg",
+  "cost": "400 po"
+ },
+ {
+  "id": "media-armadura",
+  "name": "Media armadura",
+  "category": "media",
+  "baseAC": 15,
+  "dexCap": 2,
+  "stealthDisadvantage": true,
+  "weight": "20 kg",
+  "cost": "750 po"
+ },
+ {
+  "id": "cota-guarnecida",
+  "name": "Cota guarnecida",
+  "category": "pesada",
+  "baseAC": 14,
+  "dexCap": 0,
+  "stealthDisadvantage": true,
+  "weight": "20 kg",
+  "cost": "30 po"
+ },
+ {
+  "id": "cota-de-malla",
+  "name": "Cota de malla",
+  "category": "pesada",
+  "baseAC": 16,
+  "dexCap": 0,
+  "strength": 13,
+  "stealthDisadvantage": true,
+  "weight": "27,5 kg",
+  "cost": "75 po"
+ },
+ {
+  "id": "armadura-de-bandas",
+  "name": "Armadura de bandas",
+  "category": "pesada",
+  "baseAC": 17,
+  "dexCap": 0,
+  "strength": 15,
+  "stealthDisadvantage": true,
+  "weight": "30 kg",
+  "cost": "200 po"
+ },
+ {
+  "id": "armadura-de-placas",
+  "name": "Armadura de placas",
+  "category": "pesada",
+  "baseAC": 18,
+  "dexCap": 0,
+  "strength": 15,
+  "stealthDisadvantage": true,
+  "weight": "32,5 kg",
+  "cost": "1500 po"
+ },
+ {
+  "id": "escudo",
+  "name": "Escudo",
+  "category": "escudo",
+  "baseAC": 2,
+  "dexCap": null,
+  "stealthDisadvantage": false,
+  "weight": "3 kg",
+  "cost": "10 po"
+ }
+]

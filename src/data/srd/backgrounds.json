@@ -1,0 +1,120 @@
+[
+ {
+  "id": "acolito",
+  "name": "Acólito",
+  "source": "srd",
+  "abilities": [
+   "int",
+   "sab",
+   "car"
+  ],
+  "feat": {
+   "id": "iniciado-en-la-magia",
+   "note": "clérigo"
+  },
+  "skills": [
+   "perspicacia",
+   "religion"
+  ],
+  "tool": "Suministros de calígrafo",
+  "equipment": [
+   {
+    "option": "A",
+    "text": "Suministros de calígrafo, libro (de oraciones), pergamino (10 hojas), símbolo sagrado, túnica y 8 po"
+   },
+   {
+    "option": "B",
+    "text": "50 po"
+   }
+  ],
+  "text": "**Puntuaciones de característica:** Inteligencia, Sabiduría, Carisma\n\n**Dote:** Iniciado en la magia (clérigo) (consulta el capítulo «Dotes»)\n\n**Competencias en habilidades:** Perspicacia y Religión\n\n**Competencia con herramientas:** suministros de calígrafo\n\n**Equipo:** elige A o B: (A) suministros de calígrafo, libro (de oraciones), pergamino (10 hojas), símbolo sagrado, túnica y 8 po, o (B) 50 po"
+ },
+ {
+  "id": "criminal",
+  "name": "Criminal",
+  "source": "srd",
+  "abilities": [
+   "des",
+   "con",
+   "int"
+  ],
+  "feat": {
+   "id": "alerta"
+  },
+  "skills": [
+   "juego-de-manos",
+   "sigilo"
+  ],
+  "tool": "Herramientas de ladrón",
+  "equipment": [
+   {
+    "option": "A",
+    "text": "2 dagas, herramientas de ladrón, palanqueta, 2 bolsas, ropas de viaje y 16 po"
+   },
+   {
+    "option": "B",
+    "text": "50 po"
+   }
+  ],
+  "text": "**Puntuaciones de característica:** Destreza, Constitución, Inteligencia\n\n**Dote:** Alerta (consulta el capítulo «Dotes»)\n\n**Competencias en habilidades:** Juego de manos y Sigilo\n\n**Competencia con herramientas:** herramientas de ladrón\n\n**Equipo:** elige A o B: (A) 2 dagas, herramientas de ladrón, palanqueta, 2 bolsas, ropas de viaje y 16 po, o (B) 50 po"
+ },
+ {
+  "id": "erudito",
+  "name": "Erudito",
+  "source": "srd",
+  "abilities": [
+   "con",
+   "int",
+   "sab"
+  ],
+  "feat": {
+   "id": "iniciado-en-la-magia",
+   "note": "mago"
+  },
+  "skills": [
+   "arcanos",
+   "historia"
+  ],
+  "tool": "Suministros de calígrafo",
+  "equipment": [
+   {
+    "option": "A",
+    "text": "Bastón, suministros de calígrafo, libro (de historia), pergamino (8 hojas), túnica y 8 po"
+   },
+   {
+    "option": "B",
+    "text": "50 po"
+   }
+  ],
+  "text": "**Puntuaciones de característica:** Constitución, Inteligencia, Sabiduría\n\n**Dote:** Iniciado en la magia (mago) (consulta el capítulo «Dotes»)\n\n**Competencias en habilidades:** Conocimiento arcano e Historia\n\n**Competencia con herramientas:** suministros de calígrafo\n\n**Equipo:** elige A o B: (A) bastón, suministros de calígrafo, libro (de historia), pergamino (8 hojas), túnica y 8 po, o (B) 50 po"
+ },
+ {
+  "id": "soldado",
+  "name": "Soldado",
+  "source": "srd",
+  "abilities": [
+   "fue",
+   "des",
+   "con"
+  ],
+  "feat": {
+   "id": "atacante-salvaje"
+  },
+  "skills": [
+   "atletismo",
+   "intimidacion"
+  ],
+  "tool": "Elige un tipo de juego (consulta el capítulo «Equipo»)",
+  "equipment": [
+   {
+    "option": "A",
+    "text": "Lanza, arco corto, 20 flechas, aljaba, juego (el mismo que arriba), útiles de sanador, ropas de viaje y 14 po"
+   },
+   {
+    "option": "B",
+    "text": "50 po"
+   }
+  ],
+  "text": "**Puntuaciones de característica:** Fuerza, Destreza, Constitución\n\n**Dote:** Atacante salvaje (consulta el capítulo «Dotes»)\n\n**Competencias en habilidades:** Atletismo e Intimidación\n\n**Competencia con herramientas:** elige un tipo de juego (consulta el capítulo «Equipo»)\n\n**Equipo:** elige A o B: (A) lanza, arco corto, 20 flechas, aljaba, juego (el mismo que arriba), útiles de sanador, ropas de viaje y 14 po, o (B) 50 po"
+ }
+]

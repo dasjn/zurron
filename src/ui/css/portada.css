@@ -1,0 +1,683 @@
+/*
+ * Portada: inicio, reglas y asistente de subir de nivel.
+ * Prefijo .pt-. Las piezas base (styles.css) no se redefinen aquí.
+ */
+
+/* ===== Barra superior (reglas y asistente) ===== */
+.pt-bar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+}
+.pt-bar > :first-child {
+  justify-self: start;
+  margin-left: -6px;
+}
+.pt-bar > :last-child {
+  justify-self: end;
+}
+.pt-bar .btn.ghost svg {
+  margin-right: -4px;
+}
+.pt-title {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--ink);
+}
+
+/* ===== Control segmentado (secciones de reglas, trucos y preparados; aspecto común en styles.css) =====
+   Cada botón mide lo que su texto y se reparte lo que sobra. Si no caben (zoom muy grande),
+   pasan a otra línea en vez de salirse. */
+.pt-seg {
+  flex-wrap: wrap;
+}
+.pt-seg > a,
+.pt-seg > button {
+  flex: 1 0 auto;
+  white-space: nowrap;
+}
+.pt-seg .pt-of {
+  font-weight: 500;
+  color: var(--faint);
+}
+.pt-seg [aria-pressed='true'] .pt-of {
+  color: var(--gold);
+}
+@media (max-width: 359px) {
+  .pt-seg > a,
+  .pt-seg > button {
+    padding: 0 6px;
+    font-size: 0.88rem;
+  }
+}
+
+/* ===== Inicio ===== */
+.pt-head {
+  padding: 32px 0 8px;
+  text-align: center;
+}
+.pt-head .brand {
+  font-size: 3.1rem;
+  text-shadow: 0 0 28px color-mix(in srgb, var(--gold) 30%, transparent);
+}
+/* Filete con rombo bajo la marca */
+.pt-orn {
+  position: relative;
+  width: min(220px, 70%);
+  height: 9px;
+  margin: 14px auto;
+  background: linear-gradient(90deg, transparent, var(--gold-line) 25%, var(--gold-line) 75%, transparent) center / 100% 1px no-repeat;
+}
+.pt-orn::before {
+  content: '';
+  position: absolute;
+  top: 0.5px;
+  left: calc(50% - 4px);
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  box-shadow: 0 0 0 4px var(--bg);
+  transform: rotate(45deg);
+}
+.pt-tagline {
+  max-width: 32ch;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1rem;
+  text-wrap: balance;
+}
+
+/* Filas de «selección de personaje» */
+.pt-pc,
+.pt-new {
+  gap: 14px;
+  min-height: 80px;
+  padding: 12px 14px;
+}
+.pt-pc {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 9%, transparent), transparent 60%);
+}
+.pt-pc:active,
+.pt-link:active {
+  background-color: var(--panel-2);
+}
+/* Tamaño fijado aquí: Portrait size={…} no aplica (Preact 11 ya no añade «px» a los números) */
+.pt-pc .portrait {
+  width: 56px;
+  height: 56px;
+  font-size: 1.7rem;
+}
+.pt-name {
+  display: block;
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  line-height: 1.1;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.pt-meta {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.88rem;
+  line-height: 1.3;
+  color: var(--muted);
+}
+.pt-meta > span {
+  white-space: nowrap;
+}
+.pt-go {
+  flex: none;
+  display: grid;
+  color: var(--gold);
+}
+.pt-add {
+  flex: none;
+  padding: 0 10px;
+  pointer-events: none;
+}
+/* Personaje del grupo por añadir: retrato y «Añadir» centrados en toda la fila, como el chevrón de «En este móvil» */
+.li.pt-adopt {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  grid-template-areas:
+    'm n a'
+    'm s a';
+  align-content: center;
+  column-gap: 14px;
+  row-gap: 2px;
+}
+.pt-adopt > .portrait {
+  grid-area: m;
+  align-self: center;
+}
+.pt-adopt > .pt-name {
+  grid-area: n;
+  align-self: center;
+}
+.pt-adopt > .pt-add {
+  grid-area: a;
+  align-self: center;
+}
+.pt-adopt > .pt-meta {
+  grid-area: s;
+  align-self: start;
+  margin-top: 0;
+}
+
+/* Hueco vacío: crear un personaje nuevo */
+.pt-new {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  border: 1px dashed var(--gold-line);
+  border-radius: var(--r);
+  color: inherit;
+  text-decoration: none;
+}
+.pt-new:active {
+  background: var(--panel);
+}
+.pt-slot {
+  position: relative;
+  flex: none;
+  width: 52px;
+  height: 52px;
+  margin-inline: 2px;
+  border: 1.5px dashed var(--gold-line);
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 35%, var(--gold-soft), var(--bg-inset));
+}
+.pt-slot::before,
+.pt-slot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--gold);
+  transform: translate(-50%, -50%);
+}
+.pt-slot::after {
+  width: 2px;
+  height: 18px;
+}
+.pt-new .pt-name {
+  font-size: 1.2rem;
+  color: var(--gold-hi);
+}
+@media (max-width: 380px) {
+  .pt-new {
+    gap: 12px;
+  }
+  .pt-new .pt-name {
+    font-size: 1.1rem;
+  }
+}
+
+/* Filas de reglas */
+.pt-link {
+  gap: 14px;
+  padding: 12px 14px;
+}
+.pt-ico {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--gold-line);
+  border-radius: var(--r-sm);
+  background: var(--gold-soft);
+  color: var(--gold-hi);
+}
+.pt-ltitle {
+  display: block;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+/* Pie con la atribución del SRD */
+.pt-legal {
+  position: relative;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--faint);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.pt-legal::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: calc(50% - 3.5px);
+  width: 7px;
+  height: 7px;
+  background: var(--line-2);
+  transform: rotate(45deg);
+}
+.pt-legal p {
+  margin: 0 0 8px;
+}
+.pt-legal p:last-child {
+  margin-bottom: 0;
+}
+.pt-legal a {
+  color: var(--muted);
+}
+
+/* ===== Reglas ===== */
+/* Segmentado (y buscador) fijos al hacer scroll; tapan lo que pasa por debajo */
+.pt-sticky {
+  position: sticky;
+  top: var(--top);
+  z-index: 20;
+  margin: 8px calc(-1 * var(--gutter)) 0;
+  padding: 8px var(--gutter) 12px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+.pt-search {
+  position: relative;
+  margin-top: 8px;
+}
+.pt-search svg {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  color: var(--faint);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.pt-search .input {
+  padding-left: 40px;
+}
+.pt-filters {
+  margin-top: 16px;
+}
+.pt-filters .chips {
+  gap: 8px;
+}
+.pt-filters .label {
+  margin: 0 0 8px;
+}
+.pt-filters .chips + .label {
+  margin-top: 16px;
+}
+.pt-levels .chip {
+  justify-content: center;
+  min-width: 40px;
+}
+.pt-count {
+  margin: 16px 0 8px;
+  color: var(--faint);
+  font-size: 0.88rem;
+}
+.pt-count + .notice {
+  margin: 0;
+}
+.pt-more {
+  margin: 16px 0 0;
+}
+.pt-more p {
+  margin: 0 0 8px;
+  text-align: center;
+}
+.pt-classes {
+  margin: 10px 0 0;
+}
+
+/* Cómo se juega: lectura */
+.pt-intro {
+  margin: 16px 0 0;
+}
+.pt-read .card p {
+  line-height: 1.55;
+}
+.pt-read .card > h3 + p,
+.pt-read .card > p + p,
+.pt-read .card > h3 + .pt-kicker {
+  margin-top: 6px;
+}
+.pt-formula {
+  margin: 4px 0 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--gold-hi);
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  text-align: center;
+  text-wrap: balance;
+}
+.pt-read .card .pt-formula {
+  line-height: 1.15;
+}
+.pt-ge {
+  color: var(--gold);
+}
+/* Lista con rombos */
+.pt-ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pt-ul li {
+  position: relative;
+  padding-left: 20px;
+  line-height: 1.55;
+}
+.pt-ul li + li {
+  margin-top: 8px;
+}
+.pt-ul li::before {
+  content: '';
+  position: absolute;
+  top: 0.62em;
+  left: 3px;
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+.pt-duo h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.pt-duo.good h3 svg {
+  color: var(--good);
+}
+.pt-duo.bad h3 svg {
+  color: var(--bad);
+  transform: rotate(180deg);
+}
+.pt-read .grid2 .card p {
+  margin-bottom: 0;
+}
+/* En rejilla, la segunda tarjeta no debe bajar (la base pone margen a .card + .card) */
+.pt-read .grid2 > .card + .card {
+  margin-top: 0;
+}
+.pt-after {
+  margin: 10px 0 0;
+}
+.pt-defs .li {
+  display: block;
+  padding: 12px 14px;
+  line-height: 1.5;
+}
+.pt-defs strong {
+  display: block;
+  color: var(--ink);
+}
+.pt-defs strong + span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.pt-kicker {
+  margin: 0 0 4px;
+  color: var(--gold);
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  line-height: 1.1;
+}
+
+/* ===== Asistente de subir de nivel ===== */
+.pt-stepof {
+  color: var(--muted);
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+.pt-whead {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+.pt-whead .portrait {
+  width: 64px;
+  height: 64px;
+  font-size: 1.9rem;
+}
+.pt-whead .label {
+  margin: 0 0 6px;
+}
+.pt-wtitle {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 2.1rem;
+  line-height: 1;
+  color: var(--ink);
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+/* Indicador de pasos: rombos numerados unidos por un filete */
+.pt-steps {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  padding: 0 4px;
+  list-style: none;
+}
+.pt-steps li {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+.pt-steps li:last-child {
+  flex: none;
+}
+.pt-steps li::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  margin: 0 7px;
+  background: var(--line-2);
+}
+.pt-steps li:last-child::after {
+  display: none;
+}
+.pt-steps li.done::after {
+  background: var(--gold-line);
+}
+.pt-steps span {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid var(--line-2);
+  border-radius: 2px;
+  background: var(--bg);
+  transform: rotate(45deg);
+}
+.pt-steps b {
+  color: var(--faint);
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  line-height: 1;
+  font-variant-numeric: tabular-nums lining-nums;
+  transform: rotate(-45deg);
+}
+.pt-steps .done span {
+  border-color: var(--gold-line);
+  background: var(--gold-soft);
+}
+.pt-steps .done b {
+  color: var(--gold);
+}
+.pt-steps .cur span {
+  width: 26px;
+  height: 26px;
+  border-color: var(--gold-hi);
+  background: var(--gold);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--gold) 55%, transparent);
+}
+.pt-steps .cur b {
+  color: var(--bg);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* Lo que ganas: filas en un solo panel */
+.pt-gain {
+  padding: 12px 14px;
+}
+.pt-gain p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+/* Después de «.pt-gain p», que si no le quita el aire al resumen bajo el título */
+.pt-gain h3 + * {
+  margin-top: 6px;
+}
+.pt-gain p.summary {
+  color: var(--ink);
+}
+.pt-gain .text {
+  margin-top: 6px;
+  color: var(--muted);
+}
+.pt-gain .text p {
+  font-size: inherit;
+}
+.stack > .pt-h2 {
+  margin-top: 24px;
+}
+
+/* Opciones */
+.option .pt-optnote {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.option.on .pt-optnote {
+  color: var(--ink);
+}
+.pt-rolled {
+  color: var(--accent);
+  font-weight: 700;
+}
+.pt-real {
+  margin-top: 16px;
+}
+.pt-real .input {
+  max-width: 8em;
+}
+
+/* Resultado de PG */
+.pt-hp {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  padding: 8px 0 4px;
+}
+.pt-hp .roll {
+  margin: 0;
+}
+.pt-hp-s {
+  color: var(--muted);
+}
+.pt-hp-s strong {
+  color: var(--ink);
+}
+
+/* «Otra de tu libro»: los campos cuelgan de la opción */
+.pt-mesa.open > .option {
+  border-bottom-color: var(--line-2);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.pt-mesa-fields {
+  padding: 14px 16px 16px;
+  border: 1px solid var(--accent);
+  border-top: 0;
+  border-radius: 0 0 var(--r) var(--r);
+  background: var(--panel);
+}
+.pt-mesa-fields .field + .field {
+  margin-top: 14px;
+}
+.pt-mesa-fields .faint {
+  margin: 10px 0 0;
+}
+textarea.pt-tall {
+  min-height: 160px;
+}
+
+/* Repaso */
+.pt-band {
+  margin-top: 16px;
+}
+.stack > .pt-band {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+.pt-band .s.pt-up {
+  color: var(--muted);
+}
+.pt-facts .li {
+  justify-content: space-between;
+}
+.pt-facts .v {
+  color: var(--ink);
+}
+.pt-facts .pt-slots {
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-align: right;
+}
+.pt-hint {
+  margin: 4px 0 0;
+}
+.pt-pend {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+/* Atrás con su icono, sin estirarse */
+.pt-back {
+  padding-inline: 12px 16px;
+}
+.pt-back svg {
+  margin-right: -2px;
+}
+
+/* Ficha o clase no encontradas */
+.pt-missing .notice {
+  margin: 24px 0 12px;
+}
+
+/* ===== Motores sin color-mix() (iOS 15 y 16.0-16.1, Chrome < 111) =====
+   La mezcla con var() se anula al calcularse; aquí va ya hecha (o, con el color del personaje,
+   su tono suave). */
+@supports not (color: color-mix(in srgb, red, red)) {
+  .pt-head .brand {
+    text-shadow: 0 0 28px rgb(201 163 92 / 0.3);
+  }
+  .pt-pc {
+    background: linear-gradient(90deg, var(--accent-soft), transparent 60%);
+  }
+  .pt-steps .cur span {
+    box-shadow: 0 0 14px rgb(201 163 92 / 0.55);
+  }
+}

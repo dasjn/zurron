@@ -1,0 +1,596 @@
+/*
+ * Ficha: cabecera, navegación inferior y pestaña Estado.
+ * Prefijo .fi-. Las piezas base (.band, .card.frame, .list, .bnav, .btn…) están en styles.css.
+ */
+
+/* ===== Cabecera ===== */
+.fi-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+/* El chevrón de «Inicio» se alinea con el borde del contenido */
+.fi-top > .btn.ghost:first-child {
+  margin-left: -6px;
+}
+.fi-top > .btn:last-child:not(:first-child) {
+  margin-left: auto;
+}
+
+/* Si el nombre no tiene ni 9 em de ancho junto al medallón (letra muy grande o zoom), baja debajo */
+.fi-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 18px;
+  margin-top: 16px;
+  /* El medallón lleva aros y brillo por fuera: margen para que no toquen nada */
+  padding-left: 4px;
+}
+.fi-id {
+  flex: 1 1 9em;
+  min-width: 0;
+}
+/* Más pequeño en pantallas estrechas; los nombres largos se parten con guion (html lang="es") */
+.fi-name {
+  font-size: clamp(1.5rem, 9vw, 2.1rem);
+  line-height: 1;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.fi-meta {
+  margin: 8px 0 0;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+.fi-class {
+  display: block;
+  color: var(--ink);
+  font-weight: 500;
+}
+.fi-origin {
+  display: block;
+  margin-top: 1px;
+  color: var(--muted);
+}
+.fi-tagline {
+  margin: 6px 0 0;
+  color: var(--faint);
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+/* Aviso de cosas por revisar, enlazado a su pestaña */
+a.fi-warn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.fi-warn strong,
+.fi-warn .small {
+  display: block;
+}
+.fi-warn .small {
+  margin-top: 2px;
+  color: var(--muted);
+}
+.fi-warn > svg {
+  color: var(--bad);
+}
+
+/* Contenido de la pestaña: 16 px bajo la cabecera; su primer elemento no suma margen */
+.fi-main {
+  padding-top: 16px;
+}
+.fi-main > :first-child,
+.fi-main > :first-child > :first-child {
+  margin-top: 0;
+}
+
+/* ===== Hoja «Más» ===== */
+.fi-more .li {
+  gap: 14px;
+  min-height: 64px;
+}
+.fi-more-ic {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--gold-line);
+  border-radius: 50%;
+  background: var(--bg-inset);
+  color: var(--gold);
+}
+.fi-more strong {
+  display: block;
+  color: var(--ink);
+}
+.fi-more-hint {
+  display: block;
+  margin-top: 1px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+.fi-more .li > svg {
+  flex: none;
+  color: var(--faint);
+}
+/* La sección en la que estás: fondo dorado tenue y filete dorado a la izquierda */
+.fi-more [aria-current='page'] {
+  background: var(--gold-soft);
+  box-shadow: inset 3px 0 0 var(--gold);
+}
+.fi-more > * + [aria-current='page'] {
+  box-shadow:
+    inset 3px 0 0 var(--gold),
+    inset 0 1px 0 var(--line);
+}
+.fi-more [aria-current='page'] strong {
+  color: var(--gold-hi);
+}
+.fi-more [aria-current='page'] .fi-more-ic {
+  border-color: var(--gold);
+  color: var(--gold-hi);
+}
+
+/* ===== Estado: textos de fila ===== */
+.fi-row-title,
+.fi-use-name {
+  font-weight: 700;
+  line-height: 1.25;
+}
+.fi-hint {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+p.fi-hint {
+  margin-bottom: 0;
+}
+.fi-note {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.35;
+}
+
+/* ===== Puntos de golpe ===== */
+.fi-hp {
+  margin-top: 16px;
+  padding-top: 12px;
+}
+.fi-hp-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  min-height: 22px;
+}
+.fi-hp-head .label {
+  margin-right: auto;
+}
+.fi-temp.tag {
+  margin-left: 0;
+  border-color: color-mix(in srgb, var(--steel) 55%, transparent);
+  color: var(--steel);
+}
+.fi-low {
+  color: var(--bad);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.fi-hp-main {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+.fi-hp-num {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+  min-height: 64px;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: var(--r-sm);
+  background: none;
+  color: var(--ink);
+  font-family: var(--f-display);
+  font-variant-numeric: tabular-nums lining-nums;
+  line-height: 1;
+}
+.fi-hp-cur {
+  font-weight: 700;
+  font-size: 3.2rem;
+  text-decoration: underline dotted var(--line-2);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+.fi-hp-max {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+.fi-hp.fi-hp-low .fi-hp-cur,
+.fi-hp.fi-hp-down .fi-hp-cur {
+  color: var(--bad);
+}
+
+/* Barra de vida */
+.fi-bar {
+  display: flex;
+  height: 18px;
+  margin-top: 10px;
+  overflow: hidden;
+  border: 1px solid var(--gold-line);
+  border-radius: var(--r-sm);
+  background: var(--bg-inset);
+  box-shadow: inset 0 2px 4px rgb(0 0 0 / 0.55);
+}
+.fi-bar > i {
+  display: block;
+  flex: none;
+  height: 100%;
+  transition: width 0.25s ease-out;
+}
+.fi-bar-hp {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--blood) 62%, var(--ink)) 0,
+    var(--blood) 38%,
+    color-mix(in srgb, var(--blood) 72%, var(--bg-inset)) 100%
+  );
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--ink) 45%, transparent);
+}
+.fi-bar-temp {
+  border-left: 1px solid var(--bg-inset);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--steel) 60%, var(--ink)) 0,
+    var(--steel) 38%,
+    color-mix(in srgb, var(--steel) 60%, var(--bg-inset)) 100%
+  );
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--ink) 50%, transparent);
+}
+.fi-hp.fi-hp-low .fi-bar,
+.fi-hp.fi-hp-down .fi-bar {
+  border-color: var(--bad);
+  box-shadow:
+    inset 0 2px 4px rgb(0 0 0 / 0.55),
+    0 0 12px color-mix(in srgb, var(--blood) 70%, transparent);
+}
+
+/* Cantidad + Daño / Curar / PG temp.
+   Si la fila mide menos de 18,75 em (unos 320 px con la letra de serie: móviles de hasta 375 px o
+   letra grande), el campo ocupa su propia línea y los tres botones se reparten la de abajo.
+   La cifra sale de «Cantidad» (4,85 em con su relleno) más los tres botones: si cambian sus textos,
+   hay que revisarla. El mínimo de 5 em evita que el campo se recorte aunque se quede corta. */
+.fi-amount {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.fi-amount .input {
+  flex: 999 1 calc((18.75em - 100%) * 999);
+  min-width: 5em;
+  padding-inline: 10px;
+}
+.fi-amount .btn {
+  flex: 1 0 auto;
+  padding: 0 12px;
+}
+.btn.fi-dmg {
+  border-color: color-mix(in srgb, var(--blood) 75%, transparent);
+  background: var(--blood-soft);
+  color: var(--bad);
+}
+.btn.fi-heal {
+  border-color: color-mix(in srgb, var(--good) 45%, transparent);
+  background: color-mix(in srgb, var(--good) 12%, var(--panel));
+  color: var(--good);
+}
+.btn.fi-tmp {
+  border-color: color-mix(in srgb, var(--steel) 45%, transparent);
+  background: color-mix(in srgb, var(--steel) 12%, var(--panel));
+  color: var(--steel);
+}
+
+/* Salvaciones de muerte (a 0 PG) */
+.fi-death {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid color-mix(in srgb, var(--bad) 40%, transparent);
+}
+.fi-death-title {
+  margin: 0;
+  color: var(--bad);
+  font-weight: 700;
+}
+.fi-death-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+  text-align: center;
+}
+.fi-death-grid > div {
+  padding: 8px 4px 4px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--bg-inset);
+}
+.fi-death-grid .pips {
+  margin-top: 2px;
+}
+.fi-death-manual {
+  margin-top: 8px;
+}
+
+/* ===== Usos ===== */
+.fi-use {
+  gap: 12px;
+}
+.fi-use-text {
+  min-width: 0;
+}
+.fi-use-ctl {
+  flex: none;
+  max-width: 60%;
+}
+/* El rombo visible queda dentro de un hueco de 36 px: se compensa para alinear con el borde */
+.fi-use-ctl .pips {
+  justify-content: flex-end;
+  margin-right: -8px;
+}
+.fi-use-btn {
+  margin-top: 8px;
+}
+
+/* ===== Segunda franja ===== */
+.fi-band2 {
+  margin-top: 24px;
+}
+
+/* ===== En partida ===== */
+.fi-row {
+  gap: 12px;
+  padding-block: 12px;
+}
+.fi-row > .chip,
+.fi-row > .btn,
+.fi-row > .stepper {
+  flex: none;
+}
+.fi-conds {
+  margin-top: 8px;
+}
+/* Inspiración heroica: rombo hueco si no la tienes; lleno con tu color si la tienes */
+.fi-insp-mark {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 9px 0 2px;
+  border: 1.5px solid var(--faint);
+  border-radius: 1px;
+  vertical-align: 0.05em;
+  transform: rotate(45deg);
+}
+.fi-insp.on .fi-insp-mark {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 8px -1px var(--accent);
+}
+.fi-insp .btn {
+  min-width: 76px;
+}
+
+/* ===== Descansos ===== */
+.fi-rest-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.fi-hd {
+  flex: none;
+  text-align: right;
+}
+.fi-hd-v {
+  display: block;
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.fi-hd-of {
+  color: var(--muted);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.fi-rest-btns {
+  margin-top: 14px;
+}
+/* «Descanso largo» en Grenze no cabe en una línea a 360 px con el relleno de serie.
+   Con letra grande pasa a dos líneas dentro del botón. */
+.fi-rest-btns .btn {
+  padding-inline: 10px;
+}
+
+/* ===== Hojas ===== */
+.fi-modal-gap {
+  margin-top: 16px;
+}
+.fi-modal-h3 {
+  margin: 20px 0 8px;
+}
+/* Desglose de la CA: todas las cifras a la derecha, en la misma columna */
+.fi-ac .v {
+  min-width: 2.2ch;
+  font-family: var(--f-display);
+  font-size: 1.15rem;
+  line-height: 1;
+  text-align: right;
+}
+.fi-total .v {
+  font-size: 1.4rem;
+  color: var(--gold-hi);
+}
+.fi-ul {
+  margin: 0;
+  padding-left: 20px;
+}
+.fi-ul li + li {
+  margin-top: 4px;
+}
+.fi-cond > summary > .chip,
+.fi-cond > summary > .fi-hint {
+  flex: none;
+}
+.fi-cond > summary > .fi-hint {
+  margin-top: 0;
+}
+
+/* Editar PG */
+.fi-hp-edit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.fi-hp-edit .input {
+  width: 6ch;
+  min-height: 60px;
+  padding: 4px 8px;
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+}
+.fi-hp-edit-max {
+  color: var(--muted);
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+/* Descanso corto: tirar o escribir la tirada */
+.fi-rest-stats .v {
+  font-family: var(--f-display);
+  font-size: 1.15rem;
+}
+.fi-roll-row {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+}
+.fi-roll-row .input {
+  min-width: 0;
+  padding-inline: 10px;
+}
+.fi-or {
+  color: var(--faint);
+  font-size: 0.9rem;
+}
+.fi-roll {
+  margin-top: 12px;
+  text-align: center;
+}
+.fi-roll .roll {
+  margin: 0;
+}
+
+/* ===== Pantallas bajas (iPhone SE, móvil en horizontal) =====
+   Medallón, nombre y franja más pequeños y menos aire: «Daño» y «Curar» quedan a la vista sin bajar. */
+@media (max-height: 600px) {
+  .fi-hero {
+    margin-top: 10px;
+  }
+  .fi-hero .portrait {
+    width: 64px;
+    height: 64px;
+    font-size: 1.8rem;
+  }
+  .fi-name {
+    font-size: clamp(1.5rem, 8vw, 2.1rem);
+  }
+  .fi-meta {
+    margin-top: 6px;
+  }
+  .fi-main .band:not(.fi-band2) > * {
+    padding-block: 8px 6px;
+  }
+  .fi-main .band:not(.fi-band2) .v {
+    font-size: 1.75rem;
+  }
+  .fi-hp {
+    margin-top: 12px;
+    padding-top: 8px;
+  }
+  .fi-hp-main {
+    margin-top: 4px;
+  }
+  .fi-hp-num {
+    min-height: 52px;
+  }
+  .fi-bar {
+    margin-top: 8px;
+  }
+  .fi-amount {
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+}
+
+/* ===== Motores sin color-mix() (iOS 15 y 16.0-16.1, Chrome < 111) =====
+   Las mezclas de arriba llevan var() y se anulan al calcularse, así que un color de repuesto
+   escrito antes no serviría: aquí van ya mezcladas (los tokens no cambian con el personaje). */
+@supports not (color: color-mix(in srgb, red, red)) {
+  .fi-temp.tag {
+    border-color: rgb(143 179 217 / 0.55);
+  }
+  .fi-bar-hp {
+    background: linear-gradient(180deg, #cc7667 0, var(--blood) 38%, #882921 100%);
+    box-shadow: inset 0 1px 0 rgb(236 225 201 / 0.45);
+  }
+  .fi-bar-temp {
+    background: linear-gradient(180deg, #b4c5d3 0, var(--steel) 38%, #5b7085 100%);
+    box-shadow: inset 0 1px 0 rgb(236 225 201 / 0.5);
+  }
+  .fi-hp.fi-hp-low .fi-bar,
+  .fi-hp.fi-hp-down .fi-bar {
+    box-shadow:
+      inset 0 2px 4px rgb(0 0 0 / 0.55),
+      0 0 12px rgb(184 53 43 / 0.7);
+  }
+  .btn.fi-dmg {
+    border-color: rgb(184 53 43 / 0.75);
+  }
+  .btn.fi-heal {
+    border-color: rgb(140 194 131 / 0.45);
+    background: #2c2d20;
+  }
+  .btn.fi-tmp {
+    border-color: rgb(143 179 217 / 0.45);
+    background: #2c2b2b;
+  }
+  .fi-death {
+    border-top-color: rgb(232 115 95 / 0.4);
+  }
+}

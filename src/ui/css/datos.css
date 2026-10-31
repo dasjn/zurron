@@ -1,0 +1,127 @@
+/* Datos: avisos de guardado y de versión nueva, pantalla de fallo, recordatorios
+   de copia e instalación, comparación al importar y la pregunta «¿Descartar los
+   cambios?». Prefijo .dt- */
+
+/* ===== Avisos fijos arriba (no se pudo guardar, versión nueva) ===== */
+.dt-bars {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: calc(env(safe-area-inset-top, 0px) + 12px) var(--gutter) 0;
+}
+/* La pantalla de debajo ya no necesita dejar sitio a la barra de estado */
+.dt-bars ~ * {
+  --top: 0px;
+}
+.dt-bars > * + * {
+  margin-top: 8px;
+}
+.dt-bar strong {
+  display: block;
+}
+.dt-bar p {
+  margin: 4px 0 0;
+}
+.dt-update {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.dt-update > span {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Botones dentro de un aviso */
+.dt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* ===== Pantalla de fallo ===== */
+.dt-crash h1 {
+  margin: 24px 0 8px;
+  font-size: 1.4rem;
+}
+.dt-crash .grid2 {
+  margin-top: 20px;
+}
+.dt-crash details {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.dt-crash pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ===== Recordatorios en la ficha (copia, instalar) ===== */
+.dt-nudge {
+  margin-top: 16px;
+}
+.dt-nudge p {
+  margin: 4px 0 0;
+}
+
+/* ===== Inicio: copias y contenido de la mesa ===== */
+.dt-last {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.dt-report {
+  margin-top: 12px;
+}
+.dt-report ul {
+  margin: 6px 0 0;
+}
+.dt-mesa {
+  margin-top: 12px;
+}
+
+/* ===== «Ya tienes esa ficha»: las dos versiones ===== */
+.dt-compare {
+  margin: 12px 0 16px;
+}
+.dt-compare .li {
+  display: block;
+}
+.dt-compare dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 10px;
+  margin: 6px 0 0;
+  font-size: 0.88rem;
+}
+.dt-compare dt {
+  color: var(--muted);
+}
+.dt-compare dd {
+  margin: 0;
+}
+
+/* ===== ¿Descartar los cambios? (encima de la hoja abierta) ===== */
+.backdrop.dt-ask {
+  z-index: 55;
+  background: rgb(5 3 2 / 0.5);
+}
+.dt-ask .modal {
+  max-width: 520px;
+}
+.dt-ask p {
+  margin: 0;
+}
+.dt-ask-actions {
+  margin-top: 16px;
+}
+
+/* El foco entra en la hoja por el título (no se toca, solo orienta): sin marco */
+.modal:focus,
+.modal-head h2:focus {
+  outline: none;
+}

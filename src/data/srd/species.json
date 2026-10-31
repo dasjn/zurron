@@ -1,0 +1,863 @@
+[
+ {
+  "id": "draconido",
+  "name": "Dracónido",
+  "source": "srd",
+  "creatureType": "Humanoide",
+  "sizeText": "Mediano (entre 1,5 y 2,1 m de altura)",
+  "sizes": [
+   "Mediano"
+  ],
+  "speed": 9,
+  "darkvision": 18,
+  "traits": [
+   {
+    "id": "draconido-linaje-draconico",
+    "name": "Linaje dracónico",
+    "level": 1,
+    "text": "Tu linaje proviene de un progenitor dragón. Elige el tipo de dragón en la tabla «Ancestros dracónicos». Tu elección afectará a tus atributos Ataque de aliento y Resistencia al daño además de a tu aspecto.\n\n**Ancestros dracónicos**\n\n| Dragón | Tipo de daño |\n|---|---|\n| Azul | Relámpago |\n| Blanco | Frío |\n| Bronce | Relámpago |\n| Cobre | Ácido |\n| Negro | Ácido |\n| Oro | Fuego |\n| Oropel | Fuego |\n| Plata | Frío |\n| Rojo | Fuego |\n| Verde | Veneno |",
+    "summary": "Eliges de qué color de dragón desciendes. Eso decide el tipo de daño de tu aliento y de tu resistencia."
+   },
+   {
+    "id": "draconido-ataque-de-aliento",
+    "name": "Ataque de aliento",
+    "level": 1,
+    "text": "Cuando lleves a cabo la acción de atacar en tu turno, puedes sustituir uno de tus ataques por una exhalación de energía mágica en un cono de 4,5 m o en una línea de 9 m de largo y 1,5 m de ancho (elige la forma cada vez). Todas las criaturas situadas en esa zona deberán hacer una tirada de salvación de Destreza (CD 8 más tu modificador por Constitución y tu bonificador por competencia). Si la fallan, sufrirán 1d10 de daño del tipo determinado por tu atributo Linaje dracónico. Si la superan, sufrirán la mitad de ese daño. El daño aumenta en 1d10 cuando alcanzas los niveles 5 (2d10), 11 (3d10) y 17 (4d10) de personaje.\n\nPuedes utilizar este ataque de aliento una cantidad de veces igual a tu bonificador por competencia y recuperas todos los usos tras finalizar un descanso largo.",
+    "summary": "Al atacar, puedes cambiar uno de tus ataques por un soplo (cono o línea) que obliga a los enemigos de la zona a hacer una tirada de salvación de Destreza. Lo usas tantas veces como tu bonificador por competencia por descanso largo.",
+    "resources": [
+     {
+      "id": "ataque-de-aliento",
+      "name": "Ataque de aliento",
+      "max": {
+       "proficiencyBonus": true
+      },
+      "recharge": "largo"
+     }
+    ]
+   },
+   {
+    "id": "draconido-resistencia-al-dano",
+    "name": "Resistencia al daño",
+    "level": 1,
+    "text": "Tienes resistencia al tipo de daño determinado por tu atributo Linaje dracónico.",
+    "summary": "Recibes la mitad del daño del tipo de tu linaje dracónico."
+   },
+   {
+    "id": "draconido-vision-en-la-oscuridad",
+    "name": "Visión en la oscuridad",
+    "level": 1,
+    "text": "Tienes visión en la oscuridad hasta 18 m.",
+    "summary": "Ves en la oscuridad hasta 18 m como si fuera luz tenue (en tonos de gris)."
+   },
+   {
+    "id": "draconido-vuelo-draconico",
+    "name": "Vuelo dracónico",
+    "level": 5,
+    "text": "Cuando alcanzas el nivel 5 de personaje, puedes canalizar la magia dracónica para volar de forma temporal. Como acción adicional, haces que en la espalda te broten unas alas espectrales que duran 10 minutos o hasta que las repliegues (no requiere acción) o tengas el estado de incapacitado. Durante ese tiempo, tendrás una velocidad volando igual a tu velocidad. Tus alas parecen hechas de la misma energía que tu ataque de aliento. Cuando uses este atributo, no podrás volver a hacerlo hasta que finalices un descanso largo.",
+    "summary": "Desde el nivel 5, como acción adicional te salen alas espectrales y puedes volar durante 10 minutos, una vez por descanso largo.",
+    "resources": [
+     {
+      "id": "vuelo-draconico",
+      "name": "Vuelo dracónico",
+      "max": {
+       "perLevel": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+       ]
+      },
+      "recharge": "largo",
+      "fromLevel": 5
+     }
+    ]
+   }
+  ],
+  "choices": [
+   {
+    "id": "draconido-linaje-draconico",
+    "kind": "opcion",
+    "count": 1,
+    "options": [
+     {
+      "id": "azul",
+      "name": "Azul (relámpago)",
+      "text": "Tu Ataque de aliento causa daño de relámpago y tienes resistencia al daño de relámpago."
+     },
+     {
+      "id": "blanco",
+      "name": "Blanco (frío)",
+      "text": "Tu Ataque de aliento causa daño de frío y tienes resistencia al daño de frío."
+     },
+     {
+      "id": "bronce",
+      "name": "Bronce (relámpago)",
+      "text": "Tu Ataque de aliento causa daño de relámpago y tienes resistencia al daño de relámpago."
+     },
+     {
+      "id": "cobre",
+      "name": "Cobre (ácido)",
+      "text": "Tu Ataque de aliento causa daño de ácido y tienes resistencia al daño de ácido."
+     },
+     {
+      "id": "negro",
+      "name": "Negro (ácido)",
+      "text": "Tu Ataque de aliento causa daño de ácido y tienes resistencia al daño de ácido."
+     },
+     {
+      "id": "oro",
+      "name": "Oro (fuego)",
+      "text": "Tu Ataque de aliento causa daño de fuego y tienes resistencia al daño de fuego."
+     },
+     {
+      "id": "oropel",
+      "name": "Oropel (fuego)",
+      "text": "Tu Ataque de aliento causa daño de fuego y tienes resistencia al daño de fuego."
+     },
+     {
+      "id": "plata",
+      "name": "Plata (frío)",
+      "text": "Tu Ataque de aliento causa daño de frío y tienes resistencia al daño de frío."
+     },
+     {
+      "id": "rojo",
+      "name": "Rojo (fuego)",
+      "text": "Tu Ataque de aliento causa daño de fuego y tienes resistencia al daño de fuego."
+     },
+     {
+      "id": "verde",
+      "name": "Verde (veneno)",
+      "text": "Tu Ataque de aliento causa daño de veneno y tienes resistencia al daño de veneno."
+     }
+    ]
+   }
+  ],
+  "summary": "Descendiente de dragones: escupes energía como un dragón y resistes su mismo tipo de daño. A nivel 5 puedes desplegar alas mágicas un rato."
+ },
+ {
+  "id": "elfo",
+  "name": "Elfo",
+  "source": "srd",
+  "creatureType": "Humanoide",
+  "sizeText": "Mediano (entre 1,5 y 1,8 m de altura)",
+  "sizes": [
+   "Mediano"
+  ],
+  "speed": 9,
+  "darkvision": 18,
+  "traits": [
+   {
+    "id": "elfo-linaje-elfico",
+    "name": "Linaje élfico",
+    "level": 1,
+    "text": "Formas parte de un linaje que te otorga capacidades sobrenaturales. Elige un linaje de la tabla «Linajes élficos». Obtienes el beneficio de nivel 1 de ese linaje.\n\n**Linajes élficos**\n\n| Linaje | Nivel 1 | Nivel 3 | Nivel 5 |\n|---|---|---|---|\n| Alto elfo | Conoces el truco prestidigitación. Tras finalizar un descanso largo, puedes sustituir ese truco por otro truco diferente de la lista de conjuros de mago. | Detectar magia | Paso brumoso |\n| Drow | El alcance de tu visión en la oscuridad aumenta a 36 m. También conoces el truco luces danzantes. | Fuego feérico | Oscuridad |\n| Elfo de los bosques | Tu velocidad aumenta a 10,5 m. También conoces el truco saber druídico. | Zancada prodigiosa | Pasar sin rastro |\n\nCuando alcanzas los niveles 3 y 5 de personaje, aprendes un conjuro de nivel superior, como se muestra en la tabla. Siempre tienes ese conjuro preparado. Puedes lanzarlo una vez sin gastar un espacio de conjuro y recuperas la capacidad de hacerlo de esta forma tras finalizar un descanso largo. También puedes lanzar el conjuro usando cualquier espacio de conjuro que tengas del nivel apropiado.\n\nLa Inteligencia, la Sabiduría o el Carisma es tu aptitud mágica para los conjuros que lances con este atributo (elige la característica al seleccionar el linaje).",
+    "summary": "Eliges ser alto elfo, drow o elfo de los bosques. Cada linaje te da un truco a nivel 1 y un conjuro gratis al día a los niveles 3 y 5."
+   },
+   {
+    "id": "elfo-linaje-feerico",
+    "name": "Linaje feérico",
+    "level": 1,
+    "text": "Tienes ventaja en las tiradas de salvación para evitar o poner fin al estado de hechizado.",
+    "summary": "Tienes ventaja en las tiradas de salvación para evitar que te hechicen o para librarte del hechizo."
+   },
+   {
+    "id": "elfo-sentidos-agudos",
+    "name": "Sentidos agudos",
+    "level": 1,
+    "text": "Tienes competencia en la habilidad de Percepción, Perspicacia o Supervivencia.",
+    "summary": "Eres competente en una habilidad a elegir: Percepción, Perspicacia o Supervivencia."
+   },
+   {
+    "id": "elfo-trance",
+    "name": "Trance",
+    "level": 1,
+    "text": "No necesitas dormir y la magia no puede dormirte. Puedes finalizar un descanso largo en 4 horas si las pasas en una meditación similar a un trance, tiempo durante el cual conservas la consciencia.",
+    "summary": "No necesitas dormir ni te pueden dormir con magia. Tu descanso largo dura solo 4 horas de meditación consciente."
+   },
+   {
+    "id": "elfo-vision-en-la-oscuridad",
+    "name": "Visión en la oscuridad",
+    "level": 1,
+    "text": "Tienes visión en la oscuridad hasta 18 m.",
+    "summary": "Ves en la oscuridad hasta 18 m como si fuera luz tenue (en tonos de gris)."
+   }
+  ],
+  "choices": [
+   {
+    "id": "elfo-linaje-elfico",
+    "kind": "opcion",
+    "count": 1,
+    "options": [
+     {
+      "id": "alto-elfo",
+      "name": "Alto elfo",
+      "text": "Conoces el truco prestidigitación. Tras finalizar un descanso largo, puedes sustituir ese truco por otro truco diferente de la lista de conjuros de mago. Nivel 3: detectar magia. Nivel 5: paso brumoso.",
+      "spells": [
+       {
+        "level": 1,
+        "id": "prestidigitacion"
+       },
+       {
+        "level": 3,
+        "id": "detectar-magia",
+        "freeCast": "largo"
+       },
+       {
+        "level": 5,
+        "id": "paso-brumoso",
+        "freeCast": "largo"
+       }
+      ]
+     },
+     {
+      "id": "drow",
+      "name": "Drow",
+      "text": "El alcance de tu visión en la oscuridad aumenta a 36 m. También conoces el truco luces danzantes. Nivel 3: fuego feérico. Nivel 5: oscuridad.",
+      "spells": [
+       {
+        "level": 1,
+        "id": "luces-danzantes"
+       },
+       {
+        "level": 3,
+        "id": "fuego-feerico",
+        "freeCast": "largo"
+       },
+       {
+        "level": 5,
+        "id": "oscuridad",
+        "freeCast": "largo"
+       }
+      ],
+      "darkvision": 36
+     },
+     {
+      "id": "elfo-de-los-bosques",
+      "name": "Elfo de los bosques",
+      "text": "Tu velocidad aumenta a 10,5 m. También conoces el truco saber druídico. Nivel 3: zancada prodigiosa. Nivel 5: pasar sin rastro.",
+      "spells": [
+       {
+        "level": 1,
+        "id": "saber-druidico"
+       },
+       {
+        "level": 3,
+        "id": "zancada-prodigiosa",
+        "freeCast": "largo"
+       },
+       {
+        "level": 5,
+        "id": "pasar-sin-rastro",
+        "freeCast": "largo"
+       }
+      ]
+     }
+    ],
+    "note": "Elige también Inteligencia, Sabiduría o Carisma como aptitud mágica para estos conjuros."
+   },
+   {
+    "id": "elfo-sentidos-agudos",
+    "kind": "habilidad",
+    "count": 1,
+    "options": [
+     {
+      "id": "percepcion",
+      "name": "Percepción"
+     },
+     {
+      "id": "perspicacia",
+      "name": "Perspicacia"
+     },
+     {
+      "id": "supervivencia",
+      "name": "Supervivencia"
+     }
+    ]
+   }
+  ],
+  "summary": "Pueblo feérico de sentidos finos que no duerme: medita 4 horas en trance. Tu linaje élfico te da trucos y conjuros que mejoran al subir de nivel."
+ },
+ {
+  "id": "enano",
+  "name": "Enano",
+  "source": "srd",
+  "creatureType": "Humanoide",
+  "sizeText": "Mediano (entre 1,2 y 1,5 m de altura)",
+  "sizes": [
+   "Mediano"
+  ],
+  "speed": 9,
+  "darkvision": 36,
+  "traits": [
+   {
+    "id": "enano-afinidad-con-la-piedra",
+    "name": "Afinidad con la piedra",
+    "level": 1,
+    "text": "Como acción adicional, ganas la capacidad de sentir vibraciones con un alcance de 18 m durante 10 minutos. Debes encontrarte sobre una superficie de piedra o en contacto con una superficie de piedra para usar esta capacidad. La piedra puede ser natural o labrada.\n\nPuedes usar esta acción adicional una cantidad de veces igual a tu bonificador por competencia y recuperas todos los usos tras finalizar un descanso largo.",
+    "summary": "Como acción adicional, mientras tocas piedra, notas las vibraciones de lo que se mueve a 18 m durante 10 minutos. Usos: tu bonificador por competencia por descanso largo.",
+    "resources": [
+     {
+      "id": "afinidad-con-la-piedra",
+      "name": "Afinidad con la piedra",
+      "max": {
+       "proficiencyBonus": true
+      },
+      "recharge": "largo"
+     }
+    ]
+   },
+   {
+    "id": "enano-aguante-enano",
+    "name": "Aguante enano",
+    "level": 1,
+    "text": "Tus puntos de golpe máximos se incrementan en 1 y aumentarán en 1 más cada vez que subas un nivel.",
+    "summary": "Tienes 1 punto de golpe máximo más por cada nivel de personaje."
+   },
+   {
+    "id": "enano-resistencia-enana",
+    "name": "Resistencia enana",
+    "level": 1,
+    "text": "Tienes resistencia al daño de veneno. También tienes ventaja en las tiradas de salvación para evitar o poner fin al estado de envenenado.",
+    "summary": "Recibes la mitad del daño de veneno y tienes ventaja en las tiradas de salvación contra quedar envenenado."
+   },
+   {
+    "id": "enano-vision-en-la-oscuridad",
+    "name": "Visión en la oscuridad",
+    "level": 1,
+    "text": "Tienes visión en la oscuridad hasta 36 m.",
+    "summary": "Ves en la oscuridad hasta 36 m como si fuera luz tenue (en tonos de gris)."
+   }
+  ],
+  "summary": "Gente robusta y resistente, ligada a la piedra. Tienes más puntos de golpe, aguantas bien el veneno y ves lejos en la oscuridad."
+ },
+ {
+  "id": "gnomo",
+  "name": "Gnomo",
+  "source": "srd",
+  "creatureType": "Humanoide",
+  "sizeText": "Pequeño (entre 90 cm y 1,2 m de altura)",
+  "sizes": [
+   "Pequeño"
+  ],
+  "speed": 9,
+  "darkvision": 18,
+  "traits": [
+   {
+    "id": "gnomo-astucia-gnoma",
+    "name": "Astucia gnoma",
+    "level": 1,
+    "text": "Tienes ventaja en las tiradas de salvación de Inteligencia, Sabiduría y Carisma.",
+    "summary": "Tienes ventaja en las tiradas de salvación de Inteligencia, Sabiduría y Carisma."
+   },
+   {
+    "id": "gnomo-linaje-gnomo",
+    "name": "Linaje gnomo",
+    "level": 1,
+    "text": "Formas parte de un linaje que te otorga capacidades sobrenaturales. Escoge una de las siguientes opciones; elijas la que elijas, la Inteligencia, la Sabiduría o el Carisma es tu aptitud mágica para los conjuros que lances con este atributo (elige la característica al seleccionar el linaje):\n\n**Gnomo de las rocas.** Conoces los trucos prestidigitación y reparar. Además, puedes pasar 10 minutos lanzando prestidigitación para crear un dispositivo mecánico Diminuto (CA 5, 1 pg), como un juguete, un encendedor o una caja de música. Cuando crees el dispositivo, determinarás su función eligiendo un efecto de prestidigitación. El dispositivo producirá ese efecto cada vez que otra criatura o tú empleéis una acción adicional para activarlo con un toque. Si el efecto elegido tiene varias opciones, escoges una de ellas para el dispositivo cuando lo crees. Por ejemplo, si eliges el efecto de encender o apagar del conjuro, determinas si el dispositivo enciende o apaga los fuegos: el dispositivo no hace ambas cosas. Puedes tener tres de estos dispositivos activos al mismo tiempo y se desarman 8 horas después de crearlos o cuando los desmontes con un toque como acción de utilizar.\n\n**Gnomo de los bosques.** Conoces el truco ilusión menor. Además, siempre tienes el conjuro hablar con los animales preparado. Puedes lanzarlo sin gastar un espacio de conjuro una cantidad de veces igual a tu bonificador por competencia y recuperas todos los usos tras finalizar un descanso largo. También puedes usar cualquier espacio de conjuro que tengas para lanzarlo.",
+    "summary": "Eliges ser gnomo de las rocas (trucos de reparar y crear cacharros mecánicos) o de los bosques (ilusión menor y hablar con los animales).",
+    "resources": [
+     {
+      "id": "hablar-con-los-animales",
+      "name": "Hablar con los animales (gnomo de los bosques)",
+      "max": {
+       "proficiencyBonus": true
+      },
+      "recharge": "largo"
+     }
+    ]
+   },
+   {
+    "id": "gnomo-vision-en-la-oscuridad",
+    "name": "Visión en la oscuridad",
+    "level": 1,
+    "text": "Tienes visión en la oscuridad hasta 18 m.",
+    "summary": "Ves en la oscuridad hasta 18 m como si fuera luz tenue (en tonos de gris)."
+   }
+  ],
+  "choices": [
+   {
+    "id": "gnomo-linaje-gnomo",
+    "kind": "opcion",
+    "count": 1,
+    "options": [
+     {
+      "id": "gnomo-de-las-rocas",
+      "name": "Gnomo de las rocas",
+      "spells": [
+       {
+        "level": 1,
+        "id": "prestidigitacion"
+       },
+       {
+        "level": 1,
+        "id": "reparar"
+       }
+      ],
+      "text": "Conoces los trucos prestidigitación y reparar. Además, puedes pasar 10 minutos lanzando prestidigitación para crear un dispositivo mecánico Diminuto (CA 5, 1 pg), como un juguete, un encendedor o una caja de música. Cuando crees el dispositivo, determinarás su función eligiendo un efecto de prestidigitación. El dispositivo producirá ese efecto cada vez que otra criatura o tú empleéis una acción adicional para activarlo con un toque. Si el efecto elegido tiene varias opciones, escoges una de ellas para el dispositivo cuando lo crees. Por ejemplo, si eliges el efecto de encender o apagar del conjuro, determinas si el dispositivo enciende o apaga los fuegos: el dispositivo no hace ambas cosas. Puedes tener tres de estos dispositivos activos al mismo tiempo y se desarman 8 horas después de crearlos o cuando los desmontes con un toque como acción de utilizar."
+     },
+     {
+      "id": "gnomo-de-los-bosques",
+      "name": "Gnomo de los bosques",
+      "spells": [
+       {
+        "level": 1,
+        "id": "ilusion-menor"
+       },
+       {
+        "level": 1,
+        "id": "hablar-con-los-animales",
+        "freeCast": "largo"
+       }
+      ],
+      "text": "Conoces el truco ilusión menor. Además, siempre tienes el conjuro hablar con los animales preparado. Puedes lanzarlo sin gastar un espacio de conjuro una cantidad de veces igual a tu bonificador por competencia y recuperas todos los usos tras finalizar un descanso largo. También puedes usar cualquier espacio de conjuro que tengas para lanzarlo."
+     }
+    ],
+    "note": "Elige también Inteligencia, Sabiduría o Carisma como aptitud mágica para estos conjuros."
+   }
+  ],
+  "summary": "Pequeños, astutos e ingeniosos. Tu mente se resiste a la magia y tu linaje te da pequeños trucos mágicos."
+ },
+ {
+  "id": "goliat",
+  "name": "Goliat",
+  "source": "srd",
+  "creatureType": "Humanoide",
+  "sizeText": "Mediano (entre 2,1 y 2,4 m de altura)",
+  "sizes": [
+   "Mediano"
+  ],
+  "speed": 10.5,
+  "traits": [
+   {
+    "id": "goliat-constitucion-poderosa",
+    "name": "Constitución poderosa",
+    "level": 1,
+    "text": "Tienes ventaja en cualquier prueba de característica que hagas para poner fin al estado de agarrado. Además, al determinar tu capacidad de carga, cuentas como si tuvieras un tamaño una categoría superior.",
+    "summary": "Tienes ventaja para soltarte cuando te agarran y puedes cargar como si fueras una categoría de tamaño más grande."
+   },
+   {
+    "id": "goliat-forma-grande",
+    "name": "Forma grande",
+    "level": 5,
+    "text": "A partir del nivel 5 de personaje, puedes cambiar de tamaño a Grande como acción adicional si estás en un lugar lo bastante espacioso. Esta transformación dura 10 minutos o hasta que le pongas fin (no requiere acción). Durante ese tiempo, tendrás ventaja en las pruebas de Fuerza y tu velocidad aumentará en 3 m. Cuando uses este atributo, no podrás volver a hacerlo hasta que finalices un descanso largo.",
+    "summary": "Desde el nivel 5, como acción adicional te haces Grande durante 10 minutos: ventaja en pruebas de Fuerza y +3 m de velocidad. Una vez por descanso largo.",
+    "resources": [
+     {
+      "id": "forma-grande",
+      "name": "Forma grande",
+      "max": {
+       "perLevel": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+       ]
+      },
+      "recharge": "largo",
+      "fromLevel": 5
+     }
+    ]
+   },
+   {
+    "id": "goliat-linaje-gigante",
+    "name": "Linaje gigante",
+    "level": 1,
+    "text": "Desciendes de los gigantes. Elige uno de los siguientes beneficios sobrenaturales que te concede tu linaje; podrás usar el beneficio elegido una cantidad de veces igual a tu bonificador por competencia y recuperas todos los usos tras finalizar un descanso largo:\n\n**Abrasión del fuego (gigante de fuego).** Cuando aciertes a un objetivo con una tirada de ataque y le causes daño, también puedes causarle 1d10 de daño de fuego.\n\n**Caída de las colinas (gigante de las colinas).** Cuando aciertes a una criatura Grande o más pequeña con una tirada de ataque y le causes daño, también puedes infligirle el estado de derribada.\n\n**Excursión de las nubes (gigante de las nubes).** Como acción adicional, te teletransportas mágicamente hasta 9 m a un espacio sin ocupar que puedas ver.\n\n**Frío de la escarcha (gigante de escarcha).** Cuando aciertes a un objetivo con una tirada de ataque y le causes daño, también puedes causarle 1d6 de daño de frío y reducir su velocidad en 3 m hasta el principio de tu siguiente turno.\n\n**Resistencia de la piedra (gigante de piedra).** Cuando recibas daño, puedes usar una reacción para tirar 1d12. Suma tu modificador por Constitución al resultado y reduce el daño en ese total.\n\n**Trueno de la tormenta (gigante de las tormentas).** Cuando una criatura que esté a 18 m o menos de ti te cause daño, puedes usar una reacción para infligirle 1d8 de daño de trueno.",
+    "summary": "Eliges un tipo de gigante y ganas su poder (daño extra de fuego o frío, derribar, teletransporte corto, reducir daño o devolver daño de trueno). Usos: tu bonificador por competencia por descanso largo.",
+    "resources": [
+     {
+      "id": "linaje-gigante",
+      "name": "Linaje gigante",
+      "max": {
+       "proficiencyBonus": true
+      },
+      "recharge": "largo"
+     }
+    ]
+   }
+  ],
+  "choices": [
+   {
+    "id": "goliat-linaje-gigante",
+    "kind": "opcion",
+    "count": 1,
+    "options": [
+     {
+      "id": "abrasion-del-fuego",
+      "name": "Abrasión del fuego (gigante de fuego)",
+      "text": "Cuando aciertes a un objetivo con una tirada de ataque y le causes daño, también puedes causarle 1d10 de daño de fuego."
+     },
+     {
+      "id": "caida-de-las-colinas",
+      "name": "Caída de las colinas (gigante de las colinas)",
+      "text": "Cuando aciertes a una criatura Grande o más pequeña con una tirada de ataque y le causes daño, también puedes infligirle el estado de derribada."
+     },
+     {
+      "id": "excursion-de-las-nubes",
+      "name": "Excursión de las nubes (gigante de las nubes)",
+      "text": "Como acción adicional, te teletransportas mágicamente hasta 9 m a un espacio sin ocupar que puedas ver."
+     },
+     {
+      "id": "frio-de-la-escarcha",
+      "name": "Frío de la escarcha (gigante de escarcha)",
+      "text": "Cuando aciertes a un objetivo con una tirada de ataque y le causes daño, también puedes causarle 1d6 de daño de frío y reducir su velocidad en 3 m hasta el principio de tu siguiente turno."
+     },
+     {
+      "id": "resistencia-de-la-piedra",
+      "name": "Resistencia de la piedra (gigante de piedra)",
+      "text": "Cuando recibas daño, puedes usar una reacción para tirar 1d12. Suma tu modificador por Constitución al resultado y reduce el daño en ese total."
+     },
+     {
+      "id": "trueno-de-la-tormenta",
+      "name": "Trueno de la tormenta (gigante de las tormentas)",
+      "text": "Cuando una criatura que esté a 18 m o menos de ti te cause daño, puedes usar una reacción para infligirle 1d8 de daño de trueno."
+     }
+    ]
+   }
+  ],
+  "summary": "Descendientes de gigantes, altos y fuertes. Tu linaje gigante te da un poder sobrenatural y a nivel 5 puedes crecer hasta tamaño Grande."
+ },
+ {
+  "id": "humano",
+  "name": "Humano",
+  "source": "srd",
+  "creatureType": "Humanoide",
+  "sizeText": "Mediano (entre 1,2 y 2,1 m de altura) o Pequeño (entre 60 cm y 1,2 m de altura), elegido al seleccionar la especie",
+  "sizes": [
+   "Pequeño",
+   "Mediano"
+  ],
+  "speed": 9,
+  "traits": [
+   {
+    "id": "humano-diestro",
+    "name": "Diestro",
+    "level": 1,
+    "text": "Ganas competencia en una habilidad de tu elección.",
+    "summary": "Eres competente en una habilidad que elijas."
+   },
+   {
+    "id": "humano-ingenioso",
+    "name": "Ingenioso",
+    "level": 1,
+    "text": "Obtienes inspiración heroica tras finalizar un descanso largo.",
+    "summary": "Cada vez que terminas un descanso largo obtienes inspiración heroica (repetir una tirada de dado)."
+   },
+   {
+    "id": "humano-versatil",
+    "name": "Versátil",
+    "level": 1,
+    "text": "Obtienes una dote de origen de tu elección (consulta el capítulo «Dotes»). Se recomienda Habilidoso.",
+    "summary": "Obtienes una dote de origen extra a tu elección; Habilidoso es la recomendada."
+   }
+  ],
+  "choices": [
+   {
+    "id": "humano-diestro",
+    "kind": "habilidad",
+    "count": 1,
+    "note": "Cualquier habilidad."
+   },
+   {
+    "id": "humano-versatil",
+    "kind": "dote-origen",
+    "count": 1,
+    "note": "Se recomienda Habilidoso."
+   },
+   {
+    "id": "humano-tamano",
+    "kind": "opcion",
+    "count": 1,
+    "options": [
+     {
+      "id": "pequeno",
+      "name": "Pequeño"
+     },
+     {
+      "id": "mediano",
+      "name": "Mediano"
+     }
+    ],
+    "note": "Se elige al seleccionar la especie."
+   }
+  ],
+  "summary": "Versátiles y adaptables. Empiezas con una habilidad extra, una dote de origen adicional y recuperas inspiración heroica tras cada descanso largo."
+ },
+ {
+  "id": "mediano",
+  "name": "Mediano",
+  "source": "srd",
+  "creatureType": "Humanoide",
+  "sizeText": "Pequeño (entre 60 y 90 cm de altura)",
+  "sizes": [
+   "Pequeño"
+  ],
+  "speed": 9,
+  "traits": [
+   {
+    "id": "mediano-agilidad-de-mediano",
+    "name": "Agilidad de mediano",
+    "level": 1,
+    "text": "Puedes moverte a través del espacio ocupado por cualquier criatura de tamaño superior al tuyo, pero no puedes detenerte en el mismo espacio.",
+    "summary": "Puedes atravesar el espacio de criaturas más grandes que tú, aunque no puedes quedarte en él."
+   },
+   {
+    "id": "mediano-fortuna",
+    "name": "Fortuna",
+    "level": 1,
+    "text": "Cuando saques un 1 en una prueba con d20, podrás repetir la tirada y deberás utilizar el nuevo resultado.",
+    "summary": "Si sacas un 1 en una prueba con d20, vuelves a tirar y usas el nuevo resultado."
+   },
+   {
+    "id": "mediano-sigiloso-por-naturaleza",
+    "name": "Sigiloso por naturaleza",
+    "level": 1,
+    "text": "Puedes llevar a cabo la acción de esconderte incluso tras una criatura cuyo tamaño sea, al menos, una categoría superior al tuyo.",
+    "summary": "Puedes esconderte detrás de una criatura que sea al menos una categoría de tamaño más grande que tú."
+   },
+   {
+    "id": "mediano-valiente",
+    "name": "Valiente",
+    "level": 1,
+    "text": "Tienes ventaja en las tiradas de salvación que hagas para evitar o poner fin al estado de asustado.",
+    "summary": "Tienes ventaja en las tiradas de salvación contra el miedo (estado de asustado)."
+   }
+  ],
+  "summary": "Pequeños, valientes y con mucha suerte. Te escabulles con facilidad y puedes repetir los 1 en las pruebas con d20."
+ },
+ {
+  "id": "orco",
+  "name": "Orco",
+  "source": "srd",
+  "creatureType": "Humanoide",
+  "sizeText": "Mediano (entre 1,8 y 2,1 m de altura)",
+  "sizes": [
+   "Mediano"
+  ],
+  "speed": 9,
+  "darkvision": 36,
+  "traits": [
+   {
+    "id": "orco-aguante-incansable",
+    "name": "Aguante incansable",
+    "level": 1,
+    "text": "Cuando tus puntos de golpe se reducen a 0 pero no mueres inmediatamente, puedes recuperar 1 punto de golpe. Cuando uses este atributo, no podrás volver a hacerlo hasta que finalices un descanso largo.",
+    "summary": "Cuando te reducen a 0 puntos de golpe sin matarte, puedes quedarte con 1 punto de golpe. Una vez por descanso largo.",
+    "resources": [
+     {
+      "id": "aguante-incansable",
+      "name": "Aguante incansable",
+      "max": {
+       "perLevel": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+       ]
+      },
+      "recharge": "largo"
+     }
+    ]
+   },
+   {
+    "id": "orco-descarga-de-adrenalina",
+    "name": "Descarga de adrenalina",
+    "level": 1,
+    "text": "Puedes llevar a cabo la acción de correr como acción adicional. Cuando lo hagas, obtendrás una cantidad de puntos de golpe temporales igual a tu bonificador por competencia.\n\nPuedes usar este atributo una cantidad de veces igual a tu bonificador por competencia y recuperas todos los usos tras finalizar un descanso corto o largo.",
+    "summary": "Puedes correr como acción adicional y ganas puntos de golpe temporales iguales a tu bonificador por competencia. Usos: tu bonificador por competencia por descanso corto o largo.",
+    "resources": [
+     {
+      "id": "descarga-de-adrenalina",
+      "name": "Descarga de adrenalina",
+      "max": {
+       "proficiencyBonus": true
+      },
+      "recharge": "corto"
+     }
+    ]
+   },
+   {
+    "id": "orco-vision-en-la-oscuridad",
+    "name": "Visión en la oscuridad",
+    "level": 1,
+    "text": "Tienes visión en la oscuridad hasta 36 m.",
+    "summary": "Ves en la oscuridad hasta 36 m como si fuera luz tenue (en tonos de gris)."
+   }
+  ],
+  "summary": "Fuertes e incansables. Te cuesta caer en combate y puedes lanzarte hacia delante con un subidón de adrenalina."
+ },
+ {
+  "id": "tiefling",
+  "name": "Tiefling",
+  "source": "srd",
+  "creatureType": "Humanoide",
+  "sizeText": "Mediano (entre 1,2 y 2,1 m de altura) o Pequeño (entre 90 cm y 1,2 m de altura), elegido al seleccionar la especie",
+  "sizes": [
+   "Pequeño",
+   "Mediano"
+  ],
+  "speed": 9,
+  "darkvision": 18,
+  "traits": [
+   {
+    "id": "tiefling-legado-infernal",
+    "name": "Legado infernal",
+    "level": 1,
+    "text": "Eres el destinatario de un legado que te otorga capacidades sobrenaturales. Elige un legado de la tabla «Legados infernales». Obtienes el beneficio de nivel 1 del legado elegido.\n\n**Legados infernales**\n\n| Legado | Nivel 1 | Nivel 3 | Nivel 5 |\n|---|---|---|---|\n| Abisal | Tienes resistencia al daño de veneno. También conoces el truco rociada venenosa. | Rayo nauseabundo | Inmovilizar persona |\n| Ctónico | Tienes resistencia al daño necrótico. También conoces el truco toque helado. | Falsa vida | Rayo debilitador |\n| Infernal | Tienes resistencia al daño de fuego. También conoces el truco descarga de fuego. | Reprensión infernal | Oscuridad |\n\nCuando alcanzas los niveles 3 y 5 de personaje, aprendes un conjuro de nivel superior, como se muestra en la tabla. Siempre tienes ese conjuro preparado. Puedes lanzarlo una vez sin gastar un espacio de conjuro y recuperas la capacidad de hacerlo de esta forma tras finalizar un descanso largo. También puedes lanzar el conjuro usando cualquier espacio de conjuro que tengas del nivel apropiado.\n\nLa Inteligencia, la Sabiduría o el Carisma es tu aptitud mágica para los conjuros que lances con este atributo (elige la característica al seleccionar el legado).",
+    "summary": "Eliges legado abisal, ctónico o infernal: te da una resistencia y un truco a nivel 1, y un conjuro gratis al día a los niveles 3 y 5."
+   },
+   {
+    "id": "tiefling-presencia-sobrenatural",
+    "name": "Presencia sobrenatural",
+    "level": 1,
+    "text": "Conoces el truco taumaturgia. Cuando lo lances con este atributo, el conjuro utiliza la misma aptitud mágica que la de tu atributo Legado infernal.",
+    "summary": "Conoces el truco taumaturgia, que lanzas con la misma característica que tu legado infernal."
+   },
+   {
+    "id": "tiefling-vision-en-la-oscuridad",
+    "name": "Visión en la oscuridad",
+    "level": 1,
+    "text": "Tienes visión en la oscuridad hasta 18 m.",
+    "summary": "Ves en la oscuridad hasta 18 m como si fuera luz tenue (en tonos de gris)."
+   }
+  ],
+  "choices": [
+   {
+    "id": "tiefling-legado-infernal",
+    "kind": "opcion",
+    "count": 1,
+    "options": [
+     {
+      "id": "abisal",
+      "name": "Abisal",
+      "text": "Tienes resistencia al daño de veneno. También conoces el truco rociada venenosa. Nivel 3: rayo nauseabundo. Nivel 5: inmovilizar persona.",
+      "spells": [
+       {
+        "level": 1,
+        "id": "rociada-venenosa"
+       },
+       {
+        "level": 3,
+        "id": "rayo-nauseabundo",
+        "freeCast": "largo"
+       },
+       {
+        "level": 5,
+        "id": "inmovilizar-persona",
+        "freeCast": "largo"
+       }
+      ]
+     },
+     {
+      "id": "ctonico",
+      "name": "Ctónico",
+      "text": "Tienes resistencia al daño necrótico. También conoces el truco toque helado. Nivel 3: falsa vida. Nivel 5: rayo debilitador.",
+      "spells": [
+       {
+        "level": 1,
+        "id": "toque-helado"
+       },
+       {
+        "level": 3,
+        "id": "falsa-vida",
+        "freeCast": "largo"
+       },
+       {
+        "level": 5,
+        "id": "rayo-debilitador",
+        "freeCast": "largo"
+       }
+      ]
+     },
+     {
+      "id": "infernal",
+      "name": "Infernal",
+      "text": "Tienes resistencia al daño de fuego. También conoces el truco descarga de fuego. Nivel 3: reprensión infernal. Nivel 5: oscuridad.",
+      "spells": [
+       {
+        "level": 1,
+        "id": "descarga-de-fuego"
+       },
+       {
+        "level": 3,
+        "id": "reprension-infernal",
+        "freeCast": "largo"
+       },
+       {
+        "level": 5,
+        "id": "oscuridad",
+        "freeCast": "largo"
+       }
+      ]
+     }
+    ],
+    "note": "Elige también Inteligencia, Sabiduría o Carisma como aptitud mágica para estos conjuros."
+   },
+   {
+    "id": "tiefling-tamano",
+    "kind": "opcion",
+    "count": 1,
+    "options": [
+     {
+      "id": "pequeno",
+      "name": "Pequeño"
+     },
+     {
+      "id": "mediano",
+      "name": "Mediano"
+     }
+    ],
+    "note": "Se elige al seleccionar la especie."
+   }
+  ],
+  "summary": "Personas con un legado de los Planos Inferiores. Resistes un tipo de daño y conoces conjuros infernales que mejoran al subir de nivel."
+ }
+]
